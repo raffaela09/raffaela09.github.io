@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/styles/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="./src/img/icon_top.png" type="image/png">
+<link rel="apple-touch-icon" href="./src/img/icon_top.png">
+    <title>Contato | Topo Engenharia</title>
+</head>
+<body>
+    <header>
+        <nav class="nav-bar">
+            <div class="nav-logo">
+                <a href="#" class="nav-link-logo">
+                    <img src="./src/img/logo.png" alt="">
+                    <div class="title-header">
+                        <h1>Topo Engenharia</h1>
+                        <span class="subtitle-header">Engenharia & Agrimensura </span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="nav-list">
+                <ul>
+                    <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Sobre</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Serviços</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Projetos</a></li>
+                </ul>
+            </div>
+
+            <div class="nav-button">
+                <button class="active"><a href=".main-card">Contato</a></button>
+            </div>
+
+            <div class="mobile-menu-icon">
+                <button onclick="showMenu()"><i class="fa-solid fa-bars"></i></button>
+            </div>
+
+            <div class="mobile-menu">
+                <ul>
+                    <li class="nav-item "><a href="#" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Sobre</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Serviços</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Projetos</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link change-color">Contato</a></li>
+                </ul>
+            </div>
+
+        </nav>
+    </header>
+
+    <div class="main-card" id="contact">
+        <div class="contact-text">
+            <span class="section-label">Fale conosco</span>
+            <h2>Vamos tirar <span class="change-color">seu projeto </span>do papel?</h2>
+            <p>Fale com a <a class="link-change-color" href="#">Topo Engenharia</a> e receba uma análise técnica e objetiva.</p>
+            <div class="info-card">
+                <span class="info-label">Informações de contato</span>
+                <ul class="list-infos">
+                    <li><i class="fa-solid fa-phone"></i>(67) 98454-7352</li>
+                    <li><i class="fa-solid fa-at"></i>atendimento@topoengenhariatls.com.br</li>
+                    <li><i class="fa-solid fa-location-dot"></i>R. Duque de Caxias, 2685 - Vila Nova, Três Lagoas - MS, 79645-310</li>
+                    <li><i class="fa-solid fa-clock"></i>Seg - Sex 7:00 - 17:00</li>
+                </ul>
+            </div>
+            <div class="btn-text-contact">
+
+                <button><a href="https://api.whatsapp.com/send/?phone=5567984547352&text&type=phone_number&app_absent=0">Solicitar análise</a></button>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+
+       <div class="contact-form">
+
+                <form class="form">
+                    <div class="title-form">
+                        <i class="fa-solid fa-message"></i>
+                        <h2>Fale com a <span class="change-color">Topo</span></h2>
+                    </div>
+                    <div class="sub-title">
+                         <p>Resposta em até <span class="change-color">24h úteis</span>(em média).</p>
+                    </div>
+                   <div class="form-group">
+                        <label>
+                            <i class="fa-solid fa-user"></i>
+                            Nome
+                        </label>
+                        <input type="text" placeholder="Seu nome">
+                    </div>
+
+                    <div class="form-group">
+                        <label>
+                            <i class="fa-solid fa-envelope"></i>
+                            E-mail
+                        </label>
+                        <input type="text" placeholder="Seu melhor e-mail">
+                    </div>
+
+                    <div class="form-group">
+                        <label>
+                            <i class="fa-solid fa-phone"></i>
+                            Telefone
+                        </label>
+                        <input type="text" placeholder="Telefone com DDD">
+                    </div>
+
+                    <div class="form-group">
+                        <label>
+                            <i class="fa-solid fa-paper-plane"></i>
+                            Mensagem
+                        </label>
+                        <textarea>Olá, gostaria de um orçamento!</textarea>
+                    </div>
+
+                    <button class="form-button"><a href="#">OK</a></button>
+                </form>
+        </div>
+    </div>
+    <div class="location">
+        <div class="title-local">
+            <span class="section-label">Onde estamos</span>
+            <span class="sub-title"><i class="fa-solid fa-location-dot change-color"></i>Atendemos Três Lagoas e região com precisão técnica.</span>
+            <div class="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3730.440213777392!2d-51.69373262386388!3d-20.773471265129324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x949098868b1e6db3%3A0x41365dce6751085f!2sR.%20Duque%20de%20Caxias%2C%202685%20-%20Vila%20Santana%2C%20Tr%C3%AAs%20Lagoas%20-%20MS%2C%2079645-310!5e0!3m2!1spt-BR!2sbr!4v1770359430073!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="map-card">
+                <h3 class="map-card__title">Áreas de atuação</h3>
+
+                <ul class="map-card__list">
+                    <li class="map-card__item">
+                    <span class="map-card__icon">
+                        <i class="fa-solid fa-mountain-sun"></i>
+                    </span>
+                    <span>Topografia</span>
+                    </li>
+
+                    <li class="map-card__item">
+                    <span class="map-card__icon">
+                        <i class="fa-solid fa-satellite"></i>
+                    </span>
+                    <span>Levantamentos técnicos</span>
+                    </li>
+
+                    <li class="map-card__item">
+                    <span class="map-card__icon">
+                        <i class="fa-solid fa-map"></i>
+                    </span>
+                    <span>Suporte completo para obras urbanas e rurais</span>
+                    </li>
+                </ul>
+
+                <p class="map-card__footer">
+                    Sempre com precisão e responsabilidade técnica
+                </p>
+                </div>
+            
+
+
+        </div>
+    </div>
+    <div class="content-wpp">
+        <div class="content-left">
+            <h2 class="wpp-title">Atendimento rápido pelo <span class="change-color">WhatsApp</span></h2>
+            <p class="wpp-text">Prefere falar direto com a gente? Chama a <span class="change-color">Topo</span> e fale com um especialista agora.</p>
+        </div>
+       
+        <div class="content-right">
+            <button class="btn-wpp"><a href="https://api.whatsapp.com/send/?phone=5567984547352&text&type=phone_number&app_absent=0" target="_blank" class="wpp-link">
+            <i class="fa-brands fa-whatsapp"></i> Falar no WhatsApp
+        </a></button>
+        </div>
+    </div>
+    <footer>
+        <span>© 2026 Topo Engenharia — Todos os direitos reservados.</span>
+        <span>CREA e demais registros podem ser exibidos aqui.</span>
+        <div class="icons-footer">
+            <a href="#" class="f-icon"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="f-icon"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="#" class="f-icon"><i class="fa-brands fa-facebook"></i></a>
+        </div>
+    </footer>
+
+</body>
+<script src="./src/js/script.js"></script>
+</html>
