@@ -1,17 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
-
-  /* outline: 1px solid rgba(0, 255, 0, 0.05); */
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
-body{
+
+body {
     margin: 0;
     padding-top: 6rem;
     display: flex;
@@ -20,7 +20,9 @@ body{
     background-color: #f2f2f2;
     flex-direction: column;
 }
-header{
+
+/* ======== HEADER E MENU ======== */
+header {
     display: flex;
     align-items: center;  
     background-color: rgba(255,255,255,0.85);
@@ -33,7 +35,8 @@ header{
     backdrop-filter: blur(8px);
     left: 0;
 }
-header .subtitle-header{
+
+header .subtitle-header {
     text-align: left;
     display: block;
     font-size: 1.2rem;
@@ -43,14 +46,16 @@ header .subtitle-header{
     gap: 1.25rem;
     opacity: 0.85;
 }
-.title-header{
+
+.title-header {
     display: flex;
     flex-direction: column;
     justify-content: center;
     line-height: 1.1;
     gap: 0.3rem;
 }
-.nav-bar{
+
+.nav-bar {
     display: flex;
     justify-content: space-between;
     align-items: center; 
@@ -59,7 +64,7 @@ header .subtitle-header{
     padding-inline: clamp(1.5rem, 5vw, 10rem);
 }
 
-.nav-link-logo{
+.nav-link-logo {
     text-decoration: none;
     display: flex;
     flex-direction: row;
@@ -67,35 +72,42 @@ header .subtitle-header{
     align-items: center;
     color: #2A2A2A;
 }
-.nav-logo img{
+
+.nav-logo img {
     width: 4.5rem;
     margin-right: 10px;
 }
-.nav-list{
+
+.nav-list {
     margin-left: auto;
     display: flex;
     align-items: center;
 }
 
-.nav-list ul{
+.nav-list ul {
     display: flex;
     gap: 1.2rem;
     list-style: none;
 }
-.nav-item{
+
+.nav-item {
     margin: 0 15px;
     text-decoration: none;
     position: relative;
     display: inline-block;
 }
-.nav-link{
+
+.nav-link {
     text-decoration: none;
     font-size: 1.15rem;
-    color: #ffff;
-    color: #2A2A2A
+    color: #2A2A2A;
 }
 
-.nav-button button{
+.nav-button {
+    margin-left: 1rem;
+}
+
+.nav-button button {
     border: none;
     background-color: #2A2A2A;
     padding: 10px 15px;
@@ -105,44 +117,43 @@ header .subtitle-header{
     cursor: pointer;
     box-shadow: 0px 3px 5px #4646465d;
     position: relative;
-}
-.nav-button{
-    margin-left: 1rem;
-    
+    transition: all 0.3s ease;
 }
 
-.nav-button a{
+.nav-button button:hover {
+    background-color: #3a3a3a; 
+    box-shadow: 0 8px 12px rgba(0,0,0,0.15);
+}
+
+.nav-button a {
     text-decoration: none;
     color: #fff;
     font-weight: 700;
 }
 
-.mobile-menu-icon{
-    display: none;
-}
-.mobile-menu{
+.mobile-menu-icon, .mobile-menu {
     display: none;
 }
 
-.nav-item:not(.active) a:hover::after{
+.nav-item:not(.active) a:hover::after {
     width: 100%;
     left: 0;
     right: auto;
 }
 
 .nav-item a::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  right: 0;                 
-  width: 0%;               
-  height: 2px;            
-  background-color: #27AE60;
-  transition: width 0.3s ease;
-  transform-origin: right; 
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;                
+    width: 0%;               
+    height: 2px;            
+    background-color: #27AE60;
+    transition: width 0.3s ease;
+    transform-origin: right; 
 }
 
-.nav-item.active::after{
+.nav-item.active::after {
     content: "";
     position: absolute;
     left: 50%;
@@ -154,12 +165,8 @@ header .subtitle-header{
     border-radius: 2px;
 }
 
-.nav-button button:hover{
-    background-color: #3a3a3a; 
-    box-shadow: 0 8px 12px rgba(0,0,0,0.15);
-}
-
-.main-card{
+/* ======== PRIMEIRA DOBRA (MAIN CARD) ======== */
+.main-card {
     background-image: url("../img/bg-card.png");
     background-repeat: no-repeat;
     background-position: center;
@@ -168,22 +175,21 @@ header .subtitle-header{
     margin-top: 1rem;
     max-width: 100%;
     grid-template-columns: 1fr 1px 1fr;
-    /* gap: 4rem; */
     padding-inline: clamp(1.5rem, 5vw, 10rem); 
     align-items: center;
     box-shadow: 0px 3px 10px #46464613;  
     border-bottom: 1.5px solid #c2c2c2;
 }
 
-.column-one{
+.column-one {
     display: flex;
     align-items: flex-start;
     flex-direction: column;
     max-width: 570px;
-    padding: 2rem
+    padding: 2rem;
 }
 
-.areas{
+.areas {
     display: flex;
     align-items: center;
     gap: 12px;
@@ -192,20 +198,22 @@ header .subtitle-header{
     letter-spacing: 0.08rem;
     color: #8c8c8c;
 }
-.area-item{
+
+.area-item {
     text-transform: uppercase;
 }
 
-.area-dot{
+.area-dot {
     color: #27AE60;
     font-size: 18px;
 }
-.column-one h1{
+
+.column-one h1 {
     color: #2A2A2A;
     font-size: 1.9rem;
 }
 
-.column-content{
+.column-content {
     background-color: #f2f2f2d3;
     padding: 10px;
     border-radius: 7px;
@@ -215,7 +223,8 @@ header .subtitle-header{
     width: 90%;
     font-weight: 300;
 }
-.area-buttons{
+
+.area-buttons {
     width: 90%;
     display: flex;
     align-items: center;
@@ -224,7 +233,8 @@ header .subtitle-header{
     margin-top: 10px;
     margin-bottom: 10px;
 }
-.btn-solicite{
+
+.btn-solicite {
     width: 130px;
     height: 45px;
     border-radius: 999px;
@@ -236,7 +246,7 @@ header .subtitle-header{
     box-shadow: 0px 3px 5px #4646465d;
 }
 
-.btn-services{
+.btn-services {
     width: 130px;
     height: 45px;
     border: 1px solid black;
@@ -246,7 +256,7 @@ header .subtitle-header{
     cursor: pointer;
 }
 
-.area-contents{
+.area-contents {
     display: flex;
     align-items: center;
     flex-direction: row;
@@ -254,59 +264,65 @@ header .subtitle-header{
     font-size: 0.7rem;
 }
 
-.span-text{
-        color: #555555;
-        /* width: 500px; */
-        height: 60px;
-        margin: 10px;
-        background-color: #f2f2f2;
-        padding: 7px;
-        border-radius: 999px;
-        box-shadow: 0px 3px 5px #46464625;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+.span-text {
+    color: #555555;
+    height: 60px;
+    margin: 10px;
+    background-color: #f2f2f2;
+    padding: 7px;
+    border-radius: 999px;
+    box-shadow: 0px 3px 5px #46464625;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.span-text i{
+
+.span-text i {
     color: #27AE60;
     margin: 10px;
 }
-.highlight{
+
+.highlight {
     color: #27AE60;
 }
-.column-two{
-    /* background-color: #2A2A2A; */
+
+.column-two {
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center
+    justify-content: center;
 }
-.card-info{
-    width: 100%; /* Melhor usar 100% e controlar com max-width para ficar responsivo */
-    max-width: 500px; /* Evita que o card fique gigante em telas grandes */
-    min-height: 400px; /* Coloque um min-height no lugar de height: 90% */
+
+.card-info {
+    width: 100%; 
+    max-width: 500px; 
+    min-height: 400px; 
     background-color: #2A2A2A;
-    border-radius: 12px; /* Adiciona aquele cantinho arredondado legal do design */
+    border-radius: 12px; 
     padding: 2rem;
     margin: 2rem;
     box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.15);
     align-items: center;
 }
-.title-info{
+
+.title-info {
     width: 100%;
     display: flex;
     align-items: center;
 }
-.title-info i{
+
+.title-info i {
     font-size: 1.7rem; 
     color: #d8d8d8;
 }
-.title-info h2{
+
+.title-info h2 {
     color: #d8d8d8;
     font-weight: 500;
-    margin-left: 20px
+    margin-left: 20px;
 }
-.text-btn{
+
+.text-btn {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -316,6 +332,7 @@ header .subtitle-header{
     font-size: 1.2rem;
     text-align: center;
 }
+
 .text-btn button {
     width: 90%;
     height: 45px;
@@ -328,19 +345,16 @@ header .subtitle-header{
     cursor: pointer;
 }
 
-.content-card{
+.content-card {
     color: #d8d8d8;
     margin-top: 10px;
 }
-.performance{
+
+/* ======== SEÇÃO DE PERFORMANCE (ATUAÇÃO) ======== */
+.performance {
     width: 100%;
     height: 30%;
-    background: linear-gradient(
-    to bottom,
-    #ffffff 0%,
-    #f2f2f2 40%,
-    #f7f7f7 100%
-    );
+    background: linear-gradient(to bottom, #ffffff 0%, #f2f2f2 40%, #f7f7f7 100%);
     padding-inline: clamp(1.5rem, 5vw, 10rem);
     display: flex;
     justify-content: center;
@@ -348,7 +362,8 @@ header .subtitle-header{
     padding-bottom: 20px;
     border-bottom: 1.5px solid #c2c2c2;
 }
-.section-label{
+
+.section-label {
     text-align: left;
     display: block;
     font-size: 0.75rem;
@@ -359,48 +374,50 @@ header .subtitle-header{
     margin-bottom: 0.5rem;
     gap: 1.25rem;
 }
+
 .section-label::after {
-  content: "";
-  display: block;
-  width: 40px;
-  height: 3px;
-  background: #27AE60;
-  margin-top: 8px;
-  animation: grow 0.8s ease forwards;
-  transform-origin: left;
+    content: "";
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: #27AE60;
+    margin-top: 8px;
+    animation: grow 0.8s ease forwards;
+    transform-origin: left;
 }
 
-.title-performance{
+.title-performance {
     padding-top: 2rem;
     font-size: clamp(1.6rem, 1.7vw, 1.7rem);
     margin-bottom: 0.5rem;
     font-weight: 800;
     letter-spacing: 0.06em;
 }
-.title-performance h2{
+
+.title-performance h2 {
     color: #2A2A2A;
     font-size: 1.8rem;
 }
-.p-subtitle{
+
+.p-subtitle {
     font-size: 1rem;
     color: #8d8d8d;
     font-weight: 300;
     margin-bottom: 15px;
 }
 
-.p-card{
+.p-card {
     max-width: 400px;
     max-height: 220px;
     background-color: #ffff;
     border-radius: 5px;
-    /* margin: 15px; */
     display: flex;
     justify-content: center;
     flex-direction: column;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.048);
-
 }
-.performance-content{
+
+.performance-content {
     width: 100%;
     display: flex;
     align-items: center;
@@ -408,7 +425,8 @@ header .subtitle-header{
     flex-direction: row;
     height: 100%;
 }
-.title-p{
+
+.title-p {
     padding-top: 10px;
     padding-left: 10px;
     color: #2a2a2a;
@@ -416,14 +434,15 @@ header .subtitle-header{
     margin-bottom: 10px;
 }
 
-.p-span{
+.p-span {
     padding-left: 10px;
     padding-right: 10px;
     font-size: 0.9rem;
     font-weight: 300;
     color: #2A2A2A;
 }
-.box-p{
+
+.box-p {
     display: flex;
     width: 150px;
     height: 30px;
@@ -437,12 +456,14 @@ header .subtitle-header{
     color: #27AE60;
     gap: 10;
 }
-.content-items{
+
+.content-items {
     display: flex;
     align-items: center;
     margin-top: 10px;
 }
-.item{
+
+.item {
     margin-right: 10px;
     border: 1px solid #2a2a2a5d;
     padding: 4px;
@@ -452,9 +473,10 @@ header .subtitle-header{
     font-weight: bold;
     background-color: #ffff;
 }
-.services{
+
+/* ======== SEÇÃO DE SERVIÇOS ======== */
+.services {
     width: 100%;
-    /* height: 30%; */
     background-color: #ffff;
     padding-inline: clamp(1.5rem, 5vw, 10rem);
     display: flex;
@@ -463,20 +485,28 @@ header .subtitle-header{
     padding-bottom: 20px;
     border-bottom: 1.5px solid #c2c2c2;
 }
-.row-one{
+
+.row-one {
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 3rem; /* Espaço entre as linhas de grid do desktop */
 }
+
+.services .row-one:last-child {
+    margin-bottom: 0;
+}
+
 .row-card {
     display: flex;
-    align-items: flex-start; /* Mudamos de center para flex-start para alinhar tudo à esquerda */
+    align-items: flex-start;
     justify-content: flex-start;
     flex-direction: column;
-    border-left: 2px solid #d8d8d8; /* A linha cinza lateral */
-    padding-left: 1.5rem; /* Desgruda o texto da linha */
-    margin-bottom: 2rem;
+    border-left: 2px solid #d8d8d8; 
+    padding-left: 1.5rem; 
 }
+
 .s-title-card {
     display: flex;
     flex-direction: row;
@@ -484,15 +514,18 @@ header .subtitle-header{
     color: #2a2a2a;
     margin-bottom: 5px;
 }
+
 .s-title-card i {
-    margin-right: 12px; /* Espaço entre o ícone e o texto */
+    margin-right: 12px; 
     font-size: 1.6rem;
     color: #2a2a2a;
 }
+
 .s-title-card h4 {
     font-size: 1.3rem;
     font-weight: 700;
 }
+
 .row-card > span {
     color: #8d8d8d;
     font-size: 1rem;
@@ -500,17 +533,17 @@ header .subtitle-header{
     margin-bottom: 1rem;
     text-align: left;
 }
+
 .row-card ul {
-    list-style: none; /* Tira a bolinha preta feia do HTML */
+    list-style: none; 
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Alinha a lista à esquerda */
+    align-items: flex-start; 
     gap: 12px;
     padding-left: 0.5rem;
     width: 100%;
 }
 
-/* Preparando os itens da lista para receber a bolinha customizada */
 .row-card ul li {
     position: relative;
     padding-left: 1.2rem;
@@ -518,7 +551,6 @@ header .subtitle-header{
     font-size: 0.95rem;
 }
 
-/* A bolinha verde clara personalizada */
 .row-card ul li::before {
     content: "";
     position: absolute;
@@ -527,233 +559,199 @@ header .subtitle-header{
     transform: translateY(-50%);
     width: 7px;
     height: 7px;
-    background-color: #8fe0aa; /* Aquele verde claro elegante */
+    background-color: #8fe0aa; 
     border-radius: 50%;
 }
 
+/* =========================================
+   MEDIA QUERIES (RESPONSIVIDADE LIMPA)
+   ========================================= */
 
-@media screen and (max-width: 720px){
-    /* *{
-  outline: 1px solid red;
-} */
-    .nav-logo h1{
-        font-size: 1.2rem;
-    }
-    header .subtitle-header{
-        font-size: 0.6rem;
-    }
-    .nav-bar{
-        padding: 1.5rem;
-        display: flex;
-        align-items: center;
-    }
-    .nav-item{
-        display: none;
-    }
-    .nav-logo {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .nav-button{
-        display: none;
-    }
-    .mobile-menu{
-        border-top: 1px solid rgba(0, 0, 0, 0.171);
-        position: absolute;
-        top: 6rem;
-        left: 0;
-        width: 100%;
-        background-color: #fff;
-        box-shadow: 0px 6px 6px -3px #4646461a;
-        backdrop-filter: blur(8px);
-        display: none;
-        flex-direction: column;
-        z-index: 1000;
-        /* margin: 10px; */
-    }
-    .mobile-menu-icon{
-        display: block;
-    }
-    .mobile-menu-icon button{
-        background-color: transparent;
-        border: none;
-        cursor: pointer;
-        color: #2A2A2A;
-        font-size: 1.5rem;
-    }
-    .mobile-menu-icon button{
-        transition: transform 0.15s ease;
-    }
-
-
-    .mobile-menu-icon button:active{
-        transform: scale(0.9);
-    }
-
-    .mobile-menu ul{
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        padding: 1rem;
-    }
-    .mobile-menu .nav-item{
-        display: block;
-        padding-top: 1.2rem;
-    }
-    .mobile-menu .nav-button{
-        display: block;
-        padding: 1rem 2rem;
-    }
-    .mobile-menu .nav-button button{
-        width: 100%;
-    }
-    .open{
-        display: flex;
-    }
-    .nav-item a:hover{
-        color: #27AE60;
-        transition: color 0.25s ease;
-    }
-
-    .areas{
-        font-size: 0.60rem;
-        gap: 7px;
-    }
-    .main-card{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        width: 100%;
-        padding-inline: 0;
-        /* Adicione estas regras para o fundo: */
-        background-image: url("../img/bg-card.png"); /* Certifique-se que o caminho está correto */
-        background-repeat: repeat-y; /* O PULO DO GATO: Repete a imagem verticalmente */
-        background-size: 100% auto; /* Faz a imagem cobrir 100% da largura, e a altura se ajusta automaticamente */
-        background-position: top center; /* Começa a imagem do topo e centralizada */
-        
-        /* Opcional: se quiser que o fundo fique fixo enquanto o conteúdo rola por cima, use 'fixed'.
-        Se quiser que o fundo role junto com a página, use 'scroll' (que é o padrão) */
-        background-attachment: scroll;
-    }
-    .column-content{
-        width: 100%;
-        text-align: left;
-        color: #2a2a2ade;
-    }
-    .area-contents{
-        flex-direction: column;
-        font-size: 0.75rem;
-    }
-    .span-text{
-        margin-top: 10px;
-        height: 30px;
-    }
-    .span-text span{
-        margin-right: 10px
-    }
-    .performance-content{
-        flex-direction: column;
-    }
-    .p-card{
-        margin: 15px;
-    }
-    .item{
-        margin-right: 5px;
-    }
+/* --- NOTEBOOKS MENORES E TABLETS HORIZONTAIS (Até 1366px) --- */
+@media screen and (min-width: 769px) and (max-width: 1440px) {
+    /* 1. MANTÉM OS SERVIÇOS EM DUAS COLUNAS, MAS MENORES */
     .row-one {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    gap: 2rem; /* Espaço entre os cards DENTRO do mesmo bloco */
-        
-        /* O PULO DO GATO: */
-    margin-bottom: 2rem;/* Esse gap dá o espaço perfeito entre um serviço e outro */
-}
-
-/* Ajustando o card para ocupar tudo sem quebrar a tela */
-.row-card {
-    width: 100%;
-    margin-bottom: 0; /* Tiramos a margem de baixo porque o gap já faz esse papel */
-    padding-left: 1rem; /* Deixamos a margem interna um pouquinho menor pro mobile */
-}
-
-/* Opcional: Reduzir levemente o tamanho da fonte do título no celular */
-.s-title-card h4 {
-    font-size: 1.15rem;
-}
-
-
-}
-@media (min-width: 768px) and (max-width: 1024px) {
-
-    .nav-bar{
-        padding: 1.5rem;
-        display: flex;
-        align-items: center;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem; 
     }
-    .nav-item{
+    .row-card {
+        padding-left: 1rem; 
+    }
+    .s-title-card h4 {
+        font-size: 1.1rem; 
+    }
+    .s-title-card i {
+        font-size: 1.3rem; 
+        margin-right: 8px;
+    }
+    .row-card > span {
+        font-size: 0.85rem; 
+        margin-bottom: 0.8rem;
+    }
+    .row-card ul li {
+        font-size: 0.85rem; 
+    }
+
+    /* 2. O PULO DO GATO: ENCOLHE OS 3 CARDS DE ATUAÇÃO PRA CABER NA TELA */
+    .performance-content {
+        gap: 1rem; /* Dá um respiro entre os cards */
+    }
+    .p-card {
+        width: 32%; /* Garante que os 3 dividam a tela igualmente sem estourar */
+        max-width: 100%;
+    }
+    .p-span {
+        font-size: 0.8rem; /* Letra levemente menor pra não amontoar o texto */
+    }
+
+    /* 3. EVITA QUE AS TAGS (CREA, ART) VAZEM DA TELA */
+    .content-items {
+        flex-wrap: wrap; /* Se não couber na frente, ele joga pra linha de baixo! */
+        gap: 10px;
+    }
+    .item {
+        margin-top: 5px; /* Ajuste fino porque agora eles podem pular de linha */
+    }
+}
+
+/* --- TABLETS E MENU HAMBURGER (Até 1024px) --- */
+@media screen and (max-width: 1024px) {
+    .nav-bar {
+        padding: 1.5rem;
+    }
+    
+    .nav-item, .nav-button {
         display: none;
     }
+    
     .nav-logo {
         display: flex;
         justify-content: center;
         align-items: center;
     }
-    .nav-button{
-        display: none;
-    }
-    .mobile-menu{
+    
+    .mobile-menu {
         border-top: 2px solid rgba(0, 0, 0, 0.171);
         position: absolute;
         top: 6rem;
         left: 0;
         width: 100%;
         background-color: #fff;
-        /* box-shadow: 0px 3px 10px #4646465d; */
         display: none;
         flex-direction: column;
         z-index: 1000;
-        /* margin: 10px; */
     }
-    .mobile-menu-icon{
+    
+    .mobile-menu-icon {
         display: block;
     }
-    .mobile-menu-icon button{
+    
+    .mobile-menu-icon button {
         background-color: transparent;
         border: none;
         cursor: pointer;
         color: #2A2A2A;
         font-size: 1.5rem;
-    }
-    .mobile-menu-icon button{
         transition: transform 0.15s ease;
     }
-
-
-    .mobile-menu-icon button:active{
+    
+    .mobile-menu-icon button:active {
         transform: scale(0.9);
     }
-
-    .mobile-menu ul{
+    
+    .mobile-menu ul {
         display: flex;
         flex-direction: column;
         text-align: center;
         padding: 1rem;
     }
-    .mobile-menu .nav-item{
+    
+    .mobile-menu .nav-item {
         display: block;
         padding-top: 1.2rem;
     }
-    .mobile-menu .nav-button{
+    
+    .mobile-menu .nav-button {
         display: block;
         padding: 1rem 2rem;
+        margin-left: 0;
     }
-    .mobile-menu .nav-button button{
+    
+    .mobile-menu .nav-button button {
         width: 100%;
     }
-    .open{
+    
+    .open {
         display: flex;
+    }
+}
+
+/* --- CELULARES (Até 720px) --- */
+@media screen and (max-width: 720px) {
+    .nav-logo h1 {
+        font-size: 1.2rem;
+    }
+    
+    header .subtitle-header {
+        font-size: 0.6rem;
+    }
+
+    .areas {
+        font-size: 0.60rem;
+        gap: 7px;
+    }
+
+    .main-card {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+        padding-inline: 0;
+        background-image: url("../img/bg-card.png"); 
+        background-repeat: repeat-y; 
+        background-size: 100% auto; 
+        background-position: top center; 
+        background-attachment: scroll;
+    }
+
+    .column-content {
+        width: 100%;
+        text-align: left;
+        color: #2a2a2ade;
+    }
+
+    .area-contents {
+        flex-direction: column;
+        font-size: 0.75rem;
+    }
+
+    .span-text {
+        margin-top: 10px;
+        height: 30px;
+        width: 90%;
+    }
+
+    .span-text span {
+        margin-right: 10px;
+    }
+
+    .performance-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .p-card {
+        margin: 0;
+        width: 100%;
+    }
+
+    .item {
+        margin-right: 5px;
+    }
+
+    .s-title-card h4 {
+        font-size: 1.15rem;
     }
 }
