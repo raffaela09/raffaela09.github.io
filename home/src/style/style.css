@@ -61,7 +61,6 @@ header .subtitle-header {
     align-items: center; 
     padding: clamp(1.5rem, 5vw, 10rem);
     width: 100%;
-    padding-inline: clamp(1.5rem, 5vw, 10rem);
 }
 
 .nav-link-logo {
@@ -121,7 +120,7 @@ header .subtitle-header {
 }
 
 .nav-button button:hover {
-    background-color: #3a3a3a; 
+    background-color: #3a3a3a;
     box-shadow: 0 8px 12px rgba(0,0,0,0.15);
 }
 
@@ -150,7 +149,7 @@ header .subtitle-header {
     height: 2px;            
     background-color: #27AE60;
     transition: width 0.3s ease;
-    transform-origin: right; 
+    transform-origin: right;
 }
 
 .nav-item.active::after {
@@ -175,7 +174,7 @@ header .subtitle-header {
     margin-top: 1rem;
     max-width: 100%;
     grid-template-columns: 1fr 1px 1fr;
-    padding-inline: clamp(1.5rem, 5vw, 10rem); 
+    padding-inline: clamp(1.5rem, 5vw, 10rem);
     align-items: center;
     box-shadow: 0px 3px 10px #46464613;  
     border-bottom: 1.5px solid #c2c2c2;
@@ -234,52 +233,52 @@ header .subtitle-header {
     margin-bottom: 10px;
 }
 
-.btn-solicite {
+.btn-solicite, .btn-services {
     width: 130px;
     height: 45px;
     border-radius: 999px;
-    border: none;
-    color: #ffff;
-    background-color: #2a2a2a;
     font-weight: bold;
     cursor: pointer;
     box-shadow: 0px 3px 5px #4646465d;
 }
 
+.btn-solicite {
+    border: none;
+    color: #ffff;
+    background-color: #2a2a2a;
+}
+
 .btn-services {
-    width: 130px;
-    height: 45px;
     border: 1px solid black;
     background-color: #ffff;
-    border-radius: 999px;
-    box-shadow: 0px 3px 5px #4646465d;
-    cursor: pointer;
 }
 
 .area-contents {
     display: flex;
     align-items: center;
     flex-direction: row;
+    flex-wrap: wrap; 
+    gap: 12px; 
     width: 100%;
-    font-size: 0.7rem;
+    font-size: 0.8rem; 
+    margin-top: 15px;
 }
 
 .span-text {
     color: #555555;
-    height: 60px;
-    margin: 10px;
     background-color: #f2f2f2;
-    padding: 7px;
+    padding: 8px 18px; 
     border-radius: 999px;
     box-shadow: 0px 3px 5px #46464625;
     display: flex;
     align-items: center;
     justify-content: center;
+    white-space: nowrap; 
 }
 
 .span-text i {
     color: #27AE60;
-    margin: 10px;
+    margin-right: 8px; 
 }
 
 .highlight {
@@ -302,7 +301,8 @@ header .subtitle-header {
     padding: 2rem;
     margin: 2rem;
     box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.15);
-    align-items: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .title-info {
@@ -353,13 +353,12 @@ header .subtitle-header {
 /* ======== SEÇÃO DE PERFORMANCE (ATUAÇÃO) ======== */
 .performance {
     width: 100%;
-    height: 30%;
     background: linear-gradient(to bottom, #ffffff 0%, #f2f2f2 40%, #f7f7f7 100%);
     padding-inline: clamp(1.5rem, 5vw, 10rem);
     display: flex;
     justify-content: center;
     flex-direction: column;
-    padding-bottom: 20px;
+    padding-bottom: 2rem;
     border-bottom: 1.5px solid #c2c2c2;
 }
 
@@ -372,7 +371,6 @@ header .subtitle-header {
     text-transform: uppercase;
     color: #8D8D8D;
     margin-bottom: 0.5rem;
-    gap: 1.25rem;
 }
 
 .section-label::after {
@@ -382,95 +380,99 @@ header .subtitle-header {
     height: 3px;
     background: #27AE60;
     margin-top: 8px;
-    animation: grow 0.8s ease forwards;
-    transform-origin: left;
 }
 
 .title-performance {
     padding-top: 2rem;
-    font-size: clamp(1.6rem, 1.7vw, 1.7rem);
     margin-bottom: 0.5rem;
-    font-weight: 800;
-    letter-spacing: 0.06em;
 }
 
 .title-performance h2 {
     color: #2A2A2A;
     font-size: 1.8rem;
+    font-weight: 800;
 }
 
 .p-subtitle {
     font-size: 1rem;
     color: #8d8d8d;
     font-weight: 300;
-    margin-bottom: 15px;
-}
-
-.p-card {
-    max-width: 400px;
-    max-height: 220px;
-    background-color: #ffff;
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.048);
+    margin-bottom: 1.5rem;
 }
 
 .performance-content {
     width: 100%;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
     flex-direction: row;
-    height: 100%;
+    gap: 2rem; 
+    align-items: stretch; 
+}
+
+.p-card {
+    flex: 1; 
+    background-color: #ffff;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.048);
+    padding: 1rem; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.p-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
 }
 
 .title-p {
-    padding-top: 10px;
-    padding-left: 10px;
     color: #2a2a2a;
     font-weight: bold;
     margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.title-p i {
+    margin-right: 8px;
 }
 
 .p-span {
-    padding-left: 10px;
-    padding-right: 10px;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     font-weight: 300;
     color: #2A2A2A;
+    margin-bottom: auto; 
 }
 
 .box-p {
     display: flex;
-    width: 150px;
+    width: max-content;
+    padding: 0 16px;
     height: 30px;
     border-radius: 8px;
-    border: 1px solid #2a2a2a;
     align-items: center;
     justify-content: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 10px;
+    margin-top: 15px;
     color: #27AE60;
-    gap: 10;
+    font-size: 0.9rem;
+    font-weight: 600;
+    background-color: #e8f8f0; 
+    border: none;
 }
 
 .content-items {
     display: flex;
+    flex-wrap: wrap; 
     align-items: center;
-    margin-top: 10px;
+    gap: 10px;
+    margin-top: 20px;
 }
 
 .item {
-    margin-right: 10px;
     border: 1px solid #2a2a2a5d;
-    padding: 4px;
+    padding: 4px 12px;
     border-radius: 20px;
-    margin-top: 10px;
     box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.075);
     font-weight: bold;
+    font-size: 0.85rem;
     background-color: #ffff;
 }
 
@@ -482,7 +484,7 @@ header .subtitle-header {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    padding-bottom: 20px;
+    padding-bottom: 3rem;
     border-bottom: 1.5px solid #c2c2c2;
 }
 
@@ -491,7 +493,7 @@ header .subtitle-header {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
-    margin-bottom: 3rem; /* Espaço entre as linhas de grid do desktop */
+    margin-bottom: 2rem;
 }
 
 .services .row-one:last-child {
@@ -500,8 +502,6 @@ header .subtitle-header {
 
 .row-card {
     display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
     flex-direction: column;
     border-left: 2px solid #d8d8d8; 
     padding-left: 1.5rem; 
@@ -509,16 +509,14 @@ header .subtitle-header {
 
 .s-title-card {
     display: flex;
-    flex-direction: row;
     align-items: center;
     color: #2a2a2a;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
 }
 
 .s-title-card i {
     margin-right: 12px; 
     font-size: 1.6rem;
-    color: #2a2a2a;
 }
 
 .s-title-card h4 {
@@ -531,17 +529,14 @@ header .subtitle-header {
     font-size: 1rem;
     font-weight: 300;
     margin-bottom: 1rem;
-    text-align: left;
 }
 
 .row-card ul {
     list-style: none; 
     display: flex;
     flex-direction: column;
-    align-items: flex-start; 
     gap: 12px;
     padding-left: 0.5rem;
-    width: 100%;
 }
 
 .row-card ul li {
@@ -563,195 +558,263 @@ header .subtitle-header {
     border-radius: 50%;
 }
 
+.s-footer{
+    width: 100%;
+    height: 90px;
+    border: 1px solid #2a2a2a;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    font-weight: 300;
+    color: #2A2A2A;
+}
+
+.get-bold{
+    font-weight: bold;
+    color: #2A2A2A;
+}
+
+.s-btn{
+    width: 200px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.s-analyse{
+    width: 150px;
+    height: 45px;
+    border-radius: 999px;
+    color: #fff;
+    font-weight: bold;
+    background-color: #2A2A2A;
+    cursor: pointer;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3); 
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: none;
+}
+
+.s-analyse:hover {
+    transform: translateY(-3px); 
+    box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.4); 
+}
+
+.btn-solicite, 
+.btn-services, 
+.text-btn button {
+    transition: all 0.3s ease; 
+}
+
+.btn-solicite:hover {
+    background-color: #3a3a3a; 
+    transform: translateY(-4px); 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); 
+}
+
+.btn-services:hover {
+    background-color: #f8f8f8; 
+    border-color: #27AE60; 
+    color: #27AE60; 
+    transform: translateY(-4px); 
+    box-shadow: 0 10px 20px rgba(39, 174, 96, 0.15); 
+}
+
+.text-btn button:hover {
+    background-color: #ffffff; 
+    color: #27AE60; 
+    transform: scale(1.05); 
+    box-shadow: 0 8px 15px rgba(255, 255, 255, 0.2); 
+}
+
+/* ======== SEÇÃO DE PROCESSOS ======== */
+.process {
+    width: 100%;
+    background: linear-gradient(to bottom, #ffffff 0%, #f2f2f2 40%, #f7f7f7 100%);
+    padding-inline: clamp(1.5rem, 5vw, 10rem);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-bottom: 2rem;
+    border-bottom: 1.5px solid #c2c2c2;
+}
+
+.process-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    width: 100%;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    position: relative; /* Necessário para a linha se posicionar dentro dele */
+}
+
+/* A NOVA LINHA MESTRA (Atrás dos títulos) */
+.process-container::before {
+    content: '';
+    position: absolute;
+    top: 118px; /* Altura exata do centro dos títulos h4 verdes */
+    left: 2%; /* Pequeno ajuste para não colar nas bordas */
+    width: 96%; 
+    border-top: 2px dashed #b0b0b0;
+    z-index: 0; /* CAMADA 0: Lá no fundo */
+}
+
+/* Os Cards Brancos */
+.step-card {
+    background-color: #ffffff;
+    padding: 2rem 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.04);
+    flex: 1; 
+    position: relative;
+    z-index: 1; /* CAMADA 1: O card branco fica na frente, apagando a linha onde passa */
+    display: flex;
+    flex-direction: column;
+    min-height: 260px; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.step-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+/* A Caixinha Preta com o Número */
+.step-number {
+    background-color: #2A2A2A;
+    color: #ffffff;
+    width: 55px;
+    height: 55px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.step-card:hover .step-number {
+    background-color: #27AE60;
+    transform: scale(1.05);
+}
+
+.step-card h4 {
+    color: #27AE60; 
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    background-color: #ffffff; /* Reforço pra garantir que a linha não atravesse o texto */
+}
+
+.step-card p {
+    color: #8d8d8d;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.hashtag-topo {
+    margin-top: 3rem;
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #2a2a2a;
+    align-self: center; 
+}
+.partners{
+    width: 100%;
+    background-color: #ffff;
+    padding-inline: clamp(1.5rem, 5vw, 10rem);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-bottom: 3rem;
+    border-bottom: 1.5px solid #c2c2c2;
+}
+
 /* =========================================
    MEDIA QUERIES (RESPONSIVIDADE LIMPA)
    ========================================= */
 
-/* --- NOTEBOOKS MENORES E TABLETS HORIZONTAIS (Até 1366px) --- */
+/* --- NOTEBOOKS MENORES E TABLETS HORIZONTAIS (Até 1440px) --- */
 @media screen and (min-width: 769px) and (max-width: 1440px) {
-    /* 1. MANTÉM OS SERVIÇOS EM DUAS COLUNAS, MAS MENORES */
-    .row-one {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 1.5rem; 
-    }
-    .row-card {
-        padding-left: 1rem; 
-    }
-    .s-title-card h4 {
-        font-size: 1.1rem; 
-    }
-    .s-title-card i {
-        font-size: 1.3rem; 
-        margin-right: 8px;
-    }
-    .row-card > span {
-        font-size: 0.85rem; 
-        margin-bottom: 0.8rem;
-    }
-    .row-card ul li {
-        font-size: 0.85rem; 
-    }
-
-    /* 2. O PULO DO GATO: ENCOLHE OS 3 CARDS DE ATUAÇÃO PRA CABER NA TELA */
-    .performance-content {
-        gap: 1rem; /* Dá um respiro entre os cards */
-    }
-    .p-card {
-        width: 32%; /* Garante que os 3 dividam a tela igualmente sem estourar */
-        max-width: 100%;
-    }
-    .p-span {
-        font-size: 0.8rem; /* Letra levemente menor pra não amontoar o texto */
-    }
-
-    /* 3. EVITA QUE AS TAGS (CREA, ART) VAZEM DA TELA */
-    .content-items {
-        flex-wrap: wrap; /* Se não couber na frente, ele joga pra linha de baixo! */
-        gap: 10px;
-    }
-    .item {
-        margin-top: 5px; /* Ajuste fino porque agora eles podem pular de linha */
-    }
+    .row-one { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .row-card { padding-left: 1rem; }
+    .s-title-card h4 { font-size: 1.1rem; }
+    .s-title-card i { font-size: 1.3rem; margin-right: 8px; }
+    .row-card > span { font-size: 0.85rem; margin-bottom: 0.8rem; }
+    .row-card ul li { font-size: 0.85rem; }
+    .performance-content { gap: 1rem; }
+    .p-card { width: 32%; max-width: 100%; }
+    .p-span { font-size: 0.8rem; }
+    .content-items { flex-wrap: wrap; gap: 10px; }
+    .item { margin-top: 5px; }
 }
 
 /* --- TABLETS E MENU HAMBURGER (Até 1024px) --- */
 @media screen and (max-width: 1024px) {
-    .nav-bar {
-        padding: 1.5rem;
-    }
-    
-    .nav-item, .nav-button {
-        display: none;
-    }
-    
-    .nav-logo {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    
+    .nav-bar { padding: 1.5rem; }
+    .nav-item, .nav-button { display: none; }
+    .nav-logo { display: flex; justify-content: center; align-items: center; }
     .mobile-menu {
-        border-top: 2px solid rgba(0, 0, 0, 0.171);
-        position: absolute;
-        top: 6rem;
-        left: 0;
-        width: 100%;
-        background-color: #fff;
-        display: none;
-        flex-direction: column;
-        z-index: 1000;
+        border-top: 2px solid rgba(0, 0, 0, 0.171); position: absolute; top: 6rem; left: 0;
+        width: 100%; background-color: #fff; display: none; flex-direction: column; z-index: 1000;
     }
+    .mobile-menu-icon { display: block; }
+    .mobile-menu-icon button { background-color: transparent; border: none; cursor: pointer; color: #2A2A2A; font-size: 1.5rem; transition: transform 0.15s ease; }
+    .mobile-menu-icon button:active { transform: scale(0.9); }
+    .mobile-menu ul { display: flex; flex-direction: column; text-align: center; padding: 1rem; }
+    .mobile-menu .nav-item { display: block; padding-top: 1.2rem; }
+    .mobile-menu .nav-button { display: block; padding: 1rem 2rem; margin-left: 0; }
+    .mobile-menu .nav-button button { width: 100%; }
+    .open { display: flex; }
+
+    .process-container { flex-wrap: wrap; }
+    .step-card { min-width: 45%; }
     
-    .mobile-menu-icon {
-        display: block;
-    }
-    
-    .mobile-menu-icon button {
-        background-color: transparent;
-        border: none;
-        cursor: pointer;
-        color: #2A2A2A;
-        font-size: 1.5rem;
-        transition: transform 0.15s ease;
-    }
-    
-    .mobile-menu-icon button:active {
-        transform: scale(0.9);
-    }
-    
-    .mobile-menu ul {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        padding: 1rem;
-    }
-    
-    .mobile-menu .nav-item {
-        display: block;
-        padding-top: 1.2rem;
-    }
-    
-    .mobile-menu .nav-button {
-        display: block;
-        padding: 1rem 2rem;
-        margin-left: 0;
-    }
-    
-    .mobile-menu .nav-button button {
-        width: 100%;
-    }
-    
-    .open {
-        display: flex;
+    /* Some com a linha mestre no tablet */
+    .process-container::before {
+        display: none; 
     }
 }
 
 /* --- CELULARES (Até 720px) --- */
 @media screen and (max-width: 720px) {
-    .nav-logo h1 {
-        font-size: 1.2rem;
-    }
-    
-    header .subtitle-header {
-        font-size: 0.6rem;
-    }
-
-    .areas {
-        font-size: 0.60rem;
-        gap: 7px;
-    }
+    .nav-logo h1 { font-size: 1.2rem; }
+    header .subtitle-header { font-size: 0.6rem; }
+    .areas { font-size: 0.60rem; gap: 7px; }
 
     .main-card {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        width: 100%;
-        padding-inline: 0;
-        background-image: url("../img/bg-card.png"); 
-        background-repeat: repeat-y; 
-        background-size: 100% auto; 
-        background-position: top center; 
+        display: flex; align-items: center; justify-content: center; flex-direction: column;
+        width: 100%; padding-inline: 0; background-image: url("../img/bg-card.png");
+        background-repeat: repeat-y; background-size: 100% auto; background-position: top center;
         background-attachment: scroll;
     }
 
-    .column-content {
-        width: 100%;
-        text-align: left;
-        color: #2a2a2ade;
-    }
+    .column-content { width: 100%; text-align: left; color: #2a2a2ade; }
+    .area-contents { flex-direction: column; font-size: 0.75rem; }
+    .span-text { margin-top: 10px; height: 30px; width: 90%; }
+    .span-text span { margin-right: 10px; }
+    .performance-content { flex-direction: column; gap: 15px; }
+    .p-card { margin: 0; width: 100%; }
+    .item { margin-right: 5px; }
+    .s-title-card h4 { font-size: 1.15rem; }
+    
+    .row-one { grid-template-columns: 1fr; gap: 2.5rem; }
+    .row-card { padding-left: 1rem; }
 
-    .area-contents {
-        flex-direction: column;
-        font-size: 0.75rem;
+    .s-footer{
+        display: flex; flex-direction: column; text-align: center; gap: 1.5rem;
+        padding: 1.5rem; height: auto;
     }
+    .s-btn { width: 100%; justify-content: center; }
+    .s-analyse { width: 100%; }
 
-    .span-text {
-        margin-top: 10px;
-        height: 30px;
-        width: 90%;
-    }
-
-    .span-text span {
-        margin-right: 10px;
-    }
-
-    .performance-content {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .p-card {
-        margin: 0;
-        width: 100%;
-    }
-
-    .item {
-        margin-right: 5px;
-    }
-
-    .s-title-card h4 {
-        font-size: 1.15rem;
+    .process-container { flex-direction: column; gap: 1.5rem; }
+    .step-card { width: 100%; }
+    
+    /* Some com a linha mestre no celular tbm */
+    .process-container::before {
+        display: none;
     }
 }
