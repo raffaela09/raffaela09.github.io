@@ -731,9 +731,256 @@ header .subtitle-header {
     padding-bottom: 3rem;
     border-bottom: 1.5px solid #c2c2c2;
 }
+.partners-container {
+    width: 100%;
+    border: 1px solid #d8d8d8;
+    border-radius: 8px;
+    padding: 2.5rem; /* Um respiro um pouco maior e mais elegante */
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* O PULO DO GATO: Junta todas no centro */
+    flex-wrap: wrap; 
+    gap: 4rem; /* Cria um espaço fixo e harmônico entre as logos */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.02);
+}
+
+.logo-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Deixando todas harmoniosas e Preto e Branco */
+.logo-item img {
+    max-height: 60px; /* Aumentei o teto pra Estima poder crescer! */
+    max-width: 160px; 
+    object-fit: contain; 
+    filter: grayscale(100%) opacity(0.6); 
+    transition: all 0.4s ease; 
+    cursor: pointer;
+}
+
+/* O EFEITO DE HOVER (Passar o mouse) */
+.logo-item img:hover {
+    filter: grayscale(0%) opacity(1); 
+    transform: scale(1.1); 
+}
+.partners-container .logo-item:nth-child(2) img {
+    max-height: 85px !important; /* Força ela a ser bem mais alta que as outras (que estão com 60px) */
+    max-width: 200px !important; /* Dá mais liberdade de largura */
+    transform: scale(1.1); /* Já começa com um leve zoom nela */
+    opacity: 0.7; /* Ajuste fino pra ela não ficar muito "pesada" já que aumentou */
+}
+
+/* Ajuste do Hover específico para ela também */
+.partners-container .logo-item:nth-child(2) img:hover {
+     transform: scale(1.2); /* Aumenta um pouco mais no hover */
+     opacity: 1;
+}
+.partners-container .logo-item:nth-child(6) img {
+    max-height: 85px !important; /* Força ela a ser bem mais alta que as outras (que estão com 60px) */
+    max-width: 200px !important; /* Dá mais liberdade de largura */
+    transform: scale(1.1); /* Já começa com um leve zoom nela */
+    opacity: 0.7; /* Ajuste fino pra ela não ficar muito "pesada" já que aumentou */
+}
+
+/* Ajuste do Hover específico para ela também */
+.partners-container .logo-item:nth-child(6) img:hover {
+     transform: scale(1.2); /* Aumenta um pouco mais no hover */
+     opacity: 1;
+}
+.cta-section {
+    width: 100%;
+    background-color: #2A2A2A; /* Fundo Chumbo */
+    padding: 3rem clamp(1.5rem, 5vw, 10rem);
+    display: flex;
+    justify-content: center;
+}
+
+.cta-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Separa texto na esquerda, botão na direita */
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.cta-text h3 {
+    color: #ffffff;
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+}
+
+.cta-text p {
+    color: #a0a0a0; /* Cinza claro para o subtítulo */
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+
+/* O Botão Branco do Card Escuro */
+.cta-btn a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    color: #27AE60; /* Texto verde */
+    font-weight: 800;
+    text-decoration: none;
+    padding: 12px 32px;
+    border-radius: 999px; /* Pílula */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    white-space: nowrap; /* Não deixa o texto quebrar linha */
+}
+
+.cta-btn a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
 
 /* =========================================
-   MEDIA QUERIES (RESPONSIVIDADE LIMPA)
+   FOOTER (RODAPÉ DARK)
+   ========================================= */
+.site-footer {
+    background-color: #222222; /* Um tom ligeiramente mais escuro que o CTA para dar profundidade */
+    color: #a0a0a0;
+    padding-top: 4rem;
+    font-size: 0.95rem;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Permite que as colunas desçam se faltar espaço */
+    gap: 3rem;
+    padding-inline: clamp(1.5rem, 5vw, 10rem);
+    padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Linha divisória sutil */
+}
+
+/* Configuração das Colunas */
+.footer-col {
+    flex: 1; /* Tenta ocupar espaço igual */
+    min-width: 220px; /* Mas não fica menor que isso */
+}
+
+/* Truque para deixar a logo branca (se ela for imagem preta/colorida) */
+.footer-logo-white {
+    width: 160px;
+    margin-bottom: 1.5rem;
+    filter: brightness(0) invert(1); /* Mágica do CSS que inverte a cor pra branco! */
+}
+
+.branding p {
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+}
+
+/* Ícones Sociais */
+.social-links {
+    display: flex;
+    gap: 12px;
+}
+
+.social-links a {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255,255,255,0.05); /* Bolinha quase transparente */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #ffffff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background-color: #27AE60; /* Fica verde no hover */
+    transform: translateY(-3px);
+}
+
+/* Títulos das Colunas */
+.footer-col h4 {
+    color: #ffffff;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+/* Listas de Links e Contatos */
+.footer-col ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.footer-col a {
+    color: #a0a0a0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-col a:hover {
+    color: #fff;
+    padding-left: 2px; /* Efeitozinho de "andar" pra direita no hover */
+}
+
+/* Ícones de Contato (Telefone, Email) */
+.footer-col.contact i {
+    color: #27AE60;
+    margin-right: 10px;
+    font-size: 1.1rem;
+}
+
+.footer-col.contact li {
+    display: flex;
+    align-items: center;
+}
+
+/* Barra Final de Copyright */
+.footer-bottom {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: #1a1a1a; /* O tom mais escuro de todos pro final */
+    font-size: 0.85rem;
+}
+
+.footer-bottom a {
+    color: #a0a0a0;
+    text-decoration: underline;
+}
+#home, #atuacao, #servicos, #processos {
+    scroll-margin-top: 120px !important; 
+}
+.a-services{
+    width: 100%;
+    height: 100%;
+    color: #2a2a2a;
+    text-decoration: none;
+}
+.a-services-a{
+    width: 100%;
+    height: 100%;
+    color: #ffff;
+    text-decoration: none;
+}
+.a-services:hover{
+    color: #27AE60;
+}
+.f-topo{
+    width: 100%;
+    height: 100%;
+    color: #2a2a2a;
+    text-decoration: none;
+}
+/* =========================================
+   MEDIA QUERIES (RESPONSIVIDADE LIMPA E CORRIGIDA)
    ========================================= */
 
 /* --- NOTEBOOKS MENORES E TABLETS HORIZONTAIS (Até 1440px) --- */
@@ -749,6 +996,15 @@ header .subtitle-header {
     .p-span { font-size: 0.8rem; }
     .content-items { flex-wrap: wrap; gap: 10px; }
     .item { margin-top: 5px; }
+    .mobile-menu .nav-item a:hover::after {
+    width: 0% !important; /* Força a barrinha a não aparecer no toque */
+}
+
+/* Se quiser um efeito de clique mais limpo no celular, use este: */
+.mobile-menu .nav-item a:active {
+    color: #27AE60; /* O texto só brilha em verde rapidinho quando clica */
+    transition: 0.1s;
+}
 }
 
 /* --- TABLETS E MENU HAMBURGER (Até 1024px) --- */
@@ -756,6 +1012,7 @@ header .subtitle-header {
     .nav-bar { padding: 1.5rem; }
     .nav-item, .nav-button { display: none; }
     .nav-logo { display: flex; justify-content: center; align-items: center; }
+    
     .mobile-menu {
         border-top: 2px solid rgba(0, 0, 0, 0.171); position: absolute; top: 6rem; left: 0;
         width: 100%; background-color: #fff; display: none; flex-direction: column; z-index: 1000;
@@ -769,13 +1026,48 @@ header .subtitle-header {
     .mobile-menu .nav-button button { width: 100%; }
     .open { display: flex; }
 
+    /* Processos */
     .process-container { flex-wrap: wrap; }
     .step-card { min-width: 45%; }
+    .process-container::before { display: none; }
     
-    /* Some com a linha mestre no tablet */
-    .process-container::before {
-        display: none; 
+    /* --- AJUSTE DA PRIMEIRA DOBRA E DO FUNDO (TABLET E CELULAR) --- */
+    .main-card {
+        display: flex; 
+        flex-direction: column; 
+        padding-inline: 0; /* Tira o padding lateral pro mapa ir de ponta a ponta */
+        padding-bottom: 4rem; /* Dá um respiro gostoso no final da seção */
+        background-image: url("../img/bg-card.png");
+        background-size: cover; /* A MÁGICA PRO MAPA COBRIR TUDO */
+        background-position: center bottom;
+        background-repeat: no-repeat;
     }
+    
+    .divider { display: none; }
+    
+    .column-one {
+        max-width: 100%; 
+        padding: 3rem 2rem 1rem 2rem; /* Devolve o respiro lateral pro texto não encostar */
+    }
+    
+    /* O Card Preto Lindão */
+    .card-info {
+        width: 90%; /* Card escuro com 90% da tela (desgruda das bordas!) */
+        max-width: 600px;
+        margin: 1rem auto 0 auto; /* Centraliza perfeitamente */
+        background-color: #2A2A2A; /* Cor original de volta! */
+        border-radius: 12px;
+        box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15);
+    }
+    .mobile-menu .nav-item a:hover::after {
+    width: 0% !important; /* Força a barrinha a não aparecer no toque */
+}
+
+/* Se quiser um efeito de clique mais limpo no celular, use este: */
+.mobile-menu .nav-item a:active {
+    color: #27AE60; /* O texto só brilha em verde rapidinho quando clica */
+    transition: 0.1s;
+}
 }
 
 /* --- CELULARES (Até 720px) --- */
@@ -784,17 +1076,20 @@ header .subtitle-header {
     header .subtitle-header { font-size: 0.6rem; }
     .areas { font-size: 0.60rem; gap: 7px; }
 
-    .main-card {
-        display: flex; align-items: center; justify-content: center; flex-direction: column;
-        width: 100%; padding-inline: 0; background-image: url("../img/bg-card.png");
-        background-repeat: repeat-y; background-size: 100% auto; background-position: top center;
-        background-attachment: scroll;
+    .column-one { align-items: center; text-align: center; padding-top: 2rem; }
+    .column-one h1 { font-size: 1.7rem; }
+    .areas { justify-content: center; }
+
+    .column-content { width: 95%; text-align: left; margin-inline: auto; }
+    .area-contents { flex-direction: column; font-size: 0.75rem; width: 95%; margin-inline: auto; }
+    .span-text { margin-top: 10px; height: 30px; width: 100%; }
+    
+    .card-info {
+        width: 92%; /* No celular ganha um tiquinho mais de espaço, mas sem encostar! */
+        padding: 1.5rem;
+        margin-top: 2rem;
     }
 
-    .column-content { width: 100%; text-align: left; color: #2a2a2ade; }
-    .area-contents { flex-direction: column; font-size: 0.75rem; }
-    .span-text { margin-top: 10px; height: 30px; width: 90%; }
-    .span-text span { margin-right: 10px; }
     .performance-content { flex-direction: column; gap: 15px; }
     .p-card { margin: 0; width: 100%; }
     .item { margin-right: 5px; }
@@ -813,8 +1108,28 @@ header .subtitle-header {
     .process-container { flex-direction: column; gap: 1.5rem; }
     .step-card { width: 100%; }
     
-    /* Some com a linha mestre no celular tbm */
-    .process-container::before {
-        display: none;
-    }
+    /* Parceiros */
+    .partners-container { padding: 1.5rem; gap: 2.5rem; }
+    .logo-item img { max-height: 45px !important; }
+
+    /* CTA (Card Escuro) */
+    .cta-container { flex-direction: column; text-align: center; gap: 1.5rem; }
+    .cta-text h3 { font-size: 1.5rem; }
+    .cta-btn, .cta-btn a { width: 100%; }
+
+    /* Footer */
+    .footer-container { flex-direction: column; text-align: center; gap: 2.5rem; }
+    .footer-logo-white { margin: 0 auto 1.5rem auto; }
+    .social-links { justify-content: center; }
+    .footer-col.contact li { justify-content: center; }
+    .footer-col a:hover { padding-left: 0; }
+    .mobile-menu .nav-item a:hover::after {
+    width: 0% !important; /* Força a barrinha a não aparecer no toque */
+}
+
+/* Se quiser um efeito de clique mais limpo no celular, use este: */
+.mobile-menu .nav-item a:active {
+    color: #27AE60; /* O texto só brilha em verde rapidinho quando clica */
+    transition: 0.1s;
+}
 }

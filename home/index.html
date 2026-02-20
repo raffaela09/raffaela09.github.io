@@ -6,6 +6,7 @@
     <title>Topo Engenharia</title>
     <link rel="stylesheet" href="src/style/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="./src/img/icon_top.png" type="image/png">
 </head>
 <body>
     <header>
@@ -24,7 +25,7 @@
                 <ul>
                     <li class="nav-item active"><a href="#" class="nav-link">Home</a></li>
                     <li class="nav-item"><a href="#" class="nav-link">Sobre</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Serviços</a></li>
+                    <li class="nav-item"><a href="#servicos" class="nav-link">Serviços</a></li>
                     <li class="nav-item"><a href="#" class="nav-link">Projetos</a></li>
                 </ul>
             </div>
@@ -41,7 +42,7 @@
                 <ul>
                     <li class="nav-item "><a href="#" class="nav-link">Home</a></li>
                     <li class="nav-item"><a href="#" class="nav-link">Sobre</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Serviços</a></li>
+                    <li class="nav-item"><a href="#servicos" class="nav-link">Serviços</a></li>
                     <li class="nav-item"><a href="#" class="nav-link">Projetos</a></li>
                     <li class="nav-item"><a href="#contact" class="nav-link change-color">Contato</a></li>
                 </ul>
@@ -60,8 +61,8 @@
             </div>
 
             <div class="area-buttons">
-                <button class="btn-solicite">Solicitar análise</button>
-                <button class="btn-services">Ver serviços</button>
+                <button class="btn-solicite"><a href="https://wa.me/5567984547352?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20uma%20análise%20técnica." class="a-services-a" target="_blank">Solicitar análise</a></button>
+                <button class="btn-services"><a href="#servicos" class="a-services">Ver serviços</a></button>
             </div>
 
             <div class="area-contents">
@@ -103,7 +104,7 @@
                 </div>
                 <div class="text-btn">
                     <span>Resposta em até <span class="highlight">24h úteis</span>(em média).</span>
-                    <button>Falar com a Topo</button>
+                    <button> <a href="https://wa.me/5567984547352?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20uma%20análise%20técnica." target="_blank" class="f-topo">Falar com a Topo</a></button>
                 </div>
             </div>
        </div>
@@ -159,8 +160,8 @@
         </div>
     </div>
 
-    <div class="services">
-        <div class="title-performance">
+    <div class="services" >
+        <div class="title-performance" id="servicos">
             <span class="section-label">SERVIÇOS</span>
             <h3>O que fazemos, <span class="highlight">sem enrolação</span></h3>
         </div>
@@ -180,13 +181,15 @@
             </div>
 
             <div class="row-card">
-
-                <h4>Projetos Estruturais</h4>
-                <span>Concreto armado, metálica, fundações, reforços e compatibilização.</span>
+                <div class="s-title-card">
+                    <i class="fa-solid fa-clipboard-check"></i>
+                    <h4>Regularização Imobiliária</h4>
+                </div>
+                <span>Organização documental e suporte no caminho até aprovação.</span>
                 <ul>
-                    <li>Memorial descritivo</li>
-                    <li>Detalhamento técnico</li>
-                    <li>Rastreabilidade</li>
+                    <li>Análise do caso</li>
+                    <li>Documentação</li>
+                    <li>Acompanhamento</li>
                 </ul>
             </div>
             
@@ -194,25 +197,27 @@
         <div class="row-one">
             <div class="row-card">
                 <div class="s-title-card">
-                    <i class="fa-solid fa-city"></i>
-                    <h4>Projetos Estruturais</h4>
+                    <i class="fa-solid fa-mountain-sun"></i>
+                    <h4>Topografia & Levantamentos</h4>
                 </div>
-                <span>Concreto armado, metálica, fundações, reforços e compatibilização.</span>
+                <span>Base confiável para obra, projeto, loteamento e regularização.</span>
                 <ul>
-                    <li>Memorial descritivo</li>
-                    <li>Detalhamento técnico</li>
-                    <li>Rastreabilidade</li>
+                    <li>Plantas e relatórios</li>
+                    <li>Curvas de nível</li>
+                    <li>Conferência em campo</li>
                 </ul>
             </div>
 
             <div class="row-card">
-
-                <h4>Projetos Estruturais</h4>
-                <span>Concreto armado, metálica, fundações, reforços e compatibilização.</span>
+                <div class="s-title-card">
+                    <i class="fa-solid fa-user-tie"></i>
+                    <h4>Consultoria, Laudos e Vistorias</h4>
+                </div>
+                <span>Parecer técnico, vistoria e laudos para decisão segura.</span>
                 <ul>
-                    <li>Memorial descritivo</li>
-                    <li>Detalhamento técnico</li>
-                    <li>Rastreabilidade</li>
+                    <li>Relatórios objetivos</li>
+                    <li>Fotos e evidências</li>
+                    <li>Recomendações</li>
                 </ul>
             </div>
             
@@ -222,7 +227,7 @@
                 <span><span class="get-bold">Não sabe por onde começar?</span> A gente faz uma análise sincera e aponta <span class="highlight">o melhor caminho.</span></span>
             </div>
             <div class="s-btn">
-                <button class="s-analyse">Solicitar análise</button>
+                <button class="s-analyse"> <a href="https://wa.me/5567984547352?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20uma%20análise%20técnica." class="a-services-a" target="_blank">Solicitar análise</a></button>
             </div>
         </div>
     </div>
@@ -270,7 +275,74 @@
             <h3>Empresas que confiam em nossa <span class="highlight">precisão</span></h3>
         </div>
         <span class="p-subtitle" id="p-subtitle">Escopo claro, entrega documentada, responsabilidade técnica.</span>
+
+        <div class="partners-container">
+            <div class="logo-item"><img src="./src/img/logo-1.png" alt="Eldorado Brasil"></div>
+            <div class="logo-item"><img src="./src/img/logo-2.png" alt="Estima Engenharia"></div>
+            <div class="logo-item"><img src="./src/img/logo-3.png" alt="Plangeff"></div>
+            <div class="logo-item"><img src="./src/img/logo-4.png" alt="Cataguá Construtora"></div>
+            <div class="logo-item"><img src="./src/img/logo-5.png" alt="Bracell"></div>
+            <div class="logo-item"><img src="./src/img/logo-6.png" alt="Agis"></div>
+        </div>
+
     </div>
+   <div class="cta-section">
+        <div class="cta-container">
+            <div class="cta-text">
+                <h3>Quer tirar seu projeto do papel com segurança?</h3>
+                <p>Chama a <span class="highlight">Topo</span> e receba uma análise técnica sincera do seu caso.</p>
+            </div>
+            <div class="cta-btn">
+                <a href="https://wa.me/5567984547352?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20uma%20análise%20técnica." target="_blank">Falar com a Topo</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-col branding">
+                <img src="./src/img/logo.png" alt="Topo Engenharia Logo" class="footer-logo-white">
+                <p>Soluções técnicas integradas para empresas que exigem máxima precisão, conformidade legal e eficiência operacional.</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/topoengenharia3l/" aria-label="Instagram" target="_blank"><i class="fa-brands fa-instagram" ></i></a>
+                    <a href="https://www.linkedin.com/company/topo-engenharia-e-agrimensura/?originalSubdomain=br" aria-label="LinkedIn" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://wa.me/5567984547352?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20uma%20análise%20técnica." aria-label="WhatsApp" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col links">
+                <h4>Navegação Rápida</h4>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#sobre">Sobre Nós</a></li>
+                    <li><a href="#servicos">Nossos Serviços</a></li>
+                    <li><a href="#projetos">Projetos e Cases</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col contact">
+                <h4>Contato</h4>
+                <ul>
+                    <li>
+                        <i class="fa-solid fa-phone"></i>
+                        <span>+55 (67) 98454-7352</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>atendimento@topoengenhariatls.com.br</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>R. Duque de Caxias, 2685 - Vila Nova, Três Lagoas - MS</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© 2024 Topo Engenharia. Todos os direitos reservados. | <a href="#">Política de Privacidade</a></p>
+        </div>
+    </footer>
 </body>
 <script src="src/js/script.js"></script>
 </html>
