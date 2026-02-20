@@ -1,0 +1,24 @@
+{
+    "logo": {
+        "text": "Topo Engenharia",
+        "subtitle": "Engenharia & Agrimensura"
+    },
+    "card": {
+        "title": "Decisão técnica, execução limpa, entrega <span class='highlight'>aprovada.</span>",
+        "text": "Projetos e levantamentos com precisão, comunicação clara e responsabilidade. Sem promessas vazias. Sem retrabalho. Sem dor de cabeça." 
+    },
+    "beneficios": {
+        "one": "ART / Responsabilidade técnica",
+        "two": "Documentação completa",
+        "three": "Prazos e escopo claros"
+    },
+    "areas": [
+        "ENGENHARIA",
+        "TOPOGRAFIA",
+        "REGULARIZAÇÃO"
+    ],
+    "info": {
+        "title": "TOPO EM NÚMEROS"
+    }
+
+}
