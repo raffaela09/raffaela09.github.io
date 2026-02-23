@@ -42,7 +42,7 @@ header .subtitle-header {
     font-size: 1.2rem;
     font-weight: 400;
     letter-spacing: 0.08rem;
-    color: #9c9c9c;
+    color: #27AE60;
     gap: 1.25rem;
     opacity: 0.85;
 }
@@ -177,7 +177,7 @@ header .subtitle-header {
     padding-inline: clamp(1.5rem, 5vw, 10rem);
     align-items: center;
     box-shadow: 0px 3px 10px #46464613;  
-    border-bottom: 1.5px solid #c2c2c2;
+    border-bottom: 1.5px solid #DDF3E7;
 }
 
 .column-one {
@@ -313,7 +313,7 @@ header .subtitle-header {
 
 .title-info i {
     font-size: 1.7rem; 
-    color: #d8d8d8;
+    color: #27AE60;
 }
 
 .title-info h2 {
@@ -353,13 +353,19 @@ header .subtitle-header {
 /* ======== SEÇÃO DE PERFORMANCE (ATUAÇÃO) ======== */
 .performance {
     width: 100%;
-    background: linear-gradient(to bottom, #ffffff 0%, #f2f2f2 40%, #f7f7f7 100%);
+background: linear-gradient(
+  to bottom,
+  #ffffff 0%,
+  #f7fbf9 30%,
+  #eef7f3 65%,
+  #e6f3ed 100%
+);
     padding-inline: clamp(1.5rem, 5vw, 10rem);
     display: flex;
     justify-content: center;
     flex-direction: column;
     padding-bottom: 2rem;
-    border-bottom: 1.5px solid #c2c2c2;
+    border-bottom: 1.5px solid #DDF3E7;
 }
 
 .section-label {
@@ -433,6 +439,7 @@ header .subtitle-header {
 
 .title-p i {
     margin-right: 8px;
+    color: #27AE60;
 }
 
 .p-span {
@@ -485,7 +492,7 @@ header .subtitle-header {
     justify-content: center;
     flex-direction: column;
     padding-bottom: 3rem;
-    border-bottom: 1.5px solid #c2c2c2;
+    border-bottom: 1.5px solid #DDF3E7;
 }
 
 .row-one {
@@ -517,6 +524,7 @@ header .subtitle-header {
 .s-title-card i {
     margin-right: 12px; 
     font-size: 1.6rem;
+    color: #27AE60;
 }
 
 .s-title-card h4 {
@@ -561,7 +569,7 @@ header .subtitle-header {
 .s-footer{
     width: 100%;
     height: 90px;
-    border: 1px solid #2a2a2a;
+    border: 1px solid #27AE60;
     border-radius: 5px;
     display: flex;
     align-items: center;
@@ -630,13 +638,19 @@ header .subtitle-header {
 /* ======== SEÇÃO DE PROCESSOS ======== */
 .process {
     width: 100%;
-    background: linear-gradient(to bottom, #ffffff 0%, #f2f2f2 40%, #f7f7f7 100%);
+background: linear-gradient(
+  to bottom,
+  #ffffff 0%,
+  #f7fbf9 30%,
+  #eef7f3 65%,
+  #e6f3ed 100%
+);
     padding-inline: clamp(1.5rem, 5vw, 10rem);
     display: flex;
     justify-content: center;
     flex-direction: column;
     padding-bottom: 2rem;
-    border-bottom: 1.5px solid #c2c2c2;
+    border-bottom: 1.5px solid #DDF3E7;
 }
 
 .process-container {
@@ -733,7 +747,7 @@ header .subtitle-header {
 }
 .partners-container {
     width: 100%;
-    border: 1px solid #d8d8d8;
+    border: 1px solid #27AE60;
     border-radius: 8px;
     padding: 2.5rem; /* Um respiro um pouco maior e mais elegante */
     margin-top: 2rem;
@@ -878,6 +892,7 @@ header .subtitle-header {
     line-height: 1.6;
     margin-bottom: 1.5rem;
     font-weight: 300;
+    color: #27AE60;
 }
 
 /* Ícones Sociais */

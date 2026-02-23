@@ -85,3 +85,40 @@ fetch("content.json")
   .catch(error => {
     console.error("Erro ao carregar conteúdo:", error);
   });
+
+  const counters = document.querySelectorAll(".counter");
+
+  //funcao para animar os números do card hero
+  function animateCounter(counter){
+      const target = +counter.getAttribute("data-target");
+      const prefix = counter.getAttribute("data-prefix") || "";
+      const suffix = counter.getAttribute("data-suffix") || "";
+
+      let current = 0;
+      const duration = 2000;
+      const increment = target / (duration / 16);
+
+      const updateCounter = () => {
+          current += increment;
+
+          if(current < target){
+              counter.textContent =
+                  prefix + Math.floor(current) + suffix;
+              requestAnimationFrame(updateCounter);
+          } else {
+              counter.textContent =
+                  prefix + target + suffix;
+          }
+      };
+
+      updateCounter();
+  }
+
+  //para ativar a funcao sempre que a pagina carregar
+  document.addEventListener("DOMContentLoaded", () => {
+      const counters = document.querySelectorAll(".counter");
+
+      counters.forEach(counter => {
+          animateCounter(counter);
+      });
+  });
