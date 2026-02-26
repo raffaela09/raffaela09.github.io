@@ -163,6 +163,8 @@ header .subtitle-header {
     padding-top: 1rem;
     padding: 56px 0; 
     border-bottom: 1.5px solid #DDF3E7;
+        background-size: cover; /* Ajustado para o parallax funcionar perfeitamente */
+    background-attachment: fixed; 
 }
 .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: start; }
 .hero-right { margin: 0 auto; width: 100%; }

@@ -170,7 +170,8 @@ header .subtitle-header {
     background-image: url("../img/bg-card.png");
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 100%;
+    background-size: cover; /* Ajustado para o parallax funcionar perfeitamente */
+    background-attachment: fixed; /* A MÁGICA DO PARALLAX SUAVE AQUI */
     display: grid;
     margin-top: 1rem;
     max-width: 100%;
