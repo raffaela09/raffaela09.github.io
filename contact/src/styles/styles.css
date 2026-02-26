@@ -735,7 +735,7 @@ iframe {
     .contact-form { padding: 0; max-width: 100%; }
     .form { padding: 1.5rem; border-radius: 16px; margin: 0; }
     .list-infos i { margin-right: 15px; } 
-    .list-infos li { font-size: 0.9rem; line-height: 1.4; margin-bottom: 0.8rem !important; }
+    .list-infos li { font-size: 0.8rem; line-height: 1.4; margin-bottom: 0.8rem !important; }
     #contact { scroll-margin-top: 6rem; }
     
     .location { display: flex; flex-direction: column; }

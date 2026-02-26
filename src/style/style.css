@@ -21,7 +21,7 @@ body {
     flex-direction: column;
 }
 
-/* ======== HEADER E MENU ======== */
+/* HEADER E MENU*/
 header {
     display: flex;
     align-items: center;  
@@ -152,6 +152,7 @@ header .subtitle-header {
     transform-origin: right;
 }
 
+/* Linha verde embaixo da pagina selecionada */
 .nav-item.active::after {
     content: "";
     position: absolute;
@@ -164,7 +165,7 @@ header .subtitle-header {
     border-radius: 2px;
 }
 
-/* ======== PRIMEIRA DOBRA (MAIN CARD) ======== */
+/* HERO com a foto */
 .main-card {
     background-image: url("../img/bg-card.png");
     background-repeat: no-repeat;
@@ -350,7 +351,7 @@ header .subtitle-header {
     margin-top: 10px;
 }
 
-/* ======== SEÇÃO DE PERFORMANCE (ATUAÇÃO) ======== */
+/* seçao de atuacao*/
 .performance {
     width: 100%;
 background: linear-gradient(
@@ -483,7 +484,7 @@ background: linear-gradient(
     background-color: #ffff;
 }
 
-/* ======== SEÇÃO DE SERVIÇOS ======== */
+/* secao de servicos*/
 .services {
     width: 100%;
     background-color: #ffff;
@@ -635,7 +636,7 @@ background: linear-gradient(
     box-shadow: 0 8px 15px rgba(255, 255, 255, 0.2); 
 }
 
-/* ======== SEÇÃO DE PROCESSOS ======== */
+/* secao de processos*/
 .process {
     width: 100%;
 background: linear-gradient(
@@ -1100,7 +1101,7 @@ background: linear-gradient(
     .span-text { margin-top: 10px; height: 30px; width: 100%; }
     
     .card-info {
-        width: 92%; /* No celular ganha um tiquinho mais de espaço, mas sem encostar! */
+        width: 92%; 
         padding: 1.5rem;
         margin-top: 2rem;
     }
@@ -1127,7 +1128,7 @@ background: linear-gradient(
     .partners-container { padding: 1.5rem; gap: 2.5rem; }
     .logo-item img { max-height: 45px !important; }
 
-    /* CTA (Card Escuro) */
+    /* Card escuro */
     .cta-container { flex-direction: column; text-align: center; gap: 1.5rem; }
     .cta-text h3 { font-size: 1.5rem; }
     .cta-btn, .cta-btn a { width: 100%; }
@@ -1142,7 +1143,6 @@ background: linear-gradient(
     width: 0% !important; /* Força a barrinha a não aparecer no toque */
 }
 
-/* Se quiser um efeito de clique mais limpo no celular, use este: */
 .mobile-menu .nav-item a:active {
     color: #27AE60; /* O texto só brilha em verde rapidinho quando clica */
     transition: 0.1s;

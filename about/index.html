@@ -5,30 +5,54 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sobre | Topo Engenharia</title>
   <meta name="description" content="Conheça a Topo Engenharia e Agrimensura. Engenharia, Topografia e Regularização com responsabilidade técnica desde 2019." />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="./styles.css">
+  <link rel="icon" href="../src/img/icon_top.png" type="image/png">
 </head>
 
 <body>
   
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="../index.html">
-        <img src="logo topo.jpeg" class="logo-img" alt="Topo Engenharia logo">
-        <span class="brand-text">
-          <strong>Topo Engenharia</strong>
-          <span>Engenharia & Agrimensura</span>
-        </span>
-      </a>
+<header>
+        <nav class="nav-bar">
+            <div class="nav-logo">
+                <a href="../index.html" class="nav-link-logo">
+                    <img src="../src/img/logo.png" alt="">
+                    <div class="title-header">
+                        <h1 id="logo-text">Topo Engenharia</h1>
+                        <span class="subtitle-header" id="subtitle-header">Engenharia & Agrimensura</span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="nav-list">
+                <ul>
+                    <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item active"><a href="./index.html#hero" class="nav-link">Sobre</a></li>
+                    <li class="nav-item"><a href="../index.html#servicos" class="nav-link">Serviços</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Imóveis</a></li>
+                </ul>
+            </div>
 
-      <nav class="nav">
-        <a class="nav-link" href="../index.html">Home</a>
-        <a class="nav-link active" href="#">Sobre</a>
-        <a class="nav-link" href="../index.html#servicos">Serviços</a>
-        <a class="nav-link" href="#">Projetos</a>
-        <a class="nav-link pill" href="../contact/index.html">Contato</a>
-      </nav>
-    </div>
-  </header>
+            <div class="nav-button">
+                <button><a href="../contact/index.html">Contato</a></button>
+            </div>
+
+            <div class="mobile-menu-icon">
+                <button onclick="showMenu()"><i class="fa-solid fa-bars"></i></button>
+            </div>
+
+            <div class="mobile-menu">
+                <ul>
+                    <li class="nav-item "><a href="../index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="./index.html#hero" class="nav-link">Sobre</a></li>
+                    <li class="nav-item"><a href="../index.html#servicos" class="nav-link">Serviços</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Imóveis</a></li>
+                    <li class="nav-item"><a href="../contact/index.html" class="nav-link change-color">Contato</a></li>
+                </ul>
+            </div>
+
+        </nav>
+    </header>
 
   <!-- =========================
    HERO (A/B/C)
@@ -36,7 +60,7 @@
    - B (completa): mantém tudo exceto "Sobre em números"
    - C (monstra): mantém tudo
   ========================== -->
-  <section class="hero">
+  <section class="hero" id="hero">
     <div class="container hero-grid">
       <div class="hero-left">
         <div class="kicker">
@@ -90,9 +114,9 @@
 
         <a class="btn full" href="#contato">Falar com a Topo</a>
 
-        <p class="tiny">
+        <!-- <p class="tiny">
           * Ajuste esses números para dados reais quando tiver fechado com a empresa.
-        </p>
+        </p> -->
       </aside>
     </div>
   </section>
@@ -295,31 +319,47 @@
         <p class="muted">Uma trajetória construída com experiência em campo e compromisso com cada projeto..</p>
       </div>
 
-      <div class="timeline card reveal">
-        <div class="t-item">
-          <div class="t-dot"></div>
-          <div>
-            <div class="t-title">2019 — Fundação</div>
-            <p class="muted">Início das atividades com foco em topografia e engenharia civil, atuando com seriedade e precisão em cada projeto.</p>
-          </div>
-        </div>
+<div class="timeline reveal">
+  
+  <div class="t-item">
+    <div class="t-dot"></div>
+    <div class="t-content">
+      <div class="t-title">2019 — FUNDAÇÃO</div>
+      <p class="muted">Início das atividades com foco em topografia e engenharia civil, atuando com seriedade e precisão em cada projeto.</p>
+      <ul class="t-checks">
+        <li><i class="fa-solid fa-check"></i> Primeiros 8 projetos realizados</li>
+        <li><i class="fa-solid fa-check"></i> Atuação no estado de MS</li>
+      </ul>
+    </div>
+  </div>
 
-        <div class="t-item">
-          <div class="t-dot"></div>
-          <div>
-            <div class="t-title">2020–2022 — Consolidação</div>
-            <p class="muted">Período de consolidação dos serviços, com ampliação do atendimento e atuação em projetos, levantamentos e acompanhamento técnico em obras.</p>
-          </div>
-        </div>
+  <div class="t-item">
+    <div class="t-dot"></div>
+    <div class="t-content">
+      <div class="t-title">2020–2022 — CONSOLIDAÇÃO</div>
+      <p class="muted">Período de consolidação dos serviços, com ampliação do atendimento e atuação em projetos, levantamentos e acompanhamento técnico em obras.</p>
+      <ul class="t-checks">
+        <li><i class="fa-solid fa-check"></i> Expansão para os estados de SP e MG</li>
+        <li><i class="fa-solid fa-check"></i> Mais de 30 projetos executados</li>
+      </ul>
+    </div>
+  </div>
 
-        <div class="t-item">
-          <div class="t-dot"></div>
-          <div>
-            <div class="t-title">2023–2026 — Expansão</div>
-            <p class="muted">Expansão da atuação em regularização imobiliária e soluções completas em engenharia e topografia.</p>
-          </div>
-        </div>
-      </div>
+  <div class="t-item">
+    <div class="t-dot"></div>
+    <div class="t-content">
+      <div class="t-title">2023–HOJE — EXPANSÃO</div>
+      <p class="muted">Expansão de atuação em regularização imobiliária e soluções completas em engenharia e topografia.</p>
+      
+      <ul class="t-checks col-2">
+        <li><i class="fa-solid fa-check"></i> Atuação em 3 estados</li>
+        <li><i class="fa-solid fa-check"></i> Portfólio diversificado com mais de 50 projetos</li>
+        <li><i class="fa-solid fa-check"></i> Mais de 50 projetos</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
     </div>
   </section>
 
@@ -385,7 +425,6 @@
           </label>
 
           <button class="btn primary full" type="submit">Enviar (demo)</button>
-          <p class="tiny muted">* Formulário visual. Para funcionar, conecta num backend/Formspree/EmailJS.</p>
         </form>
       </div>
     </div>
@@ -416,17 +455,52 @@
 
 
 
-  <footer class="footer">
-    <div class="container footer-inner">
-      <div class="muted">© <span id="year"></span> Topo Engenharia. Todos os direitos reservados.</div>
-      <div class="footer-links">
-        <a class="muted" href="#">Política</a>
-        <span class="muted">•</span>
-        <a class="muted" href="#">Termos</a>
-      </div>
-    </div>
-  </footer>
+<footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-col branding">
+                <img src="../src/img/logo.png" alt="Topo Engenharia Logo" class="footer-logo-white">
+                <p>Soluções técnicas integradas para empresas que exigem máxima precisão, conformidade legal e eficiência operacional.</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/topoengenharia3l/" aria-label="Instagram" target="_blank"><i class="fa-brands fa-instagram" ></i></a>
+                    <a href="https://www.linkedin.com/company/topo-engenharia-e-agrimensura/?originalSubdomain=br" aria-label="LinkedIn" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://wa.me/5567984547352?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20uma%20análise%20técnica." aria-label="WhatsApp" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
 
-  <script src="./sobre.js"></script>
+            <div class="footer-col links">
+                <h4>Navegação Rápida</h4>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="#hero">Sobre Nós</a></li>
+                    <li><a href="../index.html#servicos">Nossos Serviços</a></li>
+                    <li><a href="#projetos">Projetos e Cases</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col contact">
+                <h4>Contato</h4>
+                <ul>
+                    <li>
+                        <i class="fa-solid fa-phone"></i>
+                        <span>+55 (67) 98454-7352</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>atendimento@topoengenhariatls.com.br</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>R. Duque de Caxias, 2685 - Vila Nova, Três Lagoas - MS</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© 2026 Topo Engenharia. Todos os direitos reservados. | <a href="#">Política de Privacidade</a></p>
+        </div>
+    </footer>
+
+  <script src="./main.js"></script>
 </body>
 </html>
