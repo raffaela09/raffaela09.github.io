@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 :root {
   --bg: #ffffff;
   --soft: #f6f7f9;
@@ -11,7 +13,6 @@
   --max: 1140px;
   --pad: clamp(1.5rem, 5vw, 10rem);
 }
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 /* =========================================
    RESETS E BASE
@@ -73,6 +74,7 @@ header {
     backdrop-filter: blur(8px);
     left: 0;
 }
+
 header .subtitle-header {
     text-align: left;
     display: block;
@@ -83,6 +85,7 @@ header .subtitle-header {
     gap: 1.25rem;
     opacity: 0.85;
 }
+
 .title-header {
     display: flex;
     flex-direction: column;
@@ -90,6 +93,7 @@ header .subtitle-header {
     line-height: 1.1;
     gap: 0.3rem;
 }
+
 .nav-bar {
     display: flex;
     justify-content: space-between;
