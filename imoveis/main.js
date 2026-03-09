@@ -44,7 +44,82 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // ==========================================
-    // 3. FILTROS (AGORA BLINDADOS)
+    // 3. MENU MOBILE RESPONSIVO
+    // ==========================================
+    const btnMenu = document.querySelector('.mobile-menu-icon button'); 
+    const menuMobile = document.querySelector('.mobile-menu');
+    const icon = document.querySelector('.mobile-menu-icon i');
+
+    if (btnMenu && menuMobile && icon) {
+        btnMenu.addEventListener('click', (event) => {
+            event.stopPropagation(); // Impede clique acidental fora
+            
+            menuMobile.classList.toggle('open');
+            
+            if (menuMobile.classList.contains('open')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            } else {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Fechar menu ao clicar fora dele
+        document.addEventListener('click', (event) => {
+            if (menuMobile.classList.contains('open') && !menuMobile.contains(event.target)) {
+                menuMobile.classList.remove('open');
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            }
+        });
+    }
+
+    // ==========================================
+    // 4. ANIMAÇÃO DE CRESCIMENTO DOS NÚMEROS
+    // ==========================================
+    const counters = document.querySelectorAll('.counter');
+    const animationSpeed = 1500; // Tempo em milissegundos (1.5s)
+
+    if ("IntersectionObserver" in window && counters.length > 0) {
+        const counterObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const targetElement = entry.target;
+                    const targetValue = parseInt(targetElement.getAttribute('data-target'), 10);
+                    
+                    let startTimestamp = null;
+                    const step = (timestamp) => {
+                        if (!startTimestamp) startTimestamp = timestamp;
+                        const progress = Math.min((timestamp - startTimestamp) / animationSpeed, 1);
+                        
+                        targetElement.textContent = Math.floor(progress * targetValue);
+                        
+                        if (progress < 1) {
+                            window.requestAnimationFrame(step);
+                        } else {
+                            targetElement.textContent = targetValue; // Garante o número exato no final
+                        }
+                    };
+                    window.requestAnimationFrame(step);
+                    
+                    observer.unobserve(targetElement); // Anima só na primeira vez
+                }
+            });
+        }, { threshold: 0.5 });
+
+        counters.forEach(counter => {
+            counterObserver.observe(counter);
+        });
+    } else {
+        // Fallback para navegadores antigos
+        counters.forEach(counter => {
+            counter.textContent = counter.getAttribute('data-target');
+        });
+    }
+
+    // ==========================================
+    // 5. FILTROS (BLINDADOS)
     // ==========================================
     const fTipo = document.getElementById("fTipo");
     const fStatus = document.getElementById("fStatus");
@@ -56,7 +131,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const cards = document.querySelectorAll(".imovelCard");
         if (!cards.length || !imoveisGrid) return;
 
-        // Pega o valor do filtro e já força pra minúsculo pra evitar erro bobo
         const tipo = fTipo ? fTipo.value.toLowerCase() : "all";
         const status = fStatus ? fStatus.value.toLowerCase() : "all";
         const cidade = fCidade ? fCidade.value.toLowerCase() : "all";
@@ -64,7 +138,6 @@ document.addEventListener("DOMContentLoaded", () => {
         let imoveisVisiveis = 0;
 
         cards.forEach((card) => {
-            // Pega o que tá no banco e também força pra minúsculo
             const cardTipo = (card.dataset.tipo || "").toLowerCase();
             const cardStatus = (card.dataset.status || "").toLowerCase();
             const cardCidade = (card.dataset.cidade || "").toLowerCase();
@@ -74,20 +147,19 @@ document.addEventListener("DOMContentLoaded", () => {
             const matchCidade = cidade === "all" || cardCidade === cidade;
 
             if (matchTipo && matchStatus && matchCidade) {
-                card.style.display = ""; // Mostra o card
+                card.style.display = ""; 
                 imoveisVisiveis++;
             } else {
-                card.style.display = "none"; // Esconde o card
+                card.style.display = "none"; 
             }
         });
 
-        // MÁGICA DE UX: Mostra mensagem amigável se o filtro não achar nada!
         let msgVazia = document.getElementById("msg-vazia");
         if (imoveisVisiveis === 0) {
             if (!msgVazia) {
                 msgVazia = document.createElement("div");
                 msgVazia.id = "msg-vazia";
-                msgVazia.style.gridColumn = "1 / -1"; // Ocupa a linha toda
+                msgVazia.style.gridColumn = "1 / -1"; 
                 msgVazia.style.textAlign = "center";
                 msgVazia.style.padding = "60px 20px";
                 msgVazia.innerHTML = `
@@ -116,7 +188,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // ==========================================
-    // 4. CARREGAR DO FIREBASE E MONTAR CARDS
+    // 6. CARREGAR DO FIREBASE E MONTAR CARDS
     // ==========================================
     async function carregarImoveis() {
         if (!imoveisGrid) return;
@@ -125,7 +197,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const q = query(collection(db, "imoveis"), orderBy("dataCriacao", "desc"));
             const querySnapshot = await getDocs(q);
             
-            let htmlDosCards = ""; // Guarda todos os cards antes de jogar na tela (mais rápido)
+            let htmlDosCards = ""; 
 
             querySnapshot.forEach((doc) => {
                 const imovel = doc.data();
@@ -178,10 +250,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 `;
             });
 
-            // Joga todos os cards na tela de uma vez só!
             imoveisGrid.innerHTML = htmlDosCards;
-
-            // Chama a função para garantir que já comece filtrado (caso tenha algum valor)
             aplicarFiltros();
 
         } catch (error) {
