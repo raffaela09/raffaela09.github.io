@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Topo Engenharia</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔒</text></svg>">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body style="display: none;">
+    <header class="admin-header">
+        <div class="logo-area">
+            <h2>Painel de Imóveis</h2>
+        </div>
+        <div class="user-profile" style="display: flex; align-items: center; gap: 15px;">
+            <img src="user-icon.png" alt="Admin" class="avatar">
+            <span>Admin</span>
+            
+            <button id="btn-sair" class="btn-outline" style="border-color: #ff4a4a; color: #ff4a4a; padding: 5px 15px;">Sair</button>
+        </div>
+    </header>
+
+    <main class="admin-container">
+        <section class="card-section">
+            <h3>Gerenciar Imóveis</h3>
+            <h4 class="section-subtitle">Adicionar Novo Imóvel</h4>
+            
+            <form id="form-imovel" class="form-grid">
+                <div class="input-group full-width">
+                    <label>Título</label>
+                    <input type="text" id="titulo" placeholder="Digite o título do imóvel...">
+                </div>
+
+                <div class="input-group">
+                    <label>Tipo de Imóvel</label>
+                    <select id="tipoImovel">
+                        <option value="casa">Casa</option>
+                        <option value="apartamento">Apartamento</option>
+                        <option value="terreno">Terreno</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label>Modalidade</label>
+                    <select id="modalidade">
+                        <option value="venda">Venda</option>
+                        <option value="locacao">Locação</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label>Cidade</label>
+                    <select id="cidade">
+                        <option value="tres-lagoas">Três Lagoas</option>
+                        <option value="piracicaba">Piracicaba</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label>Quartos</label>
+                    <input type="number" id="quartos" placeholder="Ex: 3">
+                </div>
+
+                <div class="input-group">
+                    <label>Banheiros</label>
+                    <input type="number" id="banheiros" placeholder="Ex: 2">
+                </div>
+
+                <div class="input-group">
+                    <label>Vagas</label>
+                    <input type="number" id="vagas" placeholder="Ex: 1">
+                </div>
+
+                <div class="input-group">
+                    <label>Área (m²)</label>
+                    <input type="number" id="area" placeholder="Ex: 180">
+                </div>
+
+                <div class="input-group">
+                    <label>Preço (R$)</label>
+                    <input type="number" id="preco" placeholder="Ex: 480000">
+                </div>
+
+                <div class="input-group full-width-textarea">
+                    <label>Descrição</label>
+                    <textarea id="descricao" rows="4" placeholder="Digite a descrição do imóvel..."></textarea>
+                </div>
+
+                <div class="input-group full-width upload-area">
+                    <label>Foto</label>
+                    
+                    <label for="foto-upload" class="drop-zone" id="drop-zone" style="display: block; cursor: pointer;">
+                        <span class="upload-icon">☁️</span>
+                        <p>Arraste uma foto aqui ou clique para fazer upload</p>
+                        
+                        <span class="btn-outline" style="display: inline-block; padding: 10px 15px; margin-top: 10px; border: 1px solid var(--border-color); border-radius: 8px;">Selecionar Foto</span>
+                    </label>
+                    
+                    <input type="file" id="foto-upload" accept="image/*" style="display: none;">
+                </div>
+
+                <button type="submit" class="btn-primary full-width">Cadastrar Imóvel</button>
+            </form>
+        </section>
+
+        <section class="card-section">
+            <h4 class="section-subtitle">Meus Imóveis</h4>
+            <div class="imoveis-list" id="lista-imoveis">
+                </div>
+        </section>
+    </main>
+    <script src="admin.js" type="module"></script>
+</body>
+</html>

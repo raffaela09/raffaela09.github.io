@@ -8,6 +8,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="./styles.css">
   <link rel="icon" href="../src/img/icon_top.png" type="image/png">
+  <script>
+    document.documentElement.classList.add("js");
+  </script>
 </head>
 
 <body>
@@ -28,8 +31,8 @@
                 <ul>
                     <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
                     <li class="nav-item active"><a href="./index.html#hero" class="nav-link">Sobre</a></li>
-                    <li class="nav-item"><a href="../index.html#servicos" class="nav-link">Serviços</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Imóveis</a></li>
+                    <li class="nav-item"><a href="../servicos/index.html" class="nav-link">Serviços</a></li>
+                    <li class="nav-item"><a href="../imoveis/index.html" class="nav-link">Imóveis</a></li>
                 </ul>
             </div>
 
@@ -38,15 +41,15 @@
             </div>
 
             <div class="mobile-menu-icon">
-                <button onclick="showMenu()"><i class="fa-solid fa-bars"></i></button>
+                <button><i class="fa-solid fa-bars"></i></button>
             </div>
 
             <div class="mobile-menu">
                 <ul>
                     <li class="nav-item "><a href="../index.html" class="nav-link">Home</a></li>
                     <li class="nav-item"><a href="./index.html#hero" class="nav-link">Sobre</a></li>
-                    <li class="nav-item"><a href="../index.html#servicos" class="nav-link">Serviços</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Imóveis</a></li>
+                    <li class="nav-item"><a href="../servicos/index.html" class="nav-link">Serviços</a></li>
+                    <li class="nav-item"><a href="../imoveis/index.html" class="nav-link">Imóveis</a></li>
                     <li class="nav-item"><a href="../contact/index.html" class="nav-link change-color">Contato</a></li>
                 </ul>
             </div>
@@ -54,15 +57,9 @@
         </nav>
     </header>
 
-  <!-- =========================
-   HERO (A/B/C)
-   - A (curta): mantém só h1 + p + chips
-   - B (completa): mantém tudo exceto "Sobre em números"
-   - C (monstra): mantém tudo
-  ========================== -->
   <section class="hero" id="hero">
     <div class="container hero-grid">
-      <div class="hero-left">
+      <div class="hero-left reveal">
         <div class="kicker">
           <span class="k-dot" aria-hidden="true"></span>
           <span>Desde 2019 • MS, SP e MG</span>
@@ -86,7 +83,6 @@
         </div>
       </div>
 
-      <!-- C: “Sobre em números” (se quiser mais institucional forte) -->
       <aside class="hero-right card card-heavy reveal">
         <div class="card-top">
           <div class="card-title">Topo em números</div>
@@ -95,15 +91,15 @@
 
         <div class="numbers">
           <div class="num">
-            <div class="num-big">+ 50</div>
+            <div class="num-big">+ <span class="counter" data-target="50">0</span></div>
             <div class="num-sub">projetos técnicos executados</div>
           </div>
           <div class="num">
-            <div class="num-big">+ 10 mil m²</div>
+            <div class="num-big">+ <span class="counter" data-target="10">0</span> mil m²</div>
             <div class="num-sub">projetados e gerenciados</div>
           </div>
           <div class="num">
-            <div class="num-big">03</div>
+            <div class="num-big">0<span class="counter" data-target="3">0</span></div>
             <div class="num-sub">estados atendidos</div>
           </div>
         </div>
@@ -113,22 +109,13 @@
         </div>
 
         <a class="btn full" href="#contato">Falar com a Topo</a>
-
-        <!-- <p class="tiny">
-          * Ajuste esses números para dados reais quando tiver fechado com a empresa.
-        </p> -->
       </aside>
     </div>
   </section>
 
-  <!-- =========================
-   QUEM SOMOS (A/B/C)
-   A: mantém 1 parágrafo + Área de atuação
-   B/C: mantém tudo
-  ========================== -->
   <section id="quem-somos" class="section">
     <div class="container">
-      <div class="section-head">
+      <div class="section-head reveal">
         <div class="eyebrow">Quem somos</div>
         <h2>Decisão técnica, execução limpa, entrega <span class="change-color">aprovada.</span></h2>
         <p class="muted">
@@ -142,7 +129,7 @@
           <div class="media-badge">Engenharia <span class="change-color">•</span> Topografia <span class="change-color">•</span> Regularização</div>
         </div>
 
-        <div class="about-text">
+        <div class="about-text reveal">
           <p>
             A <strong>Topo Engenharia e Agrimensura</strong> surge em <strong>2019</strong> com o objetivo de levar confiança e expertise
             ao mercado nas áreas de topografia e engenharia civil. Com equipe qualificada e equipamentos modernos,
@@ -168,13 +155,9 @@
     </div>
   </section>
 
-  <!-- =========================
-   MISSÃO / VISÃO / VALORES (B/C)
-   A: pode remover essa seção inteira
-  ========================== -->
   <section class="section soft">
     <div class="container">
-      <div class="section-head">
+      <div class="section-head reveal">
         <div class="eyebrow">Base</div>
         <h2>O que guia nosso trabalho</h2>
         <p class="muted">Sem promessa vazia. Processo, prova e documentação.</p>
@@ -210,12 +193,9 @@
     </div>
   </section>
 
-  <!-- =========================
-   DIFERENCIAIS (A/B/C)
-  ========================== -->
   <section id="diferenciais" class="section">
     <div class="container">
-      <div class="section-head">
+      <div class="section-head reveal">
         <div class="eyebrow">Diferenciais</div>
         <h2>Por que escolher a Topo?</h2>
         <p class="muted">Cada projeto é conduzido com atenção técnica, comunicação clara e compromisso com o resultado final.</p>
@@ -224,13 +204,10 @@
       <div class="grid-3">
         <article class="card feature reveal">
           <div class="icon">
-
             <svg viewBox="0 0 24 24" fill="none" class="ico">
            <path d="M12 3L3 8v6c0 5 4 7 9 7s9-2 9-7V8l-9-5z" stroke="currentColor" stroke-width="1.5"/>
            <path d="M9 12h6M9 15h6" stroke="currentColor" stroke-width="1.5"/>
            </svg>
-
-
           </div>
           <h3>Profissionais qualificados</h3>
           <p class="muted">Equipe com experiência prática em campo e escritório, preparada para conduzir cada etapa com segurança técnica.</p>
@@ -238,13 +215,10 @@
 
         <article class="card feature reveal">
           <div class="icon">
-
           <svg viewBox="0 0 24 24" fill="none" class="ico">
          <path d="M3 21l18-18" stroke="currentColor" stroke-width="1.5"/>
          <path d="M14 3h7v7" stroke="currentColor" stroke-width="1.5"/>
          </svg>
-
-
           </div>
           <h3>Experiência prática</h3>
           <p class="muted">Trabalhamos com base na prática e na realidade de cada projeto, buscando sempre a melhor solução técnica.</p>
@@ -256,9 +230,6 @@
            <path d="M4 12h16" stroke="currentColor" stroke-width="1.5"/>
            <path d="M8 8l-4 4 4 4M16 8l4 4-4 4" stroke="currentColor" stroke-width="1.5"/>
            </svg>
-
-
-
           </div>
           <h3>Atendimento direto</h3>
           <p class="muted">Atendimento direto, com comunicação simples e acompanhamento próximo durante todo o processo.</p>
@@ -266,25 +237,21 @@
 
         <article class="card feature reveal">
           <div class="icon">
-
             <svg viewBox="0 0 24 24" fill="none" class="ico">
             <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/>
            <path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.5"/>
            </svg>
-
           </div>
           <h3>Compromisso com prazos</h3>
-          <p class="muted">POrganização e compromisso com prazos para que cada etapa avance de forma segura e previsível.</p>
+          <p class="muted">Organização e compromisso com prazos para que cada etapa avance de forma segura e previsível.</p>
         </article>
 
         <article class="card feature reveal">
           <div class="icon">
-
           <svg viewBox="0 0 24 24" fill="none" class="ico">
          <path d="M6 3h9l3 3v15H6z" stroke="currentColor" stroke-width="1.5"/>
          <path d="M9 13h6M9 17h6" stroke="currentColor" stroke-width="1.5"/>
          </svg>
-
         </div>
           <h3>Clareza documental</h3>
           <p class="muted">Documentação técnica organizada e clara, facilitando aprovações e evitando retrabalho.</p>
@@ -292,13 +259,9 @@
 
         <article class="card feature reveal">
           <div class="icon">
-
           <svg viewBox="0 0 24 24" fill="none" class="ico">
           <path d="M3 21h18M6 21V9l6-4 6 4v12" stroke="currentColor" stroke-width="1.5"/>
           </svg>
-
-
-
           </div>
           <h3>Soluções completas</h3>
           <p class="muted">Suporte técnico completo, do levantamento inicial até a regularização e aprovação final.</p>
@@ -307,16 +270,12 @@
     </div>
   </section>
 
-  <!-- =========================
-   TIMELINE (C)
-   A/B: pode remover
-  ========================== -->
   <section class="section soft">
     <div class="container">
-      <div class="section-head">
+      <div class="section-head reveal">
         <div class="eyebrow">História</div>
         <h2>Linha do tempo</h2>
-        <p class="muted">Uma trajetória construída com experiência em campo e compromisso com cada projeto..</p>
+        <p class="muted">Uma trajetória construída com experiência em campo e compromisso com cada projeto.</p>
       </div>
 
 <div class="timeline reveal">
@@ -353,7 +312,7 @@
       
       <ul class="t-checks col-2">
         <li><i class="fa-solid fa-check"></i> Atuação em 3 estados</li>
-        <li><i class="fa-solid fa-check"></i> Portfólio diversificado com mais de 50 projetos</li>
+        <li><i class="fa-solid fa-check"></i> Portfólio diversificado</li>
         <li><i class="fa-solid fa-check"></i> Mais de 50 projetos</li>
       </ul>
     </div>
@@ -363,12 +322,9 @@
     </div>
   </section>
 
-  <!-- =========================
-   CTA + CONTATO (A/B/C)
-  ========================== -->
-  <section id="contato" class="cta">
+  <section id="contato" class="cta section">
     <div class="container cta-grid">
-      <div class="cta-left">
+      <div class="cta-left reveal">
         <div class="eyebrow">Contato</div>
         <h2>Precisa de suporte técnico confiável?</h2>
         <p class="muted">
@@ -431,7 +387,7 @@
   </section>
 
      <section class="mapa-final">
-  <div class="container">
+  <div class="container reveal">
     
     <div class="mapa-head">
       <h2>Onde estamos</h2>
@@ -440,7 +396,7 @@
 
     <div class="mapa-box">
       <iframe 
-        src="https://www.google.com/maps?q=Rua+Duque+de+Caxias+2685+Tres+Lagoas+MS&output=embed"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3731.3323136209556!2d-51.7161833!3d-20.7371583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9490a6cd1a4a408f%3A0xc07ce9bcfc23a2a!2sR.%20Duque%20de%20Caxias%2C%202685%20-%20Vila%20Nova%2C%20Tr%C3%AAs%20Lagoas%20-%20MS%2C%2079620-100!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr"
         width="100%" 
         height="420" 
         style="border:0;" 
@@ -451,9 +407,6 @@
 
   </div>
 </section>
-
-
-
 
 <footer class="site-footer">
         <div class="footer-container">
@@ -472,8 +425,8 @@
                 <ul>
                     <li><a href="../index.html">Home</a></li>
                     <li><a href="#hero">Sobre Nós</a></li>
-                    <li><a href="../index.html#servicos">Nossos Serviços</a></li>
-                    <li><a href="#projetos">Projetos e Cases</a></li>
+                    <li><a href="../servicos/index.html">Nossos Serviços</a></li>
+                    <li><a href="../imoveis/index.html">Projetos e Cases</a></li>
                 </ul>
             </div>
 
@@ -503,4 +456,5 @@
 
   <script src="./main.js"></script>
 </body>
+<script src="/global.js"></script>
 </html>

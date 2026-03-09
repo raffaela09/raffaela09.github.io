@@ -60,3 +60,24 @@ function enviarParaWhatsApp() {
     // 7. Abre o WhatsApp em uma nova aba do navegador
     window.open(url, '_blank');
 }
+
+form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = document.getElementById('email').value;
+    const senha = document.getElementById('senha').value;
+
+    btn.textContent = "Conectando...";
+    msgErro.style.display = "none";
+
+    try {
+        // Tenta logar no cofre do Google
+        await signInWithEmailAndPassword(auth, email, senha);
+        // Se deu certo, ele chuta você lá pra dentro do painel!
+        window.location.replace("./");
+    } catch (error) {
+        // Se errou a senha, mostra o erro
+        console.error(error);
+        msgErro.style.display = "block";
+        btn.textContent = "Entrar";
+    }
+});
