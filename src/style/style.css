@@ -214,7 +214,9 @@ header .subtitle-header {
 
 .column-one h1 {
     color: #2A2A2A;
-    font-size: 1.9rem;
+    font-size: clamp(34px, 3.7vw, 54px); /* Deixa gigante e fluido no PC */
+    line-height: 1.1;
+    letter-spacing: -1px;
 }
 
 .column-content {
@@ -222,10 +224,10 @@ header .subtitle-header {
     padding: 10px;
     border-radius: 7px;
     margin-top: 5px;
-    color: #8d8d8d;
+    color: rgb(18,20,23,.68);
     text-align: left;
     width: 90%;
-    font-weight: 300;
+    font-weight: 400;
 }
 
 .area-buttons {
@@ -1103,10 +1105,12 @@ header .subtitle-header {
 /* --- CELULARES (Até 720px) --- */
 @media screen and (max-width: 720px) {
     .nav-logo h1 { font-size: 1.2rem; }
-    header .subtitle-header { font-size: 0.6rem; }
+    header .subtitle-header { font-size: 0.6rem; line-height: 1.2; }
     .areas { font-size: 0.60rem; gap: 7px; }
-
-    .column-one h1 { font-size: 1.7rem; }
+    .column-one h1 { 
+    font-size: 2.2rem; /* Aumenta um pouquinho no celular para dar impacto, mas sem quebrar a tela */
+    line-height: 1.1;
+}
     .areas { justify-content: center; }
 
     .column-content { width: 95%; text-align: left; margin-inline: auto; }

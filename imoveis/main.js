@@ -76,45 +76,38 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // ==========================================
-    // 4. ANIMAÇÃO DE CRESCIMENTO DOS NÚMEROS
+    // 4. ANIMAÇÃO DE CRESCIMENTO DOS NÚMEROS (CORRIGIDA)
     // ==========================================
-    const counters = document.querySelectorAll('.counter');
-    const animationSpeed = 1500; // Tempo em milissegundos (1.5s)
+    const counters = document.querySelectorAll(".counter");
 
-    if ("IntersectionObserver" in window && counters.length > 0) {
-        const counterObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const targetElement = entry.target;
-                    const targetValue = parseInt(targetElement.getAttribute('data-target'), 10);
-                    
-                    let startTimestamp = null;
-                    const step = (timestamp) => {
-                        if (!startTimestamp) startTimestamp = timestamp;
-                        const progress = Math.min((timestamp - startTimestamp) / animationSpeed, 1);
-                        
-                        targetElement.textContent = Math.floor(progress * targetValue);
-                        
-                        if (progress < 1) {
-                            window.requestAnimationFrame(step);
-                        } else {
-                            targetElement.textContent = targetValue; // Garante o número exato no final
-                        }
-                    };
-                    window.requestAnimationFrame(step);
-                    
-                    observer.unobserve(targetElement); // Anima só na primeira vez
-                }
-            });
-        }, { threshold: 0.5 });
+    //funcao para animar os números do card hero
+    function animateCounter(counter){
+        const target = +counter.getAttribute("data-target");
+        const prefix = counter.getAttribute("data-prefix") || "";
+        const suffix = counter.getAttribute("data-suffix") || "";
 
+        let current = 0;
+        const duration = 2000;
+        const increment = target / (duration / 16);
+
+        const updateCounter = () => {
+            current += increment;
+
+            if(current < target){
+                counter.textContent = prefix + Math.floor(current) + suffix;
+                requestAnimationFrame(updateCounter);
+            } else {
+                counter.textContent = prefix + target + suffix;
+            }
+        };
+
+        updateCounter();
+    }
+
+    // Verifica se existem contadores e ativa a função corretamente (sem evento duplo e no singular)
+    if (counters.length > 0) {
         counters.forEach(counter => {
-            counterObserver.observe(counter);
-        });
-    } else {
-        // Fallback para navegadores antigos
-        counters.forEach(counter => {
-            counter.textContent = counter.getAttribute('data-target');
+            animateCounter(counter);
         });
     }
 

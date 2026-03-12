@@ -217,9 +217,10 @@ header .subtitle-header {
 }
 
 .contact-text h1 {
-    color: #2a2a2a;
-    font-size: 1.9rem;
-    margin-bottom: 0.5rem !important;
+    color: #2A2A2A;
+    font-size: clamp(34px, 3.7vw, 54px); /* Deixa gigante e fluido no PC */
+    line-height: 1.1;
+    letter-spacing: -1px;
 }
 
 .contact-text p {
@@ -783,44 +784,45 @@ iframe {
     }
 }
 
-@media (min-width: 769px) and (max-width: 1400px) { /* Alterado de 768px para 769px */
-    /* --- HEADER (SEU CÓDIGO INTACTO) --- */
-    .nav-bar{ padding: 1.5rem; display: flex; align-items: center; }
-    .nav-item, .nav-button{ display: none; }
-    .nav-logo { display: flex; justify-content: center; align-items: center; }
-    .mobile-menu{ border-top: 1px solid rgba(0, 0, 0, 0.171); position: absolute; top: 6rem; left: 0; width: 100%; background-color: #fff; box-shadow: 0px 3px 10px #4646465d; backdrop-filter: blur(8px); display: none; flex-direction: column; z-index: 1000; }
-    .mobile-menu-icon{ display: block; }
-    .mobile-menu-icon button{ background-color: transparent; border: none; cursor: pointer; color: #2A2A2A; font-size: 1.5rem; transition: transform 0.15s ease; }
-    .mobile-menu-icon button:active{ transform: scale(0.9); }
-    .mobile-menu ul{ display: flex; flex-direction: column; text-align: center; padding: 1rem; }
-    .mobile-menu .nav-item{ display: block; padding-top: 1.2rem; }
-    .mobile-menu .nav-button{ display: block; padding: 1rem 2rem; }
-    .mobile-menu .nav-button button{ width: 100%; }
-    .open{ display: flex; }
+
+@media screen and (max-width: 768px) {
+    
+    /* AQUI É LITERALMENTE O CÓDIGO DA SUA HOME! */
+    .nav-bar{  display: flex; align-items: center; }
+    .nav-logo h1, .title-header h1 { font-size: 1.2rem !important; margin: 0 !important; color: #2A2A2A !important; font-weight: bold !important;  }
+    header .subtitle-header { font-size: 0.6rem !important; margin: 0 !important; color: #27AE60 !important; }
     .title-header span{ font-size: 0.7rem; }
-    .mobile-menu .nav-item a:hover::after { width: 0% !important; }
-    .mobile-menu .nav-item a:active { color: #27AE60; transition: 0.1s; }
-    header h1 { margin-top: 0.5rem; font-size: 1rem; line-height: 1.2; }
+    .contact-text h1{ font-size: 2.2rem;}
+    .section-head h2, .section__title { font-size: 1.8rem; text-align: left; }
+    .section-head p, .section__desc { text-align: left; }
 
-    /* --- CONTEÚDO (ARRUMANDO O LAYOUT) --- */
-    .main-card { display: flex; flex-direction: column; width: 100%; padding: 2rem; gap: 2rem; background-image: url("../img/bg-card.png");        background-size: cover;
-        background-position: center bottom;
-        background-repeat: no-repeat;}
-    .divider { display: none; }
-    .contact-text { padding: 0; max-width: 100%; }
-    .contact-text h2 { font-size: 1.6rem; line-height: 1.3; }
-    .contact-form { padding: 0; max-width: 100%; }
-    .form { padding: 1.5rem; border-radius: 16px; margin: 0 auto; max-width: 600px; }
-    .list-infos i { margin-right: 15px; }
-    .list-infos li { font-size: 1rem; line-height: 1.4; }
-    
-    .location { display: flex; flex-direction: column; }
-    .map { width: 100%; }
-    .map-card { width: 100%; margin-top: 2rem; }
-    
-    .content-wpp { display: flex; flex-direction: column; padding: 3rem; text-align: center; gap: 2rem; }
+    .hero-left { display: flex; flex-direction: column; align-items: flex-start; text-align: left; }
+    .hero-left .lead, .hero__lead { text-align: left; }
+    .chips { justify-content: flex-start; }
+    .hero-actions, .hero__actions { justify-content: flex-start; width: 100%; flex-direction: column; }
+    .hero-actions .btn { width: 100%; }
+    .hero-right { margin-top: 1rem; width: 100%; }
+
+    .grid-3, .imoveisGrid { grid-template-columns: 1fr; }
+    .filters { grid-template-columns: 1fr; }
+
+    .cta-grid { gap: 40px; }
+    .cta-left { display: flex; flex-direction: column; align-items: flex-start; text-align: left; width: 100%; }
+    .cta-actions { display: flex; flex-direction: column; gap: 12px; width: 100%; margin-bottom: 1rem; }
+    .cta-actions .btn { width: 100%; justify-content: center; }
+
+    /* FOOTER CENTRALIZADO */
+    .footer-container { flex-direction: column; align-items: center; text-align: center; gap: 2.5rem; padding-inline: 1.5rem; }
+    .footer-col { display: flex; flex-direction: column; align-items: center; width: 100%; padding: 0; }
+    .footer-col ul { align-items: center; width: 100%; padding: 0; }
+    .footer-logo-white { margin: 0 auto 1.5rem auto; display: block; }
+    .branding p, .footer-col h4 { text-align: center; margin-left: auto; margin-right: auto; }
+    .social-links { justify-content: center; width: 100%; }
+    .footer-col.contact li { justify-content: center; text-align: center; width: 100%; }
+    .footer-col a:hover { padding-left: 0; }
+    .footer-bottom { text-align: center; padding-inline: 1.5rem; }
+    .site-footer span { font-size: 0.9rem; }
 }
-
 @keyframes grow {
   from { transform: scaleX(0); }
   to { transform: scaleX(1); }

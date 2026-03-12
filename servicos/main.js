@@ -16,37 +16,42 @@ const io = new IntersectionObserver((entries) => {
 revealEls.forEach(el => io.observe(el));
 
 // Count-up for "Topo em números"
-function animateCount(el, to, { prefix = "", suffix = "", duration = 950 } = {}) {
-  const start = 0;
-  const t0 = performance.now();
+  const counters = document.querySelectorAll(".counter");
 
-  function tick(now) {
-    const p = Math.min(1, (now - t0) / duration);
-    const eased = 1 - Math.pow(1 - p, 3); // easeOutCubic
-    const value = Math.round(start + (to - start) * eased);
-    el.textContent = `${prefix}${value}${suffix}`;
-    if (p < 1) requestAnimationFrame(tick);
+  //funcao para animar os números do card hero
+  function animateCounter(counter){
+      const target = +counter.getAttribute("data-target");
+      const prefix = counter.getAttribute("data-prefix") || "";
+      const suffix = counter.getAttribute("data-suffix") || "";
+
+      let current = 0;
+      const duration = 2000;
+      const increment = target / (duration / 16);
+
+      const updateCounter = () => {
+          current += increment;
+
+          if(current < target){
+              counter.textContent =
+                  prefix + Math.floor(current) + suffix;
+              requestAnimationFrame(updateCounter);
+          } else {
+              counter.textContent =
+                  prefix + target + suffix;
+          }
+      };
+
+      updateCounter();
   }
 
-  requestAnimationFrame(tick);
-}
+  //para ativar a funcao sempre que a pagina carregar
+  document.addEventListener("DOMContentLoaded", () => {
+      const counters = document.querySelectorAll(".counter");
 
-const statValues = document.querySelectorAll(".stat__value");
-const statsIO = new IntersectionObserver((entries) => {
-  for (const e of entries) {
-    if (!e.isIntersecting) continue;
-
-    const el = e.target;
-    const to = Number(el.dataset.count || "0");
-    const prefix = el.dataset.prefix || "";
-    const suffix = el.dataset.suffix || "";
-
-    animateCount(el, to, { prefix, suffix, duration: 950 });
-    statsIO.unobserve(el);
-  }
-}, { threshold: 0.35 });
-
-statValues.forEach(el => statsIO.observe(el));
+      counters.forEach(counter => {
+          animateCounter(counter);
+      });
+  });
 
 
 function showMenu(){
