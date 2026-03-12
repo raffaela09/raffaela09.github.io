@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 :root{
   --bg:#ffffff;
   --text:#0f172a;
@@ -10,31 +11,38 @@
   --r-xl: 22px;
   --r-lg: 16px;
   --max: 1120px;
+  --pad: clamp(1.5rem, 5vw, 10rem);
 }
 
 /* Base */
 * { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; overflow-x: hidden; }
-body {
-  padding-top: 7rem;
-  font-family: "Poppins", sans-serif;
-  background-color: #f2f2f2;
-  color: var(--text);
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-a{ color:inherit; text-decoration:none; }
 
-body{
-  background-color: #f2f2f2;
+html { 
+    scroll-behavior: smooth; 
+    overflow-x: hidden; /* Trava mestre */
 }
+
+body {
+    padding-top: 7rem;
+    font-family: "Poppins", sans-serif;
+    background-color: #f2f2f2;
+    color: var(--text);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    max-width: 100vw; /* Garante que não ultrapasse a tela */
+    overflow-x: hidden; /* Trava mestre no body */
+}
+
+a { color:inherit; text-decoration:none; }
+
 .container {
     width: 100%;
     margin: 0 auto;
-    padding-inline: clamp(1.5rem, 5vw, 10rem); /* Padroniza com a header e as outras páginas */
-    
+    padding-inline: var(--pad); /* Padroniza com a header e as outras páginas */
 }
+
 /* HEADER E MENU*/
 header {
     display: flex;
@@ -48,7 +56,6 @@ header {
     z-index: 10;
     backdrop-filter: blur(8px);
     left: 0;
-    /* margin-bottom: 2rem; */
 }
 
 header .subtitle-header {
@@ -61,9 +68,11 @@ header .subtitle-header {
     gap: 1.25rem;
     opacity: 0.85;
 }
+
 .title-header h1 {
     margin: 0;
 }
+
 .title-header {
     display: flex;
     flex-direction: column;
@@ -76,12 +85,11 @@ header .subtitle-header {
     display: flex;
     justify-content: space-between;
     align-items: center; 
-    padding: clamp(1.5rem, 5vw, 10rem);
+    padding: var(--pad);
     width: 100%;
 }
 
 .nav-link-logo {
-    text-decoration: none;
     display: flex;
     flex-direction: row;
     white-space: nowrap;
@@ -108,13 +116,11 @@ header .subtitle-header {
 
 .nav-item {
     margin: 0 15px;
-    text-decoration: none;
     position: relative;
     display: inline-block;
 }
 
 .nav-link {
-    text-decoration: none;
     font-size: 1.15rem;
     color: #2A2A2A;
 }
@@ -142,7 +148,6 @@ header .subtitle-header {
 }
 
 .nav-button a {
-    text-decoration: none;
     color: #fff;
     font-weight: 700;
 }
@@ -176,26 +181,25 @@ header .subtitle-header {
     left: 50%;
     bottom: -6px;
     height: 3px;
-    width: 150%; 
+    width: 100%; 
     background-color: #27AE60;
     transform: translateX(-50%);
     border-radius: 2px;
 }
 
-
 /* HERO */
 .hero {
-    background-image: url("../src/img/bg-card.png"); /* Ajuste o caminho da imagem se necessário! */
+    background-image: url("../src/img/bg-card.png"); 
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    background-attachment: fixed; /* A mágica do Parallax suave */
+    background-attachment: fixed; 
     border-bottom: 1.5px solid #DDF3E7;
     padding-top: 4rem;
     padding-bottom: 4rem;
-    padding-inline: clamp(1.5rem, 5vw, 10rem); /* Mesmo alinhamento da página de contato */
+    padding-inline: var(--pad); 
     width: 100%;
-    
+    box-sizing: border-box;
 }
 
 .hero__grid {
@@ -203,8 +207,9 @@ header .subtitle-header {
     grid-template-columns: 1.2fr .8fr;
     gap: 28px;
     align-items: start;
-    width: 100%; /* Força o grid a preencher o espaço lateral */
+    width: 100%; 
 }
+
 .badge{
   display:inline-flex;
   align-items:center;
@@ -218,23 +223,27 @@ header .subtitle-header {
   font-weight: 800;
   font-size: 13.5px;
 }
+
 .badge__dot {
     width: 10px; 
     height: 10px;
     border-radius: 50%;
     background: var(--green);
-    flex-shrink: 0; /* Garante que a bolinha não amasse no celular */
+    flex-shrink: 0; 
     position: relative;
     animation: pulse-green 2s infinite;
     display: inline-block;
 }
+
 .hero__title{
   font-size: clamp(34px, 3.9vw, 54px);
   letter-spacing: -1px;
   line-height: 1.04;
   margin: 16px 0 10px;
 }
+
 .accent{ color: var(--green); }
+
 .hero__lead{
   margin: 0;
   color: var(--muted);
@@ -245,12 +254,14 @@ header .subtitle-header {
   padding: 10px; 
   border-radius: 7px;
 }
+
 .chips{
   display:flex;
   flex-wrap:wrap;
   gap: 10px;
   margin-top: 18px;
 }
+
 .chip{
   padding: 10px 14px;
   border-radius: 999px;
@@ -260,6 +271,7 @@ header .subtitle-header {
   font-weight: 800;
   font-size: 13px;
 }
+
 .hero__actions{
   display:flex;
   gap: 12px;
@@ -361,6 +373,7 @@ header .subtitle-header {
     transform: translateY(-4px); 
     box-shadow: 0 10px 20px rgba(39, 174, 96, 0.15); 
 }
+
 /* SECTION */
 .section{ padding: 34px 0; 
 background: linear-gradient(
@@ -404,17 +417,15 @@ background: linear-gradient(
   line-height: 1.6;
 }
 
-/* ✅ SERVIÇOS (NOVO LAYOUT PADRONIZADO) */
-/* ✅ SERVIÇOS (LAYOUT ELEGANTE E ALINHADO) */
+/* ✅ SERVIÇOS */
 .servicesStack {
   display: flex;
   flex-direction: column;
-  gap: 24px; /* Aumentei um tiquinho o gap pra dar um respiro melhor entre as fotos */
-  align-items: stretch; /* A MÁGICA AQUI: Faz os cards esticarem de ponta a ponta */
+  gap: 24px; 
+  align-items: stretch; 
   width: 100%;
 }
 
-/* Card com imagem + overlay */
 .serviceCard {
   position: relative;
   border-radius: 26px;
@@ -422,9 +433,15 @@ background: linear-gradient(
   border: 1px solid var(--line);
   background: #000;
   box-shadow: 0 25px 70px rgba(15,23,42,.08);
-  width: 100%; /* Ocupa 100% do espaço disponível */
-  max-width: 100%; /* Tiramos o limite de largura pra ele acompanhar exatamente a linha do título */
+  width: 100%; 
+  max-width: 100%; 
   margin: 0;
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+
+.serviceCard:hover{
+  transform: translateY(-8px);
+  box-shadow: 0 40px 90px rgba(15,23,42,.18);
 }
 
 .serviceCard__img{
@@ -433,9 +450,13 @@ background: linear-gradient(
   object-fit: cover;
   display:block;
   transform: scale(1.02);
+  transition: transform .6s ease;
 }
 
-/* overlay com contraste BOM */
+.serviceCard:hover .serviceCard__img{
+  transform: scale(1.05);
+}
+
 .serviceCard__overlay{
   position:absolute;
   inset:0;
@@ -446,7 +467,6 @@ background: linear-gradient(
   align-items:flex-start;
   text-align:left;
   color:#fff;
-
   background:
     linear-gradient(to top,
       rgba(0,0,0,.78) 0%,
@@ -469,13 +489,14 @@ background: linear-gradient(
 
 .serviceCard__overlay h3{
   margin: 0 0 10px;
-  font-size: 34px;
+  font-size: 42px;
   letter-spacing: -0.6px;
   text-shadow: 0 10px 30px rgba(0,0,0,.35);
 }
+
 .serviceCard__overlay p{
   margin: 0;
-  max-width: 78ch;
+  max-width: 620px;
   line-height: 1.6;
   font-size: 16px;
   opacity: .98;
@@ -502,18 +523,18 @@ background: linear-gradient(
 .difs {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 20px; /* Espaço perfeito entre os cards */
+  gap: 20px; 
   margin-top: 2rem;
 }
 
 .dif {
   display: flex;
-  align-items: center; /* Alinha o ícone e o texto lado a lado no centro vertical */
-  gap: 20px; /* Distância do ícone para o texto */
+  align-items: center; 
+  gap: 20px; 
   background: #ffffff;
-  border-radius: 24px; /* Bordas suaves e gordinhas igual da foto */
+  border-radius: 24px; 
   padding: 24px;
-  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.089); /* Sombra elegante */
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.089); 
   border: 1px solid rgba(15,23,42,.04);
   transition: all .25s ease;
 }
@@ -523,17 +544,16 @@ background: linear-gradient(
   box-shadow: 0 15px 35px rgba(15,23,42,.08);
 }
 
-/* A caixinha verde com o ícone */
 .dif__icon {
   width: 64px;
   height: 64px;
-  min-width: 64px; /* Trava o tamanho para não amassar se o texto for grande */
-  background: rgba(39, 174, 96, 0.12); /* Fundo verde clarinho transparente */
-  border-radius: 18px; /* Bordinha arredondada no ícone */
+  min-width: 64px; 
+  background: rgba(39, 174, 96, 0.12); 
+  border-radius: 18px; 
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #27AE60; /* Verde vibrante da Topo */
+  color: #27AE60; 
   font-size: 1.6rem;
 }
 
@@ -553,7 +573,7 @@ background: linear-gradient(
         #e6f3ed 100%
     );
     border-top: 1.5px solid #DDF3E7;
-    padding: 60px 0; /* Dá um respiro maior em cima e embaixo */
+    padding: 60px 0; 
 }
 
 /* CTA */
@@ -564,10 +584,8 @@ background: linear-gradient(
   align-items:center;
   justify-content:space-between;
   gap: 20px;
-
   background: linear-gradient(135deg, #27ae60 0%, #111827 100%);
   color: #ffffff;
-
   box-shadow: 0 25px 70px rgba(15,23,42,.25);
 }
 
@@ -582,17 +600,12 @@ background: linear-gradient(
   color: rgba(255,255,255,.85);
   max-width: 60ch;
 }
-/* FOOTER */
-.branding p {
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
-    font-weight: 300;
-    color: #27AE60;
-}
 
-/* Ícones Sociais */
+/* =========================================
+   FOOTER - BLINDADO
+   ========================================= */
 .site-footer {
-    background-color: #222222; /* Um tom ligeiramente mais escuro que o CTA para dar profundidade */
+    background-color: #222222; 
     color: #a0a0a0;
     padding-top: 4rem;
     font-size: 0.95rem;
@@ -601,58 +614,59 @@ background: linear-gradient(
 .footer-container {
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap; /* Permite que as colunas desçam se faltar espaço */
+    flex-wrap: wrap; 
     gap: 3rem;
-    padding-inline: clamp(1.5rem, 5vw, 10rem);
+    padding-inline: var(--pad);
     padding-bottom: 3rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Linha divisória sutil */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05); 
 }
 
-/* Configuração das Colunas */
 .footer-col {
-    flex: 1; /* Tenta ocupar espaço igual */
-    min-width: 220px; /* Mas não fica menor que isso */
+    flex: 1; 
+    min-width: 220px; 
+    overflow-wrap: break-word; 
+    word-break: break-word; /* Proteção contra textos longos */
 }
 
-/* Truque para deixar a logo branca (se ela for imagem preta/colorida) */
 .footer-logo-white {
     width: 160px;
     margin-bottom: 1.5rem;
-    filter: brightness(0) invert(1); /* Mágica do CSS que inverte a cor pra branco! */
+    filter: brightness(0) invert(1); 
 }
 
-.social-links {
-    display: flex;
-    gap: 12px;
+.branding p {
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+    color: #27AE60;
+    text-align: left;
 }
 
+.social-links { display: flex; gap: 12px; }
 .social-links a {
     width: 40px;
     height: 40px;
-    background-color: rgba(255,255,255,0.05); /* Bolinha quase transparente */
+    background-color: rgba(255,255,255,0.05); 
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
     color: #ffffff;
-    text-decoration: none;
     transition: all 0.3s ease;
 }
-
 .social-links a:hover {
-    background-color: #27AE60; /* Fica verde no hover */
+    background-color: #27AE60; 
     transform: translateY(-3px);
 }
 
-/* Títulos das Colunas */
 .footer-col h4 {
     color: #ffffff;
     font-size: 1.2rem;
     margin-bottom: 1.5rem;
     font-weight: 700;
+    text-align: left;
 }
 
-/* Listas de Links e Contatos */
 .footer-col ul {
     list-style: none;
     display: flex;
@@ -662,32 +676,30 @@ background: linear-gradient(
 
 .footer-col a {
     color: #a0a0a0;
-    text-decoration: none;
     transition: color 0.3s ease;
+    word-break: break-all; /* Força a quebra de e-mails longos */
 }
 
-.footer-col a:hover {
-    color: #fff;
-    padding-left: 2px; /* Efeitozinho de "andar" pra direita no hover */
+.footer-col a:hover { color: #fff; padding-left: 2px; }
+
+/* Proteção do ícone de contato */
+.footer-col.contact li {
+    display: flex;
+    align-items: flex-start; /* Alinha o ícone no topo se quebrar linha */
 }
 
-/* Ícones de Contato (Telefone, Email) */
 .footer-col.contact i {
     color: #27AE60;
     margin-right: 10px;
     font-size: 1.1rem;
+    flex-shrink: 0; /* Impede o ícone de ser esmagado */
+    margin-top: 4px;
 }
 
-.footer-col.contact li {
-    display: flex;
-    align-items: center;
-}
-
-/* Barra Final de Copyright */
 .footer-bottom {
-    text-align: center;
-    padding: 1.5rem;
-    background-color: #1a1a1a; /* O tom mais escuro de todos pro final */
+    text-align: left;
+    padding: 1.5rem var(--pad);
+    background-color: #1a1a1a; 
     font-size: 0.85rem;
 }
 
@@ -695,31 +707,14 @@ background: linear-gradient(
     color: #a0a0a0;
     text-decoration: underline;
 }
+
 #home, #atuacao, #servicos, #processos {
     scroll-margin-top: 120px !important; 
 }
-.a-services{
-    width: 100%;
-    height: 100%;
-    color: #2a2a2a;
-    text-decoration: none;
-}
-.a-services-a{
-    width: 100%;
-    height: 100%;
-    color: #ffff;
-    text-decoration: none;
-}
-.a-services:hover{
-    color: #27AE60;
-}
-.f-topo{
-    width: 100%;
-    height: 100%;
-    color: #2a2a2a;
-    text-decoration: none;
-}
-
+.a-services{ width: 100%; height: 100%; color: #2a2a2a; text-decoration: none; }
+.a-services-a{ width: 100%; height: 100%; color: #ffff; text-decoration: none; }
+.a-services:hover{ color: #27AE60; }
+.f-topo{ width: 100%; height: 100%; color: #2a2a2a; text-decoration: none; }
 
 /* REVEAL (modo seguro) */
 .reveal{
@@ -727,14 +722,9 @@ background: linear-gradient(
   transform: none;
   transition: opacity .35s ease, transform .35s ease;
 }
-html.js .reveal{
-  opacity: 0;
-  transform: translateY(10px);
-}
-html.js .reveal.is-in{
-  opacity: 1;
-  transform: none;
-}
+html.js .reveal{ opacity: 0; transform: translateY(10px); }
+html.js .reveal.is-in{ opacity: 1; transform: none; }
+
 .section-label {
     text-align: left;
     display: block;
@@ -747,127 +737,20 @@ html.js .reveal.is-in{
 }
 
 .section-label::after {
-    content: "";
-    display: block;
-    width: 40px;
-    height: 3px;
-    background: #27AE60;
-    margin-top: 8px;
+    content: ""; display: block; width: 40px; height: 3px; background: #27AE60; margin-top: 8px;
 }
 
-.change-color{
-  color: #27AE60;
-}
+.change-color{ color: #27AE60; }
 
 @keyframes pulse-green {
-    0% {
-        box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.7);
-    }
-    70% {
-        box-shadow: 0 0 0 8px rgba(22, 163, 74, 0); /* Diminuí de 12px para 8px pro mobile */
-    }
-    100% {
-        box-shadow: 0 0 0 0 rgba(22, 163, 74, 0);
-    }
+    0% { box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.7); }
+    70% { box-shadow: 0 0 0 8px rgba(22, 163, 74, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(22, 163, 74, 0); }
 }
 
-/* RESPONSIVO */
-@media (max-width: 980px){
-  
-  .hero__grid{ grid-template-columns: 1fr; }
-  .section__head{ flex-direction: column; align-items:flex-start; }
-  .difs{ grid-template-columns: 1fr; }
-  .serviceCard__img{ height: 430px; }
-  .serviceCard__overlay h3{ font-size: 28px; }
-  .serviceCard__overlay p{ font-size: 15px; }
-}
-@media (max-width: 560px){
-  .nav{ display:none; }
-  .cta{ flex-direction: column; align-items:flex-start; }
-  .brand{ min-width: auto; }
-  .serviceCard__overlay{ padding: 22px; }
-}
-
-.serviceCard__overlay h3{
-  font-size: 42px;
-}
-
-.serviceCard__overlay p{
-  max-width: 620px;
-}
-
-.serviceCard__overlay p{
-  max-width: 620px;
-}
-
-.serviceCard{
-  transition: transform .35s ease, box-shadow .35s ease;
-}
-
-.serviceCard:hover{
-  transform: translateY(-8px);
-  box-shadow: 0 40px 90px rgba(15,23,42,.18);
-}
-
-.serviceCard__img{
-  transition: transform .6s ease;
-}
-
-.serviceCard:hover .serviceCard__img{
-  transform: scale(1.05);
-}
-
-@media (max-width: 560px){
-  .serviceCard__overlay{
-    padding: 18px;
-    justify-content: flex-end;
-  }
-
-  .serviceCard__overlay h3{
-    font-size: 30px;          /* antes tava monstro */
-    line-height: 1.05;
-    margin-bottom: 8px;
-  }
-
-  .serviceCard__overlay p{
-    font-size: 14px;
-    line-height: 1.45;
-    max-width: 42ch;
-  }
-}
-
-@media (max-width: 560px){
-  .serviceTags{
-    margin-top: 12px;
-    gap: 8px;
-  }
-
-  .serviceTags span{
-    padding: 8px 12px;
-    font-size: 12px;
-  }
-}
-
-@media (max-width: 560px){
-  .serviceCard__overlay{
-    background:
-      linear-gradient(to top,
-        rgba(0,0,0,.82) 0%,
-        rgba(0,0,0,.55) 55%,
-        rgba(0,0,0,.08) 100%);
-  }
-}
-
-@media (max-width: 560px){
-  .serviceCard__overlay{
-    background:
-      linear-gradient(to top,
-        rgba(0,0,0,.82) 0%,
-        rgba(0,0,0,.55) 55%,
-        rgba(0,0,0,.08) 100%);
-  }
-}
-
+/* =========================================
+   MEDIA QUERIES 
+   ========================================= */
 
 @media screen and (min-width: 769px) and (max-width: 1440px) {
     .row-one { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
@@ -881,108 +764,68 @@ html.js .reveal.is-in{
     .p-span { font-size: 0.8rem; }
     .content-items { flex-wrap: wrap; gap: 10px; }
     .item { margin-top: 5px; }
-    .mobile-menu .nav-item a:hover::after {
-    width: 0% !important; /* Força a barrinha a não aparecer no toque */
+    .mobile-menu .nav-item a:hover::after { width: 0% !important; }
+    .mobile-menu .nav-item a:active { color: #27AE60; transition: 0.1s; }
 }
 
-/* Se quiser um efeito de clique mais limpo no celular, use este: */
-.mobile-menu .nav-item a:active {
-    color: #27AE60; /* O texto só brilha em verde rapidinho quando clica */
-    transition: 0.1s;
-}
-}
-
-/* --- TABLETS E MENU HAMBURGER (Até 1024px) --- */
-@media screen and (max-width: 1100px){
-
+/* --- TABLETS --- */
+@media screen and (max-width: 1100px) {
     /* HERO NÃO PODE SER GRID 3 COLUNAS */
+    .hero__grid { grid-template-columns: 1fr; }
+    
+    .hero {
+        background-attachment: scroll; /* fixed quebra em telas menores */
+    }
+
     .main-card{
         display:flex;
         flex-direction:column;
-        background-attachment: scroll; /* fixed quebra em telas menores */
+        background-attachment: scroll; 
         padding-inline:0;
     }
 
-    .divider{
-        display:none;
-    }
-
-    .column-one{
-        max-width:100%;
-        padding:3rem 2rem 1rem 2rem;
-    }
-
-    .column-two{
-        width:100%;
-    }
-
-    .card-info{
-        width:90%;
-        max-width:600px;
-        margin:1rem auto 0;
-    }
-
+    .divider{ display:none; }
+    .column-one{ max-width:100%; padding:3rem 2rem 1rem 2rem; }
+    .column-two{ width:100%; }
+    .card-info{ width:90%; max-width:600px; margin:1rem auto 0; }
 
     /* PROCESS */
-    .process-container{
-        flex-wrap:wrap;
-        justify-content:center;
-    }
-
-    .step-card{
-        flex:1 1 300px;
-        max-width:480px;
-    }
-
-    .process-container::before{
-        display:none;
-    }
-
+    .process-container{ flex-wrap:wrap; justify-content:center; }
+    .step-card{ flex:1 1 300px; max-width:480px; }
+    .process-container::before{ display:none; }
 
     /* PERFORMANCE CARDS NÃO ESTOURAM */
-    .performance-content{
-        flex-wrap:wrap;
-    }
-
-    .p-card{
-        flex:1 1 280px;
-        min-width:0;
-    }
-
+    .performance-content{ flex-wrap:wrap; }
+    .p-card{ flex:1 1 280px; min-width:0; }
 
     /* SERVICES GRID */
-    .row-one{
-        grid-template-columns:1fr;
-    }
-
+    .row-one{ grid-template-columns:1fr; }
 
     /* PARCEIROS */
-    .partners-container{
-        gap:2rem;
-        justify-content:center;
-    }
+    .partners-container{ gap:2rem; justify-content:center; }
+    .logo-item img{ max-width:120px; height:auto; }
+}
 
-    .logo-item img{
-        max-width:120px;
-        height:auto;
-    }
-
-}@media screen and (max-width: 1024px) {
+/* --- TABLETS E MENU HAMBURGER (Até 1024px) --- */
+@media screen and (max-width: 1024px) {
     .nav-bar { padding: 1.5rem; }
     .nav-item, .nav-button { display: none; }
-    .nav-logo { display: flex; justify-content: center; align-items: center; }
+    .nav-logo { display: flex; justify-content: flex-start; align-items: center; } /* Mantém logo na esquerda */
     
+    /* MENU MOBILE CENTRALIZADO */
     .mobile-menu {
         border-top: 2px solid rgba(0, 0, 0, 0.171); position: absolute; top: 6rem; left: 0;
-        width: 100%; background-color: #fff; display: none; flex-direction: column; z-index: 1000;
+        width: 100%; background-color: #fff; display: none; flex-direction: column; z-index: 1000; align-items: center;
     }
     .mobile-menu-icon { display: block; }
     .mobile-menu-icon button { background-color: transparent; border: none; cursor: pointer; color: #2A2A2A; font-size: 1.5rem; transition: transform 0.15s ease; }
     .mobile-menu-icon button:active { transform: scale(0.9); }
-    .mobile-menu ul { display: flex; flex-direction: column; text-align: center; padding: 1rem; }
+    
+    /* Itens do Menu Centralizados */
+    .mobile-menu ul { display: flex; flex-direction: column; text-align: center; padding: 1rem; width: 100%; }
     .mobile-menu .nav-item { display: block; padding-top: 1.2rem; }
-    .mobile-menu .nav-button { display: block; padding: 1rem 2rem; margin-left: 0; }
-    .mobile-menu .nav-button button { width: 100%; }
+    .mobile-menu .nav-button { display: flex; justify-content: center; padding: 1rem 0; margin: 0 auto; width: 100%; }
+    .mobile-menu .nav-button button { width: 120px; }
     .open { display: flex; }
 
     /* Processos */
@@ -990,64 +833,43 @@ html.js .reveal.is-in{
     .step-card { min-width: 45%; }
     .process-container::before { display: none; }
     
-    /* --- AJUSTE DA PRIMEIRA DOBRA E DO FUNDO (TABLET E CELULAR) --- */
     .main-card {
         display: flex; 
         flex-direction: column; 
-        padding-inline: 0; /* Tira o padding lateral pro mapa ir de ponta a ponta */
-        padding-bottom: 4rem; /* Dá um respiro gostoso no final da seção */
+        padding-inline: 0; 
+        padding-bottom: 4rem; 
         background-image: url("../img/bg-card.png");
-        background-size: cover; /* A MÁGICA PRO MAPA COBRIR TUDO */
+        background-size: cover; 
         background-position: center bottom;
         background-repeat: no-repeat;
     }
     
-    .divider { display: none; }
+    .column-one { max-width: 100%; padding: 3rem 2rem 1rem 2rem; }
+    .card-info { width: 90%; max-width: 600px; margin: 1rem auto 0 auto; background-color: #2A2A2A; border-radius: 12px; box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15); }
     
-    .column-one {
-        max-width: 100%; 
-        padding: 3rem 2rem 1rem 2rem; /* Devolve o respiro lateral pro texto não encostar */
-    }
-    
-    /* O Card Preto Lindão */
-    .card-info {
-        width: 90%; /* Card escuro com 90% da tela (desgruda das bordas!) */
-        max-width: 600px;
-        margin: 1rem auto 0 auto; /* Centraliza perfeitamente */
-        background-color: #2A2A2A; /* Cor original de volta! */
-        border-radius: 12px;
-        box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15);
-    }
-    .mobile-menu .nav-item a:hover::after {
-    width: 0% !important; /* Força a barrinha a não aparecer no toque */
+    .mobile-menu .nav-item a:hover::after { width: 0% !important; }
+    .mobile-menu .nav-item a:active { color: #27AE60; transition: 0.1s; }
 }
 
-/* Se quiser um efeito de clique mais limpo no celular, use este: */
-.mobile-menu .nav-item a:active {
-    color: #27AE60; /* O texto só brilha em verde rapidinho quando clica */
-    transition: 0.1s;
-}
-}
-
-/* --- CELULARES (Até 720px) --- */
-@media screen and (max-width: 740px) {
+/* --- CELULARES (Até 740px/768px) --- */
+@media screen and (max-width: 768px) {
     .nav-logo h1 { font-size: 1.2rem; }
     header .subtitle-header { font-size: 0.6rem; }
-    .areas { font-size: 0.60rem; gap: 7px; }
 
-    .column-one { align-items: center; text-align: center; padding-top: 2rem; }
+    /* Tudo alinhado à esquerda */
+    .section__head{ flex-direction: column; align-items:flex-start; }
+    .section-head h2, .section-head p, .eyebrow { text-align: left; margin-inline: 0; }
+    .eyebrow::after { margin: 8px 0 0 0; }
+
+    .areas { font-size: 0.60rem; gap: 7px; justify-content: flex-start; }
+    .column-one { align-items: flex-start; text-align: left; padding-top: 2rem; }
     .column-one h1 { font-size: 1.7rem; }
-    .areas { justify-content: center; }
 
-    .column-content { width: 95%; text-align: left; margin-inline: auto; }
-    .area-contents { flex-direction: column; font-size: 0.75rem; width: 95%; margin-inline: auto; }
+    .column-content { width: 100%; text-align: left; margin-inline: 0; }
+    .area-contents { flex-direction: column; font-size: 0.75rem; width: 100%; margin-inline: 0; }
     .span-text { margin-top: 10px; height: 30px; width: 100%; }
     
-    .card-info {
-        width: 92%; 
-        padding: 1.5rem;
-        margin-top: 2rem;
-    }
+    .card-info { width: 100%; padding: 1.5rem; margin-top: 2rem; }
 
     .performance-content { flex-direction: column; gap: 15px; }
     .p-card { margin: 0; width: 100%; }
@@ -1057,11 +879,8 @@ html.js .reveal.is-in{
     .row-one { grid-template-columns: 1fr; gap: 2.5rem; }
     .row-card { padding-left: 1rem; }
 
-    .s-footer{
-        display: flex; flex-direction: column; text-align: center; gap: 1.5rem;
-        padding: 1.5rem; height: auto;
-    }
-    .s-btn { width: 100%; justify-content: center; }
+    .s-footer{ display: flex; flex-direction: column; text-align: left; gap: 1.5rem; padding: 1.5rem; height: auto; }
+    .s-btn { width: 100%; justify-content: flex-start; }
     .s-analyse { width: 100%; }
 
     .process-container { flex-direction: column; gap: 1.5rem; }
@@ -1071,44 +890,44 @@ html.js .reveal.is-in{
     .partners-container { padding: 1.5rem; gap: 2.5rem; }
     .logo-item img { max-height: 45px !important; }
 
-    /* Card escuro */
-    .cta-container { flex-direction: column; text-align: center; gap: 1.5rem; }
+    /* CTA (Orçamento e similares) */
+    .cta { flex-direction: column; align-items:flex-start; }
+    .cta-container { flex-direction: column; text-align: left; gap: 1.5rem; }
     .cta-text h3 { font-size: 1.5rem; }
     .cta-btn, .cta-btn a { width: 100%; }
-
-    /* Footer */
-    .footer-container { flex-direction: column; text-align: center; gap: 2.5rem; }
-    .footer-logo-white { margin: 0 auto 1.5rem auto; }
-    .social-links { justify-content: center; }
-    .footer-col.contact li { justify-content: center; }
-    .footer-col a:hover { padding-left: 0; }
-    .mobile-menu .nav-item a:hover::after {
-    width: 0% !important; /* Força a barrinha a não aparecer no toque */
-}
-
-.mobile-menu .nav-item a:active {
-    color: #27AE60; /* O texto só brilha em verde rapidinho quando clica */
-    transition: 0.1s;
-}
-.site-footer span{
-    font-size: 0.8rem;
-}
-    .footer-container { flex-direction: column; text-align: center; gap: 2.5rem; }
-    .footer-logo-white { margin: 0 auto 1.5rem auto; }
-    .social-links { justify-content: center; }
-    .footer-col.contact li { justify-content: center; }
-    .footer-col a:hover { padding-left: 0; }
-    .mobile-menu .nav-item a:hover::after {
-    width: 0% !important; /* Força a barrinha a não aparecer no toque */
-}
-.badge {
-        display: inline-flex;
-        align-items: center;
-        justify-content: flex-start; /* Mantém no cantinho como você gosta */
-        gap: 12px;
-        padding: 8px 12px;
-        width: fit-content; /* Evita que o badge ocupe a largura toda se não precisar */
+    
+    /* Diferenciais em 1 Coluna */
+    .difs{ grid-template-columns: 1fr; }
+    
+    /* Serviço Cards Responsivo */
+    .serviceCard__img{ height: 430px; }
+    .serviceCard__overlay{ padding: 18px; justify-content: flex-end; }
+    .serviceCard__overlay h3{ font-size: 30px; line-height: 1.05; margin-bottom: 8px; }
+    .serviceCard__overlay p{ font-size: 14px; line-height: 1.45; max-width: 100%; }
+    .serviceTags{ margin-top: 12px; gap: 8px; }
+    .serviceTags span{ padding: 8px 12px; font-size: 12px; }
+    .serviceCard__overlay{
+        background: linear-gradient(to top, rgba(0,0,0,.82) 0%, rgba(0,0,0,.55) 55%, rgba(0,0,0,.08) 100%);
     }
 
-
+    /* FOOTER CENTRALIZADO NO MOBILE */
+    .footer-container { flex-direction: column; text-align: center; gap: 2.5rem; }
+    .footer-logo-white { margin: 0 auto 1.5rem auto; }
+    .branding p { text-align: center; }
+    .footer-col h4 { text-align: center; }
+    .social-links { justify-content: center; }
+    .footer-col.contact li { justify-content: center; text-align: center; }
+    .footer-col a:hover { padding-left: 0; }
+    .footer-bottom { text-align: center; }
+    
+    .site-footer span{ font-size: 0.8rem; }
+    
+    .badge {
+        display: inline-flex;
+        align-items: center;
+        justify-content: flex-start; 
+        gap: 12px;
+        padding: 8px 12px;
+        width: fit-content; 
+    }
 }

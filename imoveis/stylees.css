@@ -10,7 +10,6 @@
   --r-lg: 16px;
   --shadow: 0 18px 60px rgba(15, 23, 42, .08);
   --shadow2: 0 10px 30px rgba(15, 23, 42, .05);
-  /* AUMENTEI A LARGURA MÁXIMA DO SITE PRA OS CARDS FICAREM MAIORES */
   --max: 1280px; 
   --pad: clamp(1.5rem, 5vw, 10rem);
 }
@@ -26,10 +25,11 @@
 }
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden; 
 }
 html, body {
     min-height: 100vh;
-    overflow-x: hidden;
+    overflow-x: hidden; 
     position: relative;
     width: 100%;
 }
@@ -277,11 +277,10 @@ header .subtitle-header {
 @media screen and (min-width: 769px) { .t-checks.col-2 { grid-template-columns: 1fr 1fr; } }
 
 /* =========================================
-   FILTROS (ALINHAMENTO 100% PERFEITO) E IMÓVEIS
+   FILTROS E IMÓVEIS
    ========================================= */
 .filters {
     display: grid;
-    /* Divide em 4 partes exatas (25% cada) = Ocupa os mesmos 100% que os 3 cards */
     grid-template-columns: 1fr 1fr 1fr 1fr; 
     gap: 18px; 
     align-items: end;
@@ -302,13 +301,12 @@ select {
 select:focus { border-color: rgba(22,163,74,.45); box-shadow: 0 0 0 5px rgba(22,163,74,.14); }
 
 .filters .btn {
-    width: 100%; /* Força o botão a esticar igual as caixas */
+    width: 100%; 
     height: 48px; 
     margin-bottom: 0;
     justify-content: center;
 }
 
-/* CARDS AGORA SÃO MAIORES! */
 .imoveisGrid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 18px; margin-bottom: 40px;}
 
 .imovelCard { 
@@ -330,12 +328,12 @@ select:focus { border-color: rgba(22,163,74,.45); box-shadow: 0 0 0 5px rgba(22,
 }
 
 .imovelCard.noimg::before { content: ""; display: block; height: 260px; background: linear-gradient(135deg, rgba(22,163,74,.12), rgba(15,23,42,.06)); }
-.imovelCard__img { width: 100%; height: 260px; object-fit: cover; display: block; background: var(--soft); } /* FOTO MAIOR */
-.imovelCard__body { padding: 24px; } /* MAIS ESPAÇO DENTRO DO CARD */
+.imovelCard__img { width: 100%; height: 260px; object-fit: cover; display: block; background: var(--soft); }
+.imovelCard__body { padding: 24px; } 
 .imovelCard__badges { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
 .tag { display: inline-flex; align-items: center; padding: 6px 12px; border-radius: 999px; border: 1px solid var(--line); background: #fff; font-weight: 900; font-size: 12px; color: var(--text);}
 .tag--green { border-color: rgba(22,163,74,.25); background: rgba(22,163,74,.10); color: var(--brand); }
-.imovelCard__title { margin: 0 0 8px; font-size: 20px; letter-spacing: -.3px; color: var(--text); font-weight: 800;} /* TÍTULO MAIOR */
+.imovelCard__title { margin: 0 0 8px; font-size: 20px; letter-spacing: -.3px; color: var(--text); font-weight: 800;} 
 .imovelCard__desc { margin: 0 0 14px; color: var(--muted); line-height: 1.55; font-size: 14px;}
 .imovelMeta { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
 .imovelMeta span { padding: 8px 12px; border-radius: 999px; background: #fff; border: 1px solid rgba(15,23,42,.08); font-weight: 800; font-size: 12.5px; color: var(--text); }
@@ -348,7 +346,7 @@ select:focus { border-color: rgba(22,163,74,.45); box-shadow: 0 0 0 5px rgba(22,
     padding-top: 16px;
     flex-wrap: nowrap; 
 }
-.preco { font-weight: 950; letter-spacing: -.3px; font-size: 22px; color: var(--text);} /* PREÇO MAIOR */
+.preco { font-weight: 950; letter-spacing: -.3px; font-size: 22px; color: var(--text);} 
 .imovelFoot .btn {
     flex-shrink: 0; 
     white-space: nowrap; 
@@ -357,7 +355,17 @@ select:focus { border-color: rgba(22,163,74,.45); box-shadow: 0 0 0 5px rgba(22,
 /* =========================================
    CTA E CONTATO
    ========================================= */
-.cta-section { padding: 56px 0; border-top: 1px solid var(--line); background: var(--soft); }
+.cta-section, #orcamento { 
+    padding: 56px 0; 
+    border-top: 1px solid var(--line); 
+    background: linear-gradient(
+      to bottom,
+      #ffffff 0%,
+      #f7fbf9 30%,
+      #eef7f3 65%,
+      #e6f3ed 100%
+    ) !important;
+}
 .cta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: start; min-width: 0; }
 .cta-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 16px; }
 .contacts { display: grid; gap: 14px; margin-top: 20px; width: 100%; box-sizing: border-box; }
@@ -394,7 +402,7 @@ textarea { resize: vertical; min-height: 100px;}
 .mapa-box iframe { width: 100%; height: 100%; border: none; }
 
 /* =========================================
-   FOOTER (RODAPÉ DARK)
+   FOOTER (RODAPÉ DARK BLINDADO E CENTRALIZADO NO MOBILE)
    ========================================= */
 .site-footer {
     background-color: #222222; 
@@ -416,6 +424,8 @@ textarea { resize: vertical; min-height: 100px;}
 .footer-col {
     flex: 1; 
     min-width: 220px; 
+    overflow-wrap: break-word; 
+    word-break: break-word; /* Proteção anti-vazamento */
 }
 
 .footer-logo-white {
@@ -429,36 +439,23 @@ textarea { resize: vertical; min-height: 100px;}
     margin-bottom: 1.5rem;
     font-weight: 300;
     color: #27AE60;
+    text-align: left;
 }
 
-.social-links {
-    display: flex;
-    gap: 12px;
-}
-
+.social-links { display: flex; gap: 12px; }
 .social-links a {
-    width: 40px;
-    height: 40px;
-    background-color: rgba(255,255,255,0.05); 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    color: #ffffff;
-    text-decoration: none;
-    transition: all 0.3s ease;
+    width: 40px; height: 40px; background-color: rgba(255,255,255,0.05); 
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 50%; color: #ffffff; transition: all 0.3s ease;
 }
-
-.social-links a:hover {
-    background-color: #27AE60; 
-    transform: translateY(-3px);
-}
+.social-links a:hover { background-color: #27AE60; transform: translateY(-3px); }
 
 .footer-col h4 {
     color: #ffffff;
     font-size: 1.2rem;
     margin-bottom: 1.5rem;
     font-weight: 700;
+    text-align: left;
 }
 
 .footer-col ul {
@@ -472,35 +469,26 @@ textarea { resize: vertical; min-height: 100px;}
     color: #a0a0a0;
     text-decoration: none;
     transition: color 0.3s ease;
+    word-break: break-all; /* Força e-mails longos a quebrarem no meio da palavra */
 }
 
-.footer-col a:hover {
-    color: #fff;
-    padding-left: 2px; 
-}
+.footer-col a:hover { color: #fff; padding-left: 2px; }
 
-.footer-col.contact i {
-    color: #27AE60;
-    margin-right: 10px;
-    font-size: 1.1rem;
-}
-
-.footer-col.contact li {
-    display: flex;
-    align-items: center;
+/* Proteção do ícone ao lado do e-mail */
+.footer-col.contact li { display: flex; align-items: flex-start; }
+.footer-col.contact i { 
+    color: #27AE60; margin-right: 10px; font-size: 1.1rem; 
+    flex-shrink: 0; margin-top: 4px;
 }
 
 .footer-bottom {
-    text-align: center;
-    padding: 1.5rem;
+    text-align: left;
+    padding: 1.5rem clamp(1.5rem, 5vw, 10rem);
     background-color: #1a1a1a; 
     font-size: 0.85rem;
 }
 
-.footer-bottom a {
-    color: #a0a0a0;
-    text-decoration: underline;
-}
+.footer-bottom a { color: #a0a0a0; text-decoration: underline; }
 
 /* =========================================
    ANIMAÇÕES (KEYFRAMES)
@@ -541,13 +529,11 @@ textarea { resize: vertical; min-height: 100px;}
 
     .hero-grid, .hero__grid, .about-grid, .cta-grid { grid-template-columns: 1fr; gap: 40px; }
     .grid-3, .imoveisGrid { grid-template-columns: 1fr 1fr; }
-    
-    /* Corrige os filtros pra 2 colunas no tablet */
     .filters { grid-template-columns: 1fr 1fr; }
-    
     .about-media { min-height: 350px; }
 }
 
+/* --- CELULARES E IPAD MINI (Até 768px) --- */
 @media (max-width: 768px) {
     .nav-logo h1 { font-size: 1.2rem; }
     header .subtitle-header { font-size: 0.6rem; }
@@ -564,10 +550,7 @@ textarea { resize: vertical; min-height: 100px;}
 
     /* Grids 1 Coluna */
     .grid-3, .imoveisGrid { grid-template-columns: 1fr; }
-    
-    /* Filtros 1 coluna no celular */
     .filters { grid-template-columns: 1fr; }
-    
     .about-media { min-height: 250px; margin-top: 1rem; }
 
     /* Contato Mobile */
@@ -581,11 +564,51 @@ textarea { resize: vertical; min-height: 100px;}
     .cta-box { width: 100%; border-radius: 20px; padding: 24px; }
     .cta-box h3 { text-align: left; font-size: 1.5rem; margin-bottom: 1rem; }
 
-    /* Footer Mobile */
-    .footer-container { flex-direction: column; text-align: center; gap: 2.5rem; }
-    .footer-logo-white { margin: 0 auto 1.5rem auto; }
-    .social-links { justify-content: center; }
-    .footer-col.contact li { justify-content: center; }
+    /* --- FOOTER CENTRALIZADO EXCLUSIVO PARA MOBILE E IPAD MINI --- */
+    .footer-container { 
+        flex-direction: column; 
+        align-items: center; 
+        text-align: center; 
+        gap: 2.5rem; 
+        padding-inline: 1.5rem; /* Ajuste seguro de padding */
+    }
+    
+    .footer-col { 
+        display: flex; 
+        flex-direction: column; 
+        align-items: center; 
+        width: 100%; 
+        padding: 0;
+    }
+    
+    .footer-logo-white { margin: 0 auto 1.5rem auto; display: block; }
+    
+    .branding p, .footer-col h4 { 
+        text-align: center; 
+        margin-left: auto; 
+        margin-right: auto; 
+    }
+    
+    .footer-col ul { 
+        align-items: center; 
+        width: 100%; 
+        padding: 0;
+    }
+    
+    .social-links { justify-content: center; width: 100%; }
+    
+    .footer-col.contact li { 
+        justify-content: center; 
+        text-align: center; 
+        width: 100%;
+    }
+    
     .footer-col a:hover { padding-left: 0; }
+    
+    .footer-bottom { 
+        text-align: center; 
+        padding-inline: 1.5rem; 
+    }
+    
     .site-footer span { font-size: 0.9rem; }
 }

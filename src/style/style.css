@@ -9,6 +9,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden; 
 }
 
 body {
@@ -16,9 +17,11 @@ body {
     padding-top: 6rem;
     display: flex;
     width: 100%;
+    max-width: 100vw; 
     min-height: 100vh;
     background-color: #f2f2f2;
     flex-direction: column;
+    overflow-x: hidden; 
 }
 
 /* HEADER E MENU*/
@@ -159,7 +162,7 @@ header .subtitle-header {
     left: 50%;
     bottom: -6px;
     height: 3px;
-    width: 150%; 
+    width: 100%; 
     background-color: #27AE60;
     transform: translateX(-50%);
     border-radius: 2px;
@@ -170,8 +173,8 @@ header .subtitle-header {
     background-image: url("../img/bg-card.png");
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover; /* Ajustado para o parallax funcionar perfeitamente */
-    background-attachment: fixed; /* A MÁGICA DO PARALLAX SUAVE AQUI */
+    background-size: cover;
+    background-attachment: fixed;
     display: grid;
     margin-top: 1rem;
     max-width: 100%;
@@ -355,13 +358,13 @@ header .subtitle-header {
 /* seçao de atuacao*/
 .performance {
     width: 100%;
-background: linear-gradient(
-  to bottom,
-  #ffffff 0%,
-  #f7fbf9 30%,
-  #eef7f3 65%,
-  #e6f3ed 100%
-);
+    background: linear-gradient(
+      to bottom,
+      #ffffff 0%,
+      #f7fbf9 30%,
+      #eef7f3 65%,
+      #e6f3ed 100%
+    );
     padding-inline: clamp(1.5rem, 5vw, 10rem);
     display: flex;
     justify-content: center;
@@ -640,13 +643,13 @@ background: linear-gradient(
 /* secao de processos*/
 .process {
     width: 100%;
-background: linear-gradient(
-  to bottom,
-  #ffffff 0%,
-  #f7fbf9 30%,
-  #eef7f3 65%,
-  #e6f3ed 100%
-);
+    background: linear-gradient(
+      to bottom,
+      #ffffff 0%,
+      #f7fbf9 30%,
+      #eef7f3 65%,
+      #e6f3ed 100%
+    );
     padding-inline: clamp(1.5rem, 5vw, 10rem);
     display: flex;
     justify-content: center;
@@ -662,18 +665,18 @@ background: linear-gradient(
     width: 100%;
     gap: 1.5rem;
     margin-top: 2rem;
-    position: relative; /* Necessário para a linha se posicionar dentro dele */
+    position: relative;
 }
 
 /* A NOVA LINHA MESTRA (Atrás dos títulos) */
 .process-container::before {
     content: '';
     position: absolute;
-    top: 118px; /* Altura exata do centro dos títulos h4 verdes */
-    left: 2%; /* Pequeno ajuste para não colar nas bordas */
+    top: 118px; 
+    left: 2%; 
     width: 96%; 
     border-top: 2px dashed #b0b0b0;
-    z-index: 0; /* CAMADA 0: Lá no fundo */
+    z-index: 0; 
 }
 
 /* Os Cards Brancos */
@@ -684,7 +687,7 @@ background: linear-gradient(
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.04);
     flex: 1; 
     position: relative;
-    z-index: 1; /* CAMADA 1: O card branco fica na frente, apagando a linha onde passa */
+    z-index: 1; 
     display: flex;
     flex-direction: column;
     min-height: 260px; 
@@ -721,7 +724,7 @@ background: linear-gradient(
     color: #27AE60; 
     font-size: 1.1rem;
     margin-bottom: 8px;
-    background-color: #ffffff; /* Reforço pra garantir que a linha não atravesse o texto */
+    background-color: #ffffff;
 }
 
 .step-card p {
@@ -751,13 +754,13 @@ background: linear-gradient(
     width: 100%;
     border: 1px solid #27AE60;
     border-radius: 8px;
-    padding: 2.5rem; /* Um respiro um pouco maior e mais elegante */
+    padding: 2.5rem;
     margin-top: 2rem;
     display: flex;
     align-items: center;
-    justify-content: center; /* O PULO DO GATO: Junta todas no centro */
+    justify-content: center; 
     flex-wrap: wrap; 
-    gap: 4rem; /* Cria um espaço fixo e harmônico entre as logos */
+    gap: 4rem; 
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.02);
 }
 
@@ -767,9 +770,8 @@ background: linear-gradient(
     justify-content: center;
 }
 
-/* Deixando todas harmoniosas e Preto e Branco */
 .logo-item img {
-    max-height: 60px; /* Aumentei o teto pra Estima poder crescer! */
+    max-height: 60px; 
     max-width: 160px; 
     object-fit: contain; 
     filter: grayscale(100%) opacity(0.6); 
@@ -777,38 +779,35 @@ background: linear-gradient(
     cursor: pointer;
 }
 
-/* O EFEITO DE HOVER (Passar o mouse) */
 .logo-item img:hover {
     filter: grayscale(0%) opacity(1); 
     transform: scale(1.1); 
 }
 .partners-container .logo-item:nth-child(2) img {
-    max-height: 85px !important; /* Força ela a ser bem mais alta que as outras (que estão com 60px) */
-    max-width: 200px !important; /* Dá mais liberdade de largura */
-    transform: scale(1.1); /* Já começa com um leve zoom nela */
-    opacity: 0.7; /* Ajuste fino pra ela não ficar muito "pesada" já que aumentou */
+    max-height: 85px !important; 
+    max-width: 200px !important; 
+    transform: scale(1.1); 
+    opacity: 0.7; 
 }
 
-/* Ajuste do Hover específico para ela também */
 .partners-container .logo-item:nth-child(2) img:hover {
-     transform: scale(1.2); /* Aumenta um pouco mais no hover */
+     transform: scale(1.2); 
      opacity: 1;
 }
 .partners-container .logo-item:nth-child(6) img {
-    max-height: 85px !important; /* Força ela a ser bem mais alta que as outras (que estão com 60px) */
-    max-width: 200px !important; /* Dá mais liberdade de largura */
-    transform: scale(1.1); /* Já começa com um leve zoom nela */
-    opacity: 0.7; /* Ajuste fino pra ela não ficar muito "pesada" já que aumentou */
+    max-height: 85px !important; 
+    max-width: 200px !important; 
+    transform: scale(1.1); 
+    opacity: 0.7; 
 }
 
-/* Ajuste do Hover específico para ela também */
 .partners-container .logo-item:nth-child(6) img:hover {
-     transform: scale(1.2); /* Aumenta um pouco mais no hover */
+     transform: scale(1.2); 
      opacity: 1;
 }
 .cta-section {
     width: 100%;
-    background-color: #2A2A2A; /* Fundo Chumbo */
+    background-color: #2A2A2A; 
     padding: 3rem clamp(1.5rem, 5vw, 10rem);
     display: flex;
     justify-content: center;
@@ -818,7 +817,7 @@ background: linear-gradient(
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Separa texto na esquerda, botão na direita */
+    justify-content: space-between;
     flex-wrap: wrap;
     gap: 2rem;
 }
@@ -831,25 +830,24 @@ background: linear-gradient(
 }
 
 .cta-text p {
-    color: #a0a0a0; /* Cinza claro para o subtítulo */
+    color: #a0a0a0; 
     font-size: 1.1rem;
     font-weight: 300;
 }
 
-/* O Botão Branco do Card Escuro */
 .cta-btn a {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     background-color: #ffffff;
-    color: #27AE60; /* Texto verde */
+    color: #27AE60; 
     font-weight: 800;
     text-decoration: none;
     padding: 12px 32px;
-    border-radius: 999px; /* Pílula */
+    border-radius: 999px; 
     box-shadow: 0 10px 20px rgba(0,0,0,0.2);
     transition: all 0.3s ease;
-    white-space: nowrap; /* Não deixa o texto quebrar linha */
+    white-space: nowrap; 
 }
 
 .cta-btn a:hover {
@@ -858,36 +856,37 @@ background: linear-gradient(
 }
 
 /* =========================================
-   FOOTER (RODAPÉ DARK)
+   FOOTER (RODAPÉ DARK) - CORRIGIDO
    ========================================= */
 .site-footer {
-    background-color: #222222; /* Um tom ligeiramente mais escuro que o CTA para dar profundidade */
+    width: 100%;
+    background-color: #222222; 
     color: #a0a0a0;
     padding-top: 4rem;
     font-size: 0.95rem;
+    margin-top: auto; 
 }
 
 .footer-container {
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap; /* Permite que as colunas desçam se faltar espaço */
+    flex-wrap: wrap; 
     gap: 3rem;
     padding-inline: clamp(1.5rem, 5vw, 10rem);
     padding-bottom: 3rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Linha divisória sutil */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05); 
 }
 
-/* Configuração das Colunas */
 .footer-col {
-    flex: 1; /* Tenta ocupar espaço igual */
-    min-width: 220px; /* Mas não fica menor que isso */
+    flex: 1; 
+    min-width: 220px; 
+    word-wrap: break-word; /* Proteção extra para a coluna não estourar */
 }
 
-/* Truque para deixar a logo branca (se ela for imagem preta/colorida) */
 .footer-logo-white {
     width: 160px;
     margin-bottom: 1.5rem;
-    filter: brightness(0) invert(1); /* Mágica do CSS que inverte a cor pra branco! */
+    filter: brightness(0) invert(1); 
 }
 
 .branding p {
@@ -897,7 +896,6 @@ background: linear-gradient(
     color: #27AE60;
 }
 
-/* Ícones Sociais */
 .social-links {
     display: flex;
     gap: 12px;
@@ -906,7 +904,7 @@ background: linear-gradient(
 .social-links a {
     width: 40px;
     height: 40px;
-    background-color: rgba(255,255,255,0.05); /* Bolinha quase transparente */
+    background-color: rgba(255,255,255,0.05); 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -917,11 +915,10 @@ background: linear-gradient(
 }
 
 .social-links a:hover {
-    background-color: #27AE60; /* Fica verde no hover */
+    background-color: #27AE60; 
     transform: translateY(-3px);
 }
 
-/* Títulos das Colunas */
 .footer-col h4 {
     color: #ffffff;
     font-size: 1.2rem;
@@ -929,7 +926,6 @@ background: linear-gradient(
     font-weight: 700;
 }
 
-/* Listas de Links e Contatos */
 .footer-col ul {
     list-style: none;
     display: flex;
@@ -941,30 +937,33 @@ background: linear-gradient(
     color: #a0a0a0;
     text-decoration: none;
     transition: color 0.3s ease;
+    word-break: break-word; /* A MÁGICA AQUI: Quebra o e-mail longo! */
+    overflow-wrap: break-word; 
 }
 
 .footer-col a:hover {
     color: #fff;
-    padding-left: 2px; /* Efeitozinho de "andar" pra direita no hover */
-}
-
-/* Ícones de Contato (Telefone, Email) */
-.footer-col.contact i {
-    color: #27AE60;
-    margin-right: 10px;
-    font-size: 1.1rem;
+    padding-left: 2px; 
 }
 
 .footer-col.contact li {
     display: flex;
-    align-items: center;
+    align-items: flex-start; /* Se o texto quebrar em duas linhas, o ícone fica alinhado no topo */
+    word-break: break-word;
 }
 
-/* Barra Final de Copyright */
+.footer-col.contact i {
+    color: #27AE60;
+    margin-right: 10px;
+    font-size: 1.1rem;
+    flex-shrink: 0; /* IMPEDE O ÍCONE DE AMASSAR quando o texto for muito grande */
+    margin-top: 4px; /* Desce um pouquinho o ícone para alinhar com o começo do texto */
+}
+
 .footer-bottom {
     text-align: center;
     padding: 1.5rem;
-    background-color: #1a1a1a; /* O tom mais escuro de todos pro final */
+    background-color: #1a1a1a; 
     font-size: 0.85rem;
 }
 
@@ -972,9 +971,11 @@ background: linear-gradient(
     color: #a0a0a0;
     text-decoration: underline;
 }
+
 #home, #atuacao, #servicos, #processos {
     scroll-margin-top: 120px !important; 
 }
+
 .a-services{
     width: 100%;
     height: 100%;
@@ -996,12 +997,13 @@ background: linear-gradient(
     color: #2a2a2a;
     text-decoration: none;
 }
+
 /* =========================================
    MEDIA QUERIES (RESPONSIVIDADE LIMPA E CORRIGIDA)
    ========================================= */
 
-/* --- NOTEBOOKS MENORES E TABLETS HORIZONTAIS (Até 1440px) --- */
-@media screen and (min-width: 769px) and (max-width: 1440px) {
+/* --- NOTEBOOKS MENORES E DESKTOPS --- */
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
     .row-one { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
     .row-card { padding-left: 1rem; }
     .s-title-card h4 { font-size: 1.1rem; }
@@ -1013,18 +1015,9 @@ background: linear-gradient(
     .p-span { font-size: 0.8rem; }
     .content-items { flex-wrap: wrap; gap: 10px; }
     .item { margin-top: 5px; }
-    .mobile-menu .nav-item a:hover::after {
-    width: 0% !important; /* Força a barrinha a não aparecer no toque */
 }
 
-/* Se quiser um efeito de clique mais limpo no celular, use este: */
-.mobile-menu .nav-item a:active {
-    color: #27AE60; /* O texto só brilha em verde rapidinho quando clica */
-    transition: 0.1s;
-}
-}
-
-/* --- TABLETS E MENU HAMBURGER (Até 1024px) --- */
+/* --- TABLETS HORIZONTAIS E VERTICAIS (Até 1024px) --- */
 @media screen and (max-width: 1024px) {
     .nav-bar { padding: 1.5rem; }
     .nav-item, .nav-button { display: none; }
@@ -1048,43 +1041,63 @@ background: linear-gradient(
     .step-card { min-width: 45%; }
     .process-container::before { display: none; }
     
-    /* --- AJUSTE DA PRIMEIRA DOBRA E DO FUNDO (TABLET E CELULAR) --- */
+    /* Hero Section para o Tablet */
     .main-card {
         display: flex; 
         flex-direction: column; 
-        padding-inline: 0; /* Tira o padding lateral pro mapa ir de ponta a ponta */
-        padding-bottom: 4rem; /* Dá um respiro gostoso no final da seção */
+        padding-inline: 0; 
+        padding-bottom: 4rem; 
         background-image: url("../img/bg-card.png");
-        background-size: cover; /* A MÁGICA PRO MAPA COBRIR TUDO */
+        background-size: cover; 
         background-position: center bottom;
         background-repeat: no-repeat;
+        width: 100%;
     }
     
     .divider { display: none; }
     
     .column-one {
         max-width: 100%; 
-        padding: 3rem 2rem 1rem 2rem; /* Devolve o respiro lateral pro texto não encostar */
+        padding: 3rem 2rem 1rem 2rem; 
+        align-items: center; 
+        text-align: center;
+    }
+
+    .column-content {
+        margin: 1rem auto; 
+    }
+
+    .area-buttons {
+        margin: 1rem auto;
     }
     
     /* O Card Preto Lindão */
     .card-info {
-        width: 90%; /* Card escuro com 90% da tela (desgruda das bordas!) */
+        width: 90%; 
         max-width: 600px;
-        margin: 1rem auto 0 auto; /* Centraliza perfeitamente */
-        background-color: #2A2A2A; /* Cor original de volta! */
+        margin: 1rem auto 0 auto; 
+        background-color: #2A2A2A; 
         border-radius: 12px;
         box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15);
     }
-    .mobile-menu .nav-item a:hover::after {
-    width: 0% !important; /* Força a barrinha a não aparecer no toque */
-}
 
-/* Se quiser um efeito de clique mais limpo no celular, use este: */
-.mobile-menu .nav-item a:active {
-    color: #27AE60; /* O texto só brilha em verde rapidinho quando clica */
-    transition: 0.1s;
-}
+    .mobile-menu .nav-item a:hover::after {
+        width: 0% !important; 
+    }
+
+    .mobile-menu .nav-item a:active {
+        color: #27AE60; 
+        transition: 0.1s;
+    }
+
+    .performance-content {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .p-card {
+        min-width: 45%; 
+        flex: 1 1 45%;
+    }
 }
 
 /* --- CELULARES (Até 720px) --- */
@@ -1093,7 +1106,6 @@ background: linear-gradient(
     header .subtitle-header { font-size: 0.6rem; }
     .areas { font-size: 0.60rem; gap: 7px; }
 
-    .column-one { align-items: center; text-align: center; padding-top: 2rem; }
     .column-one h1 { font-size: 1.7rem; }
     .areas { justify-content: center; }
 
@@ -1110,10 +1122,10 @@ background: linear-gradient(
     .performance-content { flex-direction: column; gap: 15px; }
     .p-card { margin: 0; width: 100%; }
     .item { margin-right: 5px; }
-    .s-title-card h4 { font-size: 1.15rem; }
     
     .row-one { grid-template-columns: 1fr; gap: 2.5rem; }
     .row-card { padding-left: 1rem; }
+    .s-title-card h4 { font-size: 1.15rem; }
 
     .s-footer{
         display: flex; flex-direction: column; text-align: center; gap: 1.5rem;
@@ -1129,7 +1141,7 @@ background: linear-gradient(
     .partners-container { padding: 1.5rem; gap: 2.5rem; }
     .logo-item img { max-height: 45px !important; }
 
-    /* Card escuro */
+    /* Card escuro CTA */
     .cta-container { flex-direction: column; text-align: center; gap: 1.5rem; }
     .cta-text h3 { font-size: 1.5rem; }
     .cta-btn, .cta-btn a { width: 100%; }
@@ -1140,15 +1152,8 @@ background: linear-gradient(
     .social-links { justify-content: center; }
     .footer-col.contact li { justify-content: center; }
     .footer-col a:hover { padding-left: 0; }
-    .mobile-menu .nav-item a:hover::after {
-    width: 0% !important; /* Força a barrinha a não aparecer no toque */
-}
-
-.mobile-menu .nav-item a:active {
-    color: #27AE60; /* O texto só brilha em verde rapidinho quando clica */
-    transition: 0.1s;
-}
-.site-footer span{
-    font-size: 0.9rem;
-}
+    
+    .site-footer span {
+        font-size: 0.9rem;
+    }
 }
