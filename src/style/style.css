@@ -1102,6 +1102,11 @@ header .subtitle-header {
         min-width: 45%; 
         flex: 1 1 45%;
     }
+    .area-contents{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 /* --- CELULARES (Até 720px) --- */
@@ -1122,7 +1127,7 @@ header .subtitle-header {
     .card-info {
         width: 92%; 
         padding: 1.5rem;
-        margin-top: 2rem;
+        margin-top: 1.5rem;
     }
 
     .performance-content { flex-direction: column; gap: 15px; }

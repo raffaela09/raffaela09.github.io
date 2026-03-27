@@ -523,7 +523,7 @@ textarea { resize: vertical; min-height: 100px;}
 }
 
 .footer-bottom {
-    text-align: left;
+    text-align: center;
     padding: 1.5rem clamp(1.5rem, 5vw, 10rem);
     background-color: #1a1a1a; 
     font-size: 0.85rem;
