@@ -177,6 +177,7 @@ header .subtitle-header {
     background-size: 100%;
     display: grid;
     margin-top: 1rem;
+    padding-top: 4rem;
     max-width: 100%;
     grid-template-columns: 1fr 1px 1fr;
     padding-inline: clamp(1.5rem, 5vw, 10rem);

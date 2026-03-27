@@ -38,8 +38,9 @@ a { color:inherit; text-decoration:none; }
 
 .container {
     width: 100%;
+
     margin: 0 auto;
-    padding-inline: var(--pad); 
+    padding-inline: clamp(1.5rem, 5vw, 10rem);
 }
 
 /* HEADER E MENU*/
@@ -222,9 +223,9 @@ header .subtitle-header {
 
 .hero__grid {
     display: grid;
-    grid-template-columns: 1.2fr .8fr;
-    gap: 28px;
-    align-items: start;
+    grid-template-columns: 1fr 1fr; /* Duas colunas em partes exatamente iguais! */
+    gap: 3rem; /* O mesmo respiro de espaço que você usou na Home */
+    align-items: center; 
     width: 100%; 
 }
 .area-contents {
@@ -831,7 +832,7 @@ html.js .reveal.is-in{ opacity: 1; transform: none; }
     .divider{ display:none; }
     .column-one{ max-width:100%; padding:3rem 2rem 1rem 2rem; }
     .column-two{ width:100%; }
-    .card-info{ width:90%; max-width:600px; margin:1rem auto 0; }
+    .card-info{ width:90%; max-width:600px; margin: 2rem 0 0 0 !important; }
 
     .process-container{ flex-wrap:wrap; justify-content:center; }
     .step-card{ flex:1 1 300px; max-width:480px; }
