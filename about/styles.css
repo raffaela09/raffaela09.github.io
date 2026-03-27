@@ -517,121 +517,131 @@
     ========================================= */
 
     /* --- TABLETS E MENUS (Até 1024px) --- */
-    @media (max-width: 1024px) {
-        .nav-bar { padding: 1.5rem; }
-        .nav-item, .nav-button { display: none; }
-        .nav-logo { display: flex; justify-content: center; align-items: center; }
-        
-        /* MENU MOBILE CENTRALIZADO */
-        .mobile-menu {
-            border-top: 2px solid rgba(0, 0, 0, 0.171); position: absolute; top: 6rem; left: 0;
-            width: 100%; background-color: #fff; display: none;
-            flex-direction: column; z-index: 1000; align-items: center;
-        }
-        .mobile-menu-icon { display: block; }
-        .mobile-menu-icon button { background-color: transparent; border: none; cursor: pointer; color: #2A2A2A; font-size: 1.5rem; transition: transform 0.15s ease; }
-        .mobile-menu-icon button:active { transform: scale(0.9); }
-        
-        .mobile-menu ul { display: flex; flex-direction: column; text-align: center; padding: 1rem; width: 100%; }
-        .mobile-menu .nav-item { display: block; padding-top: 1.2rem; }
-        .mobile-menu .nav-button { display: block; padding: 1rem 0; margin: 0 auto 1rem auto; width: 100%; display: flex; justify-content: center;}
-        .mobile-menu .nav-button button { width: 120px; }
-        .open { display: flex; }
-        .mobile-menu .nav-item a:hover::after { width: 0% !important; }
-        .mobile-menu .nav-item a:active { color: #27AE60; transition: 0.1s; }
-
-        .hero-grid, .about-grid, .cta-grid { 
-            grid-template-columns: 1fr; 
-            gap: 2.5rem; 
-        }
-        .grid-3 { grid-template-columns: 1fr 1fr; }
-        .about-media { min-height: 350px; }
-        
-        /* 🔴 TUDO CENTRALIZADO NO TABLET 🔴 */
-        .hero-left, .about-text, .cta-left {
-            display: flex;
-            flex-direction: column;
-            align-items: center;    /* Traz os blocos pro centro */
-            text-align: center;     /* Centraliza o texto */
-            width: 100%;
-            max-width: 100%;        /* Removido o 300px que esmagava o texto */
-        }
-        
-        .hero-left .lead, .about-text p { text-align: center; margin-inline: auto; }
-        .hero h1 { text-align: center; }
-        .kicker { margin: 0 auto 1rem auto; } /* Centraliza a badge "Desde 2019" */
-        .chips, .hero-actions, .area-contents { justify-content: center; width: 100%; }
-        
-        .eyebrow { text-align: center; }
-        .eyebrow::after { margin: 8px auto 0 auto; } /* Centraliza a linhazinha verde */
-        .section-head h2, .section-head p { text-align: center; margin-inline: auto; }
-
-        /* Contato */
-        .contacts { width: 100%; align-items: center; }
-        .contact.card { max-width: 100% !important; margin: 0 auto !important; }
-        .cta-right { max-width: 100% !important; margin: 0 auto !important; }
-        .cta-right h3 { text-align: center; }
+@media (max-width: 1024px) {
+    .nav-bar { padding: 1.5rem; }
+    .nav-item, .nav-button { display: none; }
+    .nav-logo { display: flex; justify-content: center; align-items: center; }
+    
+    .mobile-menu {
+        border-top: 2px solid rgba(0, 0, 0, 0.171); position: absolute; top: 6rem; left: 0;
+        width: 100%; background-color: #fff; display: none;
+        flex-direction: column; z-index: 1000; align-items: center;
     }
+    .mobile-menu-icon { display: block; }
+    .mobile-menu-icon button { background-color: transparent; border: none; cursor: pointer; color: #2A2A2A; font-size: 1.5rem; transition: transform 0.15s ease; }
+    .mobile-menu-icon button:active { transform: scale(0.9); }
+    
+    .mobile-menu ul { display: flex; flex-direction: column; text-align: center; padding: 1rem; width: 100%; }
+    .mobile-menu .nav-item { display: block; padding-top: 1.2rem; }
+    .mobile-menu .nav-button { display: block; padding: 1rem 0; margin: 0 auto 1rem auto; width: 100%; display: flex; justify-content: center;}
+    .mobile-menu .nav-button button { width: 120px; }
+    .open { display: flex; }
+    .mobile-menu .nav-item a:hover::after { width: 0% !important; }
+    .mobile-menu .nav-item a:active { color: #27AE60; transition: 0.1s; }
+
+    .hero-grid, .about-grid, .cta-grid { 
+        grid-template-columns: 1fr; 
+        gap: 2.5rem; 
+    }
+    .grid-3 { grid-template-columns: 1fr 1fr; }
+    .about-media { min-height: 350px; }
+    
+    /* 🔴 O HERO FICA NO CENTRO NO TABLET 🔴 */
+    .hero-left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;    
+        text-align: center;     
+        width: 100%;
+        max-width: 100%;        
+    }
+    
+    .hero-left .lead { text-align: center; margin-inline: auto; }
+    .hero h1 { text-align: center; }
+    .kicker { margin: 0 auto 1rem auto; } 
+    .chips, .hero-actions, .area-contents { justify-content: center; width: 100%; }
+    
+    /* 🔴 O RESTO DA PÁGINA FICA NA ESQUERDA NO TABLET 🔴 */
+    .about-text, .cta-left {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        width: 100%;
+    }
+    .about-text p { text-align: left; }
+    .eyebrow { text-align: left; }
+    .eyebrow::after { margin: 8px 0 0 0; } 
+    .section-head h2, .section-head p { text-align: left; margin-inline: 0; }
+
+    /* Contato */
+    .contacts { width: 100%; align-items: flex-start; }
+    .contact.card { max-width: 100% !important; margin: 0 !important; }
+    .cta-right { max-width: 100% !important; margin: 0 !important; }
+    .cta-right h3 { text-align: left; }
+}
 
     /* --- CELULARES E IPAD MINI VERTICAL (Até 768px) --- */
-    @media (max-width: 768px) {
-        .hero h1 {
-            font-size: 2.2rem; 
-            text-align: center; /* 🔴 Centralizado no celular */
-        }
-        .nav-logo h1 { font-size: 1.2rem; }
-        header .subtitle-header { font-size: 0.6rem; }
-        
-        /* 🔴 Títulos Centralizados no Celular */
-        .section-head h2 { font-size: 1.8rem; text-align: center; }
-        .section-head p { text-align: center; margin: 0 auto; }
-        .eyebrow { text-align: center; }
-        .eyebrow::after { margin: 8px auto 0 auto; }
-        
-        .hero-left, .about-text { align-items: center; text-align: center; }
-        .hero-left .lead, .about-text p { text-align: center; }
-        
-        .chips, .area-contents { justify-content: center; width: 100%; }
-        
-        .hero-actions { justify-content: center; width: 100%; flex-direction: column; }
-        .hero-actions .btn { width: 100%; }
-        .hero-right { margin-top: 1rem; width: 100%; }
-
-        .grid-3 { grid-template-columns: 1fr; }
-        .about-media { min-height: 250px; margin-top: 1rem; }
-
-        /* Contato */
-        .cta-grid { gap: 24px; }
-        .cta-left { display: flex; flex-direction: column; align-items: center; text-align: center; width: 100%; box-sizing: border-box; }
-        
-        .cta-actions { display: flex; flex-direction: column; gap: 12px; width: 100%; margin-bottom: 1rem; }
-        .cta-actions .btn { width: 100%; justify-content: center; text-align: center; }
-        
-        .contacts { width: 100%; display: flex; flex-direction: column; align-items: center; gap: 12px; box-sizing: border-box; }
-        .contact.card { width: 100%; max-width: 100% !important; box-sizing: border-box; margin: 0; }
-        
-        .cta-right { width: 100%; max-width: 100% !important; margin: 0 !important; padding: 24px !important; box-sizing: border-box; }
-        .cta-right h3 { text-align: center; font-size: 1.5rem; margin-bottom: 1rem; }
-        .form button { width: 100%; }
-
-        /* Footer */
-        .footer-container { flex-direction: column; align-items: center; text-align: center; gap: 2.5rem; }
-        .footer-col { display: flex; flex-direction: column; align-items: center; width: 100%; }
-        .footer-col ul { align-items: center; width: 100%; }
-        .footer-logo-white { margin: 0 auto 1.5rem auto; display: block; }
-        .branding p { text-align: center; margin-inline: auto; }
-        .footer-col h4 { text-align: center; margin-inline: auto; }
-        .social-links { justify-content: center; }
-        .footer-col.contact li { justify-content: center; text-align: center; }
-        .footer-col a:hover { padding-left: 0; }
-        .footer-bottom { text-align: center; padding-inline: var(--pad); }
-        
-        /* Card Topo Em Números */
-        .card-info { 
-            width: 100%; 
-            max-width: 100%; 
-            padding: 2rem 1.5rem; 
-            margin: 2rem 0 0 0; 
-            min-height: auto; 
-        }
+ /* --- CELULARES E IPAD MINI VERTICAL (Até 768px) --- */
+@media (max-width: 768px) {
+    /* 🔴 O HERO FICA NO CENTRO NO CELULAR 🔴 */
+    .hero h1 {
+        font-size: 2.2rem; 
+        text-align: center; 
     }
+    .hero-left { align-items: center; text-align: center; }
+    .hero-left .lead { text-align: center; }
+    .kicker { margin: 0 auto 1rem auto; }
+    .chips, .area-contents { justify-content: center; width: 100%; }
+    .hero-actions { justify-content: center; width: 100%; flex-direction: column; }
+    .hero-actions .btn { width: 100%; }
+    
+    /* Card Topo Em Números */
+    .hero-right { margin-top: 1rem; width: 100%; }
+    .card-info { 
+        width: 100%; 
+        max-width: 100%; 
+        padding: 2rem 1.5rem; 
+        margin: 2rem 0 0 0; 
+        min-height: auto; 
+    }
+
+    /* 🔴 O RESTO DA PÁGINA VOLTA PARA A ESQUERDA NO CELULAR 🔴 */
+    .nav-logo h1 { font-size: 1.2rem; text-align: left; }
+    header .subtitle-header { font-size: 0.6rem; text-align: left; }
+    
+    .section-head h2 { font-size: 1.8rem; text-align: left; }
+    .section-head p { text-align: left; margin: 0; }
+    .eyebrow { text-align: left; }
+    .eyebrow::after { margin: 8px 0 0 0; }
+    
+    .about-text { align-items: flex-start; text-align: left; }
+    .about-text p { text-align: left; }
+    
+    .grid-3 { grid-template-columns: 1fr; }
+    .about-media { min-height: 250px; margin-top: 1rem; }
+
+    /* Contato na Esquerda */
+    .cta-grid { gap: 24px; }
+    .cta-left { display: flex; flex-direction: column; align-items: flex-start; text-align: left; width: 100%; box-sizing: border-box; }
+    .cta-actions { display: flex; flex-direction: column; gap: 12px; width: 100%; margin-bottom: 1rem; }
+    .cta-actions .btn { width: 100%; justify-content: center; text-align: center; }
+    .contacts { width: 100%; display: flex; flex-direction: column; align-items: flex-start; gap: 12px; box-sizing: border-box; }
+    .contact.card { width: 100%; max-width: 100% !important; box-sizing: border-box; margin: 0; }
+    
+    .cta-right { width: 100%; max-width: 100% !important; margin: 0 !important; padding: 24px !important; box-sizing: border-box; }
+    .cta-right h3 { text-align: left; font-size: 1.5rem; margin-bottom: 1rem; }
+    .form button { width: 100%; }
+
+    /* Footer Centralizado (O Footer é a única exceção, costuma ficar melhor no meio) */
+    .footer-container { flex-direction: column; align-items: center; text-align: center; gap: 2.5rem; }
+    .footer-col { display: flex; flex-direction: column; align-items: center; width: 100%; }
+    .footer-col ul { align-items: center; width: 100%; }
+    .footer-logo-white { margin: 0 auto 1.5rem auto; display: block; }
+    .branding p { text-align: center; margin-inline: auto; }
+    .footer-col h4 { text-align: center; margin-inline: auto; }
+    .social-links { justify-content: center; }
+    .footer-col.contact li { justify-content: center; text-align: center; }
+    .footer-col a:hover { padding-left: 0; }
+    .footer-bottom { text-align: center; padding-inline: var(--pad); }
+}

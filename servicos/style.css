@@ -1718,8 +1718,8 @@ html.js .reveal.is-in{ opacity: 1; transform: none; }
     .mobile-menu .nav-item a:active { color: #27AE60; transition: 0.1s; }
 }
 
-/* --- TABLETS --- */
-@media screen and (max-width: 1100px) {
+
+@media screen and (max-width: 1024px) {
     .hero__grid { grid-template-columns: 1fr; }
     
     .hero { background-attachment: scroll; }
