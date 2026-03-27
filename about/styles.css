@@ -532,7 +532,6 @@
         .mobile-menu-icon button { background-color: transparent; border: none; cursor: pointer; color: #2A2A2A; font-size: 1.5rem; transition: transform 0.15s ease; }
         .mobile-menu-icon button:active { transform: scale(0.9); }
         
-        /* Lista e botão centralizados no menu */
         .mobile-menu ul { display: flex; flex-direction: column; text-align: center; padding: 1rem; width: 100%; }
         .mobile-menu .nav-item { display: block; padding-top: 1.2rem; }
         .mobile-menu .nav-button { display: block; padding: 1rem 0; margin: 0 auto 1rem auto; width: 100%; display: flex; justify-content: center;}
@@ -541,7 +540,6 @@
         .mobile-menu .nav-item a:hover::after { width: 0% !important; }
         .mobile-menu .nav-item a:active { color: #27AE60; transition: 0.1s; }
 
-        /* Quebra grids principais para o tablet */
         .hero-grid, .about-grid, .cta-grid { 
             grid-template-columns: 1fr; 
             gap: 2.5rem; 
@@ -549,102 +547,91 @@
         .grid-3 { grid-template-columns: 1fr 1fr; }
         .about-media { min-height: 350px; }
         
-        /* Tudo alinhado à esquerda no Tablet (menos o menu) */
+        /* 🔴 TUDO CENTRALIZADO NO TABLET 🔴 */
         .hero-left, .about-text, .cta-left {
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
-            text-align: left;
+            align-items: center;    /* Traz os blocos pro centro */
+            text-align: center;     /* Centraliza o texto */
             width: 100%;
-            max-width: 300px;
+            max-width: 100%;        /* Removido o 300px que esmagava o texto */
         }
-        .hero-left .lead, .about-text p { text-align: left; }
-        .chips, .hero-actions { justify-content: flex-start; }
-        .eyebrow { text-align: left; }
-        .eyebrow::after { margin: 8px 0 0 0; }
-        .section-head h2, .section-head p { text-align: left; margin-inline: 0; }
+        
+        .hero-left .lead, .about-text p { text-align: center; margin-inline: auto; }
+        .hero h1 { text-align: center; }
+        .kicker { margin: 0 auto 1rem auto; } /* Centraliza a badge "Desde 2019" */
+        .chips, .hero-actions, .area-contents { justify-content: center; width: 100%; }
+        
+        .eyebrow { text-align: center; }
+        .eyebrow::after { margin: 8px auto 0 auto; } /* Centraliza a linhazinha verde */
+        .section-head h2, .section-head p { text-align: center; margin-inline: auto; }
 
-        /* ALINHAMENTO PERFEITO DA SEÇÃO DE CONTATO */
-        .contacts { width: 100%; }
-        .contact.card {
-            max-width: 100% !important; 
-            margin: 0 !important;
-        }
-        .cta-right {
-            max-width: 100% !important; 
-            margin: 0 !important; 
-        }
-        .cta-right h3 { text-align: left; }
+        /* Contato */
+        .contacts { width: 100%; align-items: center; }
+        .contact.card { max-width: 100% !important; margin: 0 auto !important; }
+        .cta-right { max-width: 100% !important; margin: 0 auto !important; }
+        .cta-right h3 { text-align: center; }
     }
 
     /* --- CELULARES E IPAD MINI VERTICAL (Até 768px) --- */
     @media (max-width: 768px) {
         .hero h1 {
-        font-size: 2.2rem; /* Tamanho para o celular (ou 1.7rem se quiser menor) */
-        text-align: left;
-    }
-    .nav-logo h1 { font-size: 1.2rem; }
+            font-size: 2.2rem; 
+            text-align: center; /* 🔴 Centralizado no celular */
+        }
+        .nav-logo h1 { font-size: 1.2rem; }
         header .subtitle-header { font-size: 0.6rem; }
-        /* Títulos na Esquerda no Celular */
-        .section-head h2 { font-size: 1.8rem; text-align: left; }
-        .section-head p { text-align: left; margin: 0; }
-        .eyebrow { text-align: left; }
-        .eyebrow::after { margin: 8px 0 0 0; }
-        .hero-left, .about-text { align-items: flex-start; text-align: left; }
-        .hero-left .lead, .about-text p { text-align: left; }
-        .chips { justify-content: flex-start; }
-        .hero-actions { justify-content: flex-start; width: 100%; }
+        
+        /* 🔴 Títulos Centralizados no Celular */
+        .section-head h2 { font-size: 1.8rem; text-align: center; }
+        .section-head p { text-align: center; margin: 0 auto; }
+        .eyebrow { text-align: center; }
+        .eyebrow::after { margin: 8px auto 0 auto; }
+        
+        .hero-left, .about-text { align-items: center; text-align: center; }
+        .hero-left .lead, .about-text p { text-align: center; }
+        
+        .chips, .area-contents { justify-content: center; width: 100%; }
+        
+        .hero-actions { justify-content: center; width: 100%; flex-direction: column; }
+        .hero-actions .btn { width: 100%; }
         .hero-right { margin-top: 1rem; width: 100%; }
 
-        /* Grids viram 1 coluna só */
         .grid-3 { grid-template-columns: 1fr; }
         .about-media { min-height: 250px; margin-top: 1rem; }
 
-        /* --- CONTATO CORRIGIDO E ALINHADO --- */
+        /* Contato */
         .cta-grid { gap: 24px; }
-        .cta-left { display: flex; flex-direction: column; align-items: flex-start; text-align: left; width: 100%; box-sizing: border-box; }
+        .cta-left { display: flex; flex-direction: column; align-items: center; text-align: center; width: 100%; box-sizing: border-box; }
         
-        /* Botões WhatsApp e E-mail empilhados 100% */
-        .cta-actions { 
-            display: flex; flex-direction: column; 
-            gap: 12px; width: 100%; margin-bottom: 1rem; 
-        }
+        .cta-actions { display: flex; flex-direction: column; gap: 12px; width: 100%; margin-bottom: 1rem; }
         .cta-actions .btn { width: 100%; justify-content: center; text-align: center; }
         
-        /* Cards de Endereço forçados na tela */
-        .contacts { width: 100%; display: flex; flex-direction: column; gap: 12px; box-sizing: border-box; }
+        .contacts { width: 100%; display: flex; flex-direction: column; align-items: center; gap: 12px; box-sizing: border-box; }
         .contact.card { width: 100%; max-width: 100% !important; box-sizing: border-box; margin: 0; }
         
-        /* Formulário na medida certa e sem padding extra no celular */
         .cta-right { width: 100%; max-width: 100% !important; margin: 0 !important; padding: 24px !important; box-sizing: border-box; }
-        
-        .cta-right h3 { text-align: left; font-size: 1.5rem; margin-bottom: 1rem; }
+        .cta-right h3 { text-align: center; font-size: 1.5rem; margin-bottom: 1rem; }
         .form button { width: 100%; }
 
-        /* --- FOOTER CENTRALIZADO EXCLUSIVO PARA MOBILE/IPAD MINI --- */
+        /* Footer */
         .footer-container { flex-direction: column; align-items: center; text-align: center; gap: 2.5rem; }
-        
-        /* Transforma a coluna toda num container flex centralizado */
         .footer-col { display: flex; flex-direction: column; align-items: center; width: 100%; }
         .footer-col ul { align-items: center; width: 100%; }
-        
         .footer-logo-white { margin: 0 auto 1.5rem auto; display: block; }
         .branding p { text-align: center; margin-inline: auto; }
         .footer-col h4 { text-align: center; margin-inline: auto; }
         .social-links { justify-content: center; }
-        
-        /* Ícone de contato do footer centralizado perfeitamente */
-        .footer-col.contact li { 
-            justify-content: center; 
-            text-align: center;
-        }
+        .footer-col.contact li { justify-content: center; text-align: center; }
         .footer-col a:hover { padding-left: 0; }
         .footer-bottom { text-align: center; padding-inline: var(--pad); }
+        
+        /* Card Topo Em Números */
         .card-info { 
-        width: 100%; 
-        max-width: 100%; /* Força a ocupar a largura disponível */
-        padding: 2rem 1.5rem; /* Dá um respiro melhor interno */
-        margin: 2rem 0 0 0; /* Zera a margem dos lados que estava espremendo o card! */
-        min-height: auto; /* Deixa o card crescer conforme os números */
-    }
+            width: 100%; 
+            max-width: 100%; 
+            padding: 2rem 1.5rem; 
+            margin: 2rem 0 0 0; 
+            min-height: auto; 
+        }
     }

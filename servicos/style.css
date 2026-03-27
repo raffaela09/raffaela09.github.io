@@ -880,9 +880,15 @@ html.js .reveal.is-in{ opacity: 1; transform: none; }
         background-size: cover; 
         background-position: center bottom;
         background-repeat: no-repeat;
+        
     }
     
-    .column-one { max-width: 100%; padding: 3rem 2rem 1rem 2rem; }
+    .column-one { max-width: 100%; 
+        padding: 3rem 2rem 1rem 2rem; 
+        display: flex; 
+        flex-direction: column; 
+        align-items: center; /* Centraliza os blocos (botões, badges) */
+        text-align: center; }
     
     .mobile-menu .nav-item a:hover::after { width: 0% !important; }
     .mobile-menu .nav-item a:active { color: #27AE60; transition: 0.1s; }
@@ -906,6 +912,7 @@ html.js .reveal.is-in{ opacity: 1; transform: none; }
     box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.15);
     display: flex;
     flex-direction: column;
+
 }
 
 .title-info {
@@ -935,6 +942,20 @@ html.js .reveal.is-in{ opacity: 1; transform: none; }
     font-size: 1.2rem;
     text-align: center;
 }
+.hero, .hero__title, 
+.hero__lead {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Centraliza os botões, badges e itens em linha */
+    .area-contents, 
+    .hero__actions, 
+    .chips {
+        justify-content: center; 
+        width: 100%;
+    }
 
 .text-btn button {
     width: 90%;

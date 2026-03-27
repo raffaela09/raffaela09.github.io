@@ -786,14 +786,124 @@ iframe {
 }
 
 
-@media screen and (max-width: 768px) {
+/* =========================================
+   MEDIA QUERIES (RESPONSIVIDADE)
+   ========================================= */
+
+/* --- 1º TABLETS HORIZONTAIS E VERTICAIS (Até 1024px) --- */
+@media screen and (max-width: 1024px) {
+    .nav-bar { padding: 1.5rem; }
+    .nav-item, .nav-button { display: none; }
+    .nav-logo { display: flex; justify-content: center; align-items: center; }
     
-    /* AQUI É LITERALMENTE O CÓDIGO DA SUA HOME! */
-    .nav-bar{  display: flex; align-items: center; }
+    .mobile-menu {
+        border-top: 2px solid rgba(0, 0, 0, 0.171); position: absolute; top: 6rem; left: 0;
+        width: 100%; background-color: #fff; display: none; flex-direction: column; z-index: 1000;
+    }
+    .mobile-menu-icon { display: block; }
+    .mobile-menu-icon button { background-color: transparent; border: none; cursor: pointer; color: #2A2A2A; font-size: 1.5rem; transition: transform 0.15s ease; }
+    .mobile-menu-icon button:active { transform: scale(0.9); }
+    .mobile-menu ul { display: flex; flex-direction: column; text-align: center; padding: 1rem; }
+    .mobile-menu .nav-item { display: block; padding-top: 1.2rem; }
+    .mobile-menu .nav-button { display: block; padding: 1rem 2rem; margin-left: 0; }
+    .mobile-menu .nav-button button { width: 100%; }
+    .open { display: flex; }
+
+    /* Processos */
+    .process-container { flex-wrap: wrap; }
+    .step-card { min-width: 45%; }
+    .process-container::before { display: none; }
+    
+    /* Hero Section para o Tablet */
+    .main-card {
+        display: flex; 
+        flex-direction: column; 
+        padding-inline: 0; 
+        padding-bottom: 4rem; 
+        background-image: url("../img/bg-card.png");
+        background-size: cover; 
+        background-position: center bottom;
+        background-repeat: no-repeat;
+        width: 100%;
+    }
+    
+    .divider { display: none; }
+    
+    .column-one {
+        max-width: 100%; 
+        padding: 3rem 2rem 1rem 2rem; 
+        align-items: center; 
+        text-align: center;
+    }
+
+    .column-content { margin: 1rem auto; }
+    .area-buttons { margin: 1rem auto; }
+    
+    /* O Card Preto Lindão */
+    .card-info {
+        width: 90%; 
+        max-width: 600px;
+        margin: 1rem auto 0 auto; 
+        background-color: #2A2A2A; 
+        border-radius: 12px;
+        box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .mobile-menu .nav-item a:hover::after { width: 0% !important; }
+    .mobile-menu .nav-item a:active { color: #27AE60; transition: 0.1s; }
+
+    .performance-content { flex-wrap: wrap; justify-content: center; }
+    .p-card { min-width: 45%; flex: 1 1 45%; }
+}
+
+/* --- 2º CELULARES (Até 768px) --- */
+@media screen and (max-width: 768px) {
+    /* HEADER E MENU */
+    .nav-bar{ padding: 1.5rem; display: flex; align-items: center; }
     .nav-logo h1, .title-header h1 { font-size: 1.2rem !important; margin: 0 !important; color: #2A2A2A !important; font-weight: bold !important;  }
     header .subtitle-header { font-size: 0.6rem !important; margin: 0 !important; color: #27AE60 !important; }
     .title-header span{ font-size: 0.7rem; }
+    .nav-item, .nav-button{ display: none; }
+    .nav-logo { display: flex; justify-content: center; align-items: center; }
+    
+    .mobile-menu{ border-top: 1px solid rgba(0, 0, 0, 0.171); position: absolute; top: 6rem; left: 0; width: 100%; background-color: #fff; box-shadow: 0px 3px 10px #4646465d; backdrop-filter: blur(8px); display: none; flex-direction: column; z-index: 1000; }
+    .mobile-menu-icon{ display: block; }
+    .mobile-menu-icon button{ background-color: transparent; border: none; cursor: pointer; color: #2A2A2A; font-size: 1.5rem; transition: transform 0.15s ease; }
+    .mobile-menu-icon button:active{ transform: scale(0.9); }
+    .mobile-menu ul{ display: flex; flex-direction: column; text-align: center; padding: 1rem; }
+    .mobile-menu .nav-item{ display: block; padding-top: 1.2rem; }
+    .mobile-menu .nav-button{ display: block; padding: 1rem 2rem; }
+    .mobile-menu .nav-button button{ width: 100%; }
+    .open{ display: flex; }
+    .mobile-menu .nav-item a:hover::after { width: 0% !important; }
+    .mobile-menu .nav-item a:active { color: #27AE60; transition: 0.1s; }
+    header h1 { margin-top: 0.5rem; font-size: 1rem; line-height: 1.2; }
+
+    /* --- CONTEÚDO (ARRUMANDO O LAYOUT E DEVOLVENDO A MARGEM) --- */
+    .main-card { 
+        display: flex; 
+        flex-direction: column; 
+        width: 100%; 
+        padding: 2rem 1.5rem !important; /* 🔴 O segredo da margem lateral está aqui! */
+        gap: 2rem; 
+        background-image: url("../img/bg-card.png");        
+        background-size: cover; 
+        background-position: center bottom;
+        background-repeat: no-repeat;
+    }
+    
+    .divider { display: none; }
+    .contact-text { padding: 0; max-width: 100%; }
     .contact-text h1{ font-size: 2.2rem;}
+    .contact-text h2 { font-size: 1.6rem; line-height: 1.3; }
+    .contact-text p { font-size: 0.95rem; }
+    .info-card { width: 100%; max-width: 100%; padding: 1rem 0 !important; box-shadow: none; }
+    .contact-form { padding: 0; max-width: 100%; }
+    .form { padding: 1.5rem; border-radius: 16px; margin: 0; }
+    .list-infos i { margin-right: 15px; } 
+    .list-infos li { font-size: 0.8rem; line-height: 1.4; margin-bottom: 0.8rem !important; }
+    #contact { scroll-margin-top: 6rem; }
+    
     .section-head h2, .section__title { font-size: 1.8rem; text-align: left; }
     .section-head p, .section__desc { text-align: left; }
 
@@ -812,15 +922,27 @@ iframe {
     .cta-actions { display: flex; flex-direction: column; gap: 12px; width: 100%; margin-bottom: 1rem; }
     .cta-actions .btn { width: 100%; justify-content: center; }
 
-    /* FOOTER CENTRALIZADO */
+    /* LOCATION E WPP */
+    .location { display: flex; flex-direction: column; }
+    .title-local { padding-inline: 1.5rem; }
+    .content { padding-inline: 1.5rem; }
+    .sub-title { text-align: center; }
+    .map { width: 100%; margin-bottom: 0; }
+    .map-card { margin-top: 2rem; width: 100%; }
+    
+    .content-wpp { display: flex; flex-direction: column; text-align: center; padding: 3rem 1.5rem; gap: 2rem;}
+    .content-left { padding: 0; }
+    
+    /* --- FOOTER CENTRALIZADO EXCLUSIVO PARA MOBILE E IPAD MINI --- */
     .footer-container { flex-direction: column; align-items: center; text-align: center; gap: 2.5rem; padding-inline: 1.5rem; }
-    .footer-col { display: flex; flex-direction: column; align-items: center; width: 100%; padding: 0; }
-    .footer-col ul { align-items: center; width: 100%; padding: 0; }
-    .footer-logo-white { margin: 0 auto 1.5rem auto; display: block; }
-    .branding p, .footer-col h4 { text-align: center; margin-left: auto; margin-right: auto; }
+    .footer-col { display: flex; flex-direction: column; align-items: center; width: 100%; padding: 0;}
+    .footer-col ul { align-items: center; width: 100%; padding: 0;}
+    .footer-logo-white { margin: 0 auto 1.5rem auto; display: block;}
+    .branding p, .footer-col h4 { text-align: center; margin-inline: auto; margin-left: auto; margin-right: auto; }
     .social-links { justify-content: center; width: 100%; }
     .footer-col.contact li { justify-content: center; text-align: center; width: 100%; }
     .footer-col a:hover { padding-left: 0; }
+    .footer-col span{ font-size: 0.8rem; }
     .footer-bottom { text-align: center; padding-inline: 1.5rem; }
     .site-footer span { font-size: 0.9rem; }
 }
